@@ -1,0 +1,584 @@
+/* Custom Animations */
+@keyframes fade-in-up {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes slide-in-left {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slide-in-right {
+    0% {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes scale-in {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.animate-fade-in-up {
+    animation: fade-in-up 0.8s ease-out;
+    animation-fill-mode: forwards;
+    opacity: 1; /* Fallback - ensure visible by default */
+}
+
+/* Safer animation approach - start visible, enhance with animation */
+.hero-content {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Apply smooth fade-in animation if supported */
+@supports (animation: fade-in-up 0.8s ease-out) {
+    .animations-ready .hero-content {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    
+    .animations-ready .animate-fade-in-up {
+        animation: fade-in-up 0.8s ease-out forwards;
+    }
+}
+
+.animate-float {
+    animation: float 3s ease-in-out infinite;
+}
+
+.animate-slide-in-left {
+    animation: slide-in-left 0.6s ease-out;
+}
+
+.animate-slide-in-right {
+    animation: slide-in-right 0.6s ease-out;
+}
+
+.animate-scale-in {
+    animation: scale-in 0.5s ease-out;
+}
+
+/* Glass morphism effects */
+.glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Smooth transitions for interactive elements */
+.transition-all {
+    transition: all 0.3s ease;
+}
+
+/* Custom hover effects */
+.hover-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Modal animations */
+.modal-backdrop {
+    backdrop-filter: blur(8px);
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    animation: scale-in 0.3s ease-out;
+}
+
+/* Button pulse effect */
+@keyframes pulse-blue {
+
+    0%,
+    100% {
+        box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7);
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px rgba(59, 130, 246, 0);
+    }
+}
+
+.pulse-blue {
+    animation: pulse-blue 2s infinite;
+}
+
+html,
+body {
+    overflow-x: hidden;
+    /* Prevent horizontal scroll */
+    scroll-behavior: smooth;
+}
+
+/* Enhanced Navbar Styles */
+.navbar-scroll {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 50; /* Ensure navbar is above content but not blocking */
+}
+
+.navbar-scroll.scrolled {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(25px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Navigation Items */
+.nav-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-item.active {
+    color: white !important;
+}
+
+.nav-item.active::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #7AC5FF, #0F5F98);
+    border-radius: 9999px;
+    opacity: 0.2;
+    z-index: 0;
+}
+
+.nav-item.active::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 9999px;
+    z-index: 1;
+}
+
+/* Language Toggle Switch */
+.language-toggle.active #toggleSlider {
+    transform: translateX(1.75rem); /* 28px = 7rem * 0.25 */
+}
+
+.mobile-lang-toggle.active #mobileToggleSlider {
+    transform: translateX(1.25rem); /* 20px for smaller mobile toggle */
+}
+
+/* Mobile Menu Styles */
+.mobile-menu {
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-menu.active {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Mobile Menu Button Animation */
+.mobile-menu-button.active .hamburger-line:nth-child(1) {
+    transform: rotate(45deg) translate(0.375rem, 0.375rem);
+}
+
+.mobile-menu-button.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-button.active .hamburger-line:nth-child(3) {
+    transform: rotate(-45deg) translate(0.375rem, -0.375rem);
+}
+
+/* Mobile Navigation Items */
+.mobile-nav-item.active {
+    background: rgba(255, 255, 255, 0.1);
+    color: white !important;
+}
+
+.mobile-nav-item.active .w-2 {
+    opacity: 1 !important;
+    transform: scale(1.2);
+}
+
+/* Scroll Animations */
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.navbar-scroll {
+    animation: slideDown 0.5s ease-out;
+}
+
+/* Logo hover effects */
+.logo-glow {
+    filter: drop-shadow(0 0 8px rgba(122, 197, 255, 0.3));
+    transition: filter 0.3s ease;
+}
+
+.logo-glow:hover {
+    filter: drop-shadow(0 0 16px rgba(122, 197, 255, 0.6));
+}
+
+/* CTA Button pulse effect */
+@keyframes ctaPulse {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(122, 197, 255, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 0 10px rgba(122, 197, 255, 0);
+    }
+}
+
+.cta-pulse {
+    animation: ctaPulse 2s infinite;
+}
+
+/* Responsive enhancements */
+@media (max-width: 768px) {
+    .mobile-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        z-index: 50;
+    }
+    
+    .mobile-nav-item {
+        margin: 0.25rem 0;
+    }
+}
+
+/* Focus states for accessibility */
+.nav-item:focus-visible,
+.mobile-nav-item:focus-visible,
+.language-toggle:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.6);
+    outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .navbar-scroll {
+        background: rgba(0, 0, 0, 0.9);
+        border-bottom: 2px solid white;
+    }
+    
+    .nav-item,
+    .mobile-nav-item {
+        color: white !important;
+    }
+}
+
+/* Language switch animation */
+.lang-switching {
+    opacity: 0.25;
+    transition: opacity 200ms ease;
+}
+
+.lang-switched {
+    opacity: 1;
+    transition: opacity 300ms ease;
+}
+
+/* Minimal server compatibility fixes */
+.hero-content {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Only apply animation reset if CSS loading fails */
+.css-loading-error .hero-content {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    animation: none !important;
+}
+
+/* Modal responsive improvements */
+@media (max-width: 768px) {
+    .modal-content {
+        margin: 0.5rem;
+        max-height: 90vh;
+        width: calc(100% - 1rem);
+    }
+    
+    .modal-content .lg\:flex-row {
+        flex-direction: column;
+    }
+    
+    .modal-content .lg\:w-2\/3 {
+        width: 100%;
+    }
+    
+    .modal-content .lg\:w-1\/3 {
+        width: 100%;
+        min-height: 300px;
+    }
+    
+    .modal-content .lg\:h-\[500px\] {
+        height: 280px;
+        min-height: 280px;
+    }
+    
+    .modal-content .rounded-l-3xl {
+        border-radius: 1.5rem 1.5rem 0 0;
+    }
+    
+    /* Better mobile image sizing */
+    .modal-content .md\:h-80 {
+        height: 280px !important;
+    }
+    
+    .modal-content .h-64 {
+        height: 280px !important;
+    }
+}
+
+/* Mobile Services Collapse */
+@media (max-width: 767px) {
+    #servicesGrid .group:nth-child(n+5) {
+        display: none;
+    }
+    
+    #servicesGrid.expanded .group {
+        display: block;
+    }
+}
+
+/* Improved grid alignment */
+.grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .grid {
+        gap: 2rem;
+    }
+}
+
+/* Better responsive spacing */
+.container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+/* Service card image improvements - Force full coverage */
+.service-card-bg {
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 100% !important;
+    background-attachment: local !important;
+}
+
+/* Ensure service cards maintain proper aspect ratio and image coverage */
+.aspect-\[4\/5\] {
+    aspect-ratio: 4/5;
+    min-height: 350px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Enhanced service card styling for better image display */
+.service-card-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem;
+    background-color: #f3f4f6;
+}
+
+.service-card-container::before {
+    content: '';
+    display: block;
+    padding-bottom: 125%; /* 4:5 aspect ratio */
+}
+
+.service-card-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+@media (min-width: 640px) {
+    .aspect-\[4\/5\] {
+        min-height: 380px;
+    }
+}
+
+@media (min-width: 768px) {
+    .aspect-\[4\/5\] {
+        min-height: 420px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .aspect-\[4\/5\] {
+        min-height: 480px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .aspect-\[4\/5\] {
+        min-height: 500px;
+    }
+}
+
+/* Alternative approach for full image coverage */
+.service-card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Force aspect ratio containers */
+.force-aspect-4-5 {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 125%; /* 4:5 aspect ratio */
+    overflow: hidden;
+}
+
+/* High priority service card background fixes */
+.group .aspect-\[4\/5\].service-card-bg {
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: scroll !important;
+}
+
+/* Ensure all service card backgrounds fill container */
+div[style*="background-image"].aspect-\[4\/5\] {
+    background-size: cover !important;
+    background-position: center !important;
+    min-height: 350px !important;
+}
+
+/* Make sure cards don't shrink */
+.services-grid-card {
+    flex: 1 1 auto;
+    min-width: 280px;
+    max-width: 100%;
+}
+
+/* ULTIMATE PRIORITY - Force background images to fill completely */
+.services-grid-card .aspect-\[4\/5\][style*="background-image"] {
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    min-height: 400px !important;
+    height: 100% !important;
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-end !important;
+}
+
+/* Ensure aspect ratio is maintained but fill completely */
+.aspect-\[4\/5\] {
+    aspect-ratio: 4/5 !important;
+    min-height: 400px !important;
+    background-size: cover !important;
+    background-position: center !important;
+}
+
+@media (min-width: 640px) {
+    .aspect-\[4\/5\] {
+        min-height: 420px !important;
+    }
+    .services-grid-card .aspect-\[4\/5\][style*="background-image"] {
+        min-height: 420px !important;
+    }
+}
+
+@media (min-width: 768px) {
+    .aspect-\[4\/5\] {
+        min-height: 450px !important;
+    }
+    .services-grid-card .aspect-\[4\/5\][style*="background-image"] {
+        min-height: 450px !important;
+    }
+}
+
+@media (min-width: 1024px) {
+    .aspect-\[4\/5\] {
+        min-height: 500px !important;
+    }
+    .services-grid-card .aspect-\[4\/5\][style*="background-image"] {
+        min-height: 500px !important;
+    }
+}
+
+@media (min-width: 640px) {
+    .container {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+}

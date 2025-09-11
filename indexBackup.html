@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sumber Sarana Solusindo</title>
+    <!-- CSS Link -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/style.css">
+    <!-- Add Icon URL Bar -->
+    <link rel="icon" href="" type="image/icon type">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        inter: ['Inter+Tight'],
+                        montserrat: ['Montserrat'],
+                        poppins: ['Poppins'],
+                        roboto: ['Roboto'],
+                        quicksand: ['Quicksand']
+                    },
+                },
+            },
+        };
+    </script>
+</head>
+ 
+<body>
+    <!-- Navbar Start -->
+    <nav class="bg-opacity-0 font-poppins">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 md:p-6">
+            <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+                <!-- <img src="" class="h-11 md:h-14 ml-4 md:-mt-2" alt="Triple S Logo" /> -->
+                <p class="self-center text-xl font-medium whitespace-nowrap ">Sumber Sarana Solusindo</p>
+            </a>
+            <button data-collapse-toggle="navbar-dropdown" type="button"
+                class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+                aria-controls="navbar-dropdown" aria-expanded="false">
+                <span class="sr-only">Open main menu</span>
+                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15" />
+                </svg>
+            </button>
+            <div class="hidden w-full md:block md:w-auto" id="navbar-dropdown">
+                <ul
+                    class="flex flex-col font-normal p-4 md:p-0 mt-4 rounded-lg bg-opacity-0 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 ">
+                    <li>
+                        <a href="#home" class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0"
+                        aria-current="page">Home</a>
+                    </li>
+                    <li>
+                        <a href="#services" class="block py-2 px-3 text-white font-light rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Services</a>
+                    </li>
+                    <li>
+                        <a href="#projects" class="block py-2 px-3 text-white font-light rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Projects</a>
+                    </li>
+                    <li>
+                        <a href="#gallery" class="block py-2 px-3 text-white font-light rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Gallery</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+
+    <!-- Jumbotron Home Section Start -->
+    <section id="home"
+        class="bg-gradient-to-b from-blue-300 to-blue-900 -mt-24">
+        <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16">
+            <img class="ml-20 object-cover w-full h-full md:h-max md:w-[60rem] opacity-25" src="assets/img/worldmap.png" alt="About Image">
+
+            <h1 class="font-montserrat -mt-[24rem] mb-4 text-4xl font-bold md:font-bold tracking-normal leading-none text-gray-900 md:text-4xl lg:text-5xl dark:text-white">
+                Your Trustworthy <span class="text-yellow-300">Hi-Tech</span><br> Building Equipment Service</h1>
+            <p class="font-sans mb-56 text-xs font-light text-gray-500 lg:text-xl sm:px-16 lg:px-48 dark:text-gray-200">
+                We provide Technology based mechanical & electrical services.
+            </p>
+
+            <div class="mx-auto h-16 w-40 mt-28">
+                <p class="text-white text-sm mx-auto">Scroll to Explore</p>
+                <img class="animate-pulse object-cover mx-auto w-8 h-8" src="assets/img/scroll-icon.png" alt="Scroll to Explore">
+            </div>
+            
+        </div>
+    </section>
+    <!-- Jumbotron Home Section End -->
+
+
+    <!-- About Us Section Start -->
+    <section id="projects" class="bg-white font-poppins mt-20 md:my-20 px-4 md:px-0">
+        <div class="mx-auto mb-5 max-w-screen-sm text-center lg:mb-10">
+            <h2 class="mb-4 text-3xl tracking-tight font-medium text-gray-900">Here are our active projects.</h2>
+        </div> 
+        <div class="flex items-center font-quicksand">
+            <div class="bg-blue-800 h-72 w-96 p-3 mx-auto rounded-2xl bg-cover bg-center" style="background-image: url(assets/img/skycrapers_one_new.jpg);">
+                <p class="text-center text-white font-medium mt-48 text-xl">Essence Darmawangsa</p>
+            </div>
+            <div class="bg-red-800 h-72 w-96 p-3 mx-auto rounded-2xl -ml-60 bg-cover bg-center" style="background-image: url(assets/img/skyscraper-two_new.jpg);">
+                <p class="text-center text-white font-medium mt-48 text-xl">Niffaro Park</p>
+            </div>
+        </div>
+    </section>
+    <!-- About Us Section End -->
+
+
+    <!-- Product Section Start -->
+    <section id="product" class="font-poppins mt-3 md:mt-36 mb-16 md:my-20 bg-pink-600">
+        <div class="ml-24">
+            <p class="mb-6 font-poppins text-gray-900 font-bold text-3xl">Get to the details.</p>
+        </div>
+        <div class="ml-24 mx-auto w-full flex flex-nowrap flex-col md:flex-row md:max-w-9xl bg-green-600">
+            <div class="font-poppins flex-row h-96 w-64 rounded-[25px] shadow-xl mt-3 md:mt-0 bg-cover bg-center" style="background-image: url(assets/img/maintenance.jpg);">
+                <div class="px-5 pb-5 justify-end">
+                    <a href="#">
+                        <h5 class="text-lg font-light tracking-tight text-white mt-72">Preventive Maintenance</h5>
+                    </a>
+                    <div class="flex items-center justify-between mt-2">
+                        <a href="" class="text-blue-500 bg-white font-medium rounded-full text-sm px-5 py-1.5 text-center shadow-lg md:shadow-xl">See Photo</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ml-5 font-poppins flex-row h-96 w-64 rounded-[25px] shadow-xl mt-3 md:mt-0 bg-cover bg-center" style="background-image: url(assets/img/electrical.jpg);">
+                <div class="px-5 pb-5 justify-end">
+                    <a href="#">
+                        <h5 class="text-lg font-light tracking-tight text-white mt-72">Electronic Repair</h5>
+                    </a>
+                    <div class="flex items-center justify-between mt-2">
+                        <a href="" class="text-blue-500 bg-white font-medium rounded-full text-sm px-5 py-1.5 text-center shadow-lg md:shadow-xl">See Photo</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ml-5 font-poppins flex-row h-96 w-64 rounded-[25px] shadow-xl mt-3 md:mt-0 bg-cover bg-center" style="background-image: url(assets/img/mobileapps.jpg);">
+                <div class="px-5 pb-5 justify-end">
+                    <a href="#">
+                        <h5 class="text-lg font-light tracking-tight text-white mt-72">Mobile Apps Dev</h5>
+                    </a>
+                    <div class="flex items-center justify-between mt-2">
+                        <a href="" class="text-blue-500 bg-white font-medium rounded-full text-sm px-5 py-1.5 text-center shadow-lg md:shadow-xl">See Photo</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ml-5 font-poppins flex-row h-96 w-64 rounded-[25px] shadow-xl mt-3 md:mt-0 bg-cover bg-center" style="background-image: url(assets/img/charging.jpg);">
+                <div class="px-5 pb-5 justify-end">
+                    <a href="#">
+                        <h5 class="text-lg font-light tracking-tight text-white mt-72">EV Charging Car</h5>
+                    </a>
+                    <div class="flex items-center justify-between mt-2">
+                        <a href="" class="text-blue-500 bg-white font-medium rounded-full text-sm px-5 py-1.5 text-center shadow-lg md:shadow-xl">See Photo</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ml-5 font-poppins flex-row h-96 w-64 rounded-[25px] shadow-xl mt-3 md:mt-0 bg-cover bg-center" style="background-image: url(assets/img/administration.jpg);">
+                <div class="px-5 pb-5 justify-end">
+                    <a href="#">
+                        <h5 class="text-lg font-light tracking-tight text-white mt-72">Administration Partner</h5>
+                    </a>
+                    <div class="flex items-center justify-between mt-2">
+                        <a href="" class="text-blue-500 bg-white font-medium rounded-full text-sm px-5 py-1.5 text-center shadow-lg md:shadow-xl">See Photo</a>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>        
+    </section>   
+    <!-- Product Section End -->
+
+
+    <!-- Contact Section Start -->
+        <section id="contact" class="bg-white font-poppins mt-10 md:mt-9 mb-20 md:mb-16 mx-auto">
+            <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-6">
+                <div class="mx-auto mb-5 max-w-screen-sm lg:mb-10">
+                    <h2 class="mb-4 text-3xl md:text-4xl tracking-tight font-extrabold text-gray-900">Let's talk.</h2>
+                    <p class="font-light text-gray-500 sm:text-lg">Feel free to contact with us any time.</p>
+                </div> 
+                <div class="gap-8 grid md:gap-0 sm:grid-cols-2 md:grid-cols-2">
+                    <div class="text-center text-gray-500 md:ml-32">
+                        <img class="mx-auto mb-3 w-20 h-20 md:w-36 md:h-36 rounded-full" src="assets/img/icon-phone.png" alt="Phone">
+                        <h3 class="text-lg font-semibold tracking-tight text-gray-900">
+                            <a href="https://wa.me/+6285190060033">Phone Number</a>
+                        </h3>
+                        <p class="mt-2">(+62) 899 8726 260</p>
+                    </div>
+                    <div class="text-center text-gray-500 md:-ml-28">
+                        <img class="mx-auto mb-3 w-20 h-20 md:w-36 md:h-36 rounded-full" src="assets/img/icon-mail.png" alt="Mail">
+                        <h3 class="text-lg font-semibold tracking-tight text-gray-900">
+                            <a href="mailto: tristar.wd@gmail.com">Mail Address</a>
+                        </h3>
+                        <p class="mt-2">fatriandn@gmail.com</p>
+                    </div>
+                </div>  
+            </div>
+        </section>
+    <!-- Contact Section End -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+</body>
+</html>

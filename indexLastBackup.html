@@ -1,0 +1,1337 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sumber Sarana Solusindo</title>
+    <!-- CSS Link -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Add Icon URL Bar -->
+    <link rel="icon" href="assets/img/logo/LogoNew.png" type="image/icon type">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        inter: ['Inter+Tight'],
+                        montserrat: ['Montserrat'],
+                        poppins: ['Poppins'],
+                        roboto: ['Roboto'],
+                        quicksand: ['Quicksand']
+                    },
+                },
+            },
+        };
+    </script>
+</head>
+ 
+<body>
+    <!-- Navbar Start -->
+    <nav class="bg-opacity-0 font-poppins">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 md:p-6">
+            <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+                <img src="assets/img/LOGO_FINAL1.png" class="h-11 md:h-14 -ml-1 md:-ml-5 md:-mt-1" alt="Triple S Logo" />
+            </a>
+            <button data-collapse-toggle="navbar-dropdown" type="button"
+                class="hidden items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+                aria-controls="navbar-dropdown" aria-expanded="false">
+                <span class="sr-only">Open main menu</span>
+                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15" />
+                </svg>
+            </button>
+            <div class="hidden w-full md:block md:w-auto" id="navbar-dropdown">
+                <ul
+                    class="flex flex-col font-normal p-4 md:p-0 mt-4 rounded-lg bg-opacity-0 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 ">
+                    <li>
+                        <a href="#home" class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0"
+                        aria-current="page">Home</a>
+                    </li>
+                    <li>
+                        <a href="#projects" class="block py-2 px-3 text-white font-light rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Projects</a>
+                    </li>
+                    <li>
+                        <a href="#details" class="block py-2 px-3 text-white font-light rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Gallery</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+
+    <!-- Jumbotron Home Section Start -->
+    <section id="home" class="bg-gradient-to-b from-[#7AC5FF] to-[#0F5F98] -mt-20 md:-mt-28">
+        <div class="py-8 px-0 md:px-4 mx-auto w-full h-[750px] md:h-[850px] md:max-w-screen-xl text-center lg:py-16">
+            <img class="ml-0 md:ml-20 object-cover w-full h-full md:h-max md:w-[60rem] opacity-20" src="assets/img/worldmap.png" alt="About Image">
+
+            <h1 class="font-montserrat -mt-[30rem] md:-mt-[21rem] mb-6 text-[26px] font-bold md:font-bold tracking-normal leading-none text-gray-900 md:text-4xl lg:text-5xl dark:text-white">
+                Your Trustworthy <span class="text-yellow-300">Hi-Tech</span><br> Building Equipment Service</h1>
+            <p class="font-sans mx-3 md:mx-0 mb-72 text-lg md:text-xs font-light text-gray-500 lg:text-xl sm:px-16 lg:px-48 dark:text-gray-200">
+                We provide Technology based mechanical & electrical services.
+            </p>
+
+            <div class="mx-auto h-16 w-40 mt-28">
+                <a href="#projects">
+                    <p class="text-white text-sm mx-auto">Scroll to Explore</p>
+                    <img class="animate-pulse object-cover mx-auto w-8 h-8" src="assets/img/scroll-icon.png" alt="Scroll to Explore">
+                </a>
+            </div>
+            
+        </div>
+    </section>
+    <!-- Jumbotron Home Section End -->
+
+
+    <!-- CMMS Section Start -->
+    <section id="cmms" class="bg-white px-6 py-6 items-center font-montserrat">
+        <div class="flex items-center justify-center mt-10 md:mt-20">
+            <img class="h-full md:h-[430px] max-w-full rounded-lg md:rounded-[17px] shadow-xl border border-gray-300" src="assets/img/logo/imagecmms.png" alt="Image CMMS">
+        </div>
+        <div class="items-center text-center mt-5 md:mt-9">
+            <h1 class="font-bold md:font-extrabold text-[24px] md:text-3xl text-[#0061AE]">Supported with CMMS Web App</h1>
+        </div>
+        <div class="items-center text-center px-5 md:px-28 mt-3 md:mt-5 mb-0 md:mb-5">
+            <p class="font-medium md:font-semibold text-gray-800 leading-tight text-[15px]">Optimalkan perawatan gedung Anda dengan <span class="font-semibold md:font-bold">CMMS</span> yang cerdas! Kelola pemeliharaan, pantau aset, dan cegah downtime, semuanya dalam satu sistem terpusat. Dengan backup otomatis, keamanan data terjamin-tanpa resiko kehilangan. Hemat waktu, tingkatkan efisiensi, dan pastikan gedung Anda beroperasi maksimal!</p>
+        </div>
+    </section>
+    <!-- CMMS Section End -->
+
+
+    <!-- About Us Section Start -->
+    <section id="projects" class="bg-white font-poppins mt-12 md:mt-20 md:my-20 px-4 md:px-0">
+        <div class="mx-auto mb-7 md:mb-5 max-w-screen-sm text-center lg:mb-10">
+            <h2 class="mb-4 text-2xl md:text-3xl tracking-tight font-medium text-gray-900">Here are our active projects.</h2>
+        </div> 
+        <div class="flex flex-col md:flex-row items-center font-quicksand">
+            <div class="bg-blue-800 h-44 w-72 md:h-72 md:w-96 p-3 mx-auto rounded-2xl bg-cover bg-center" style="background-image: url(assets/img/skycrapers_one_new.jpg);">
+                <p class="text-center text-white font-medium mt-28 md:mt-48 text-base">Essence Darmawangsa</p>
+            </div>
+            <div class="bg-red-800 mt-5 md:mt-0 h-44 w-72 md:h-72 md:w-96 p-3 mx-auto rounded-2xl ml-6 md:-ml-60 bg-cover bg-center" style="background-image: url(assets/img/skyscraper-two_new.jpg);">
+                <p class="text-center text-white font-medium mt-28 md:mt-48 text-base">Niffaro Park</p>
+            </div>
+        </div>
+    </section>
+    <!-- About Us Section End -->
+
+
+    <!-- Product Section Start -->
+    <section id="details" class="font-poppins mt-16 md:mt-36 mb-16 my-0 md:my-0 items-center justify-center">
+        <div class="ml-7 md:ml-16">
+            <p class="mb-4 font-poppins text-gray-900 text-3xl font-bold md:text-3xl">Get to the details.</p>
+        </div>  
+
+        <!-- Row 1 -->   
+        <div class="ml-0 md:ml-6 mx-auto w-full flex flex-nowrap items-center justify-center flex-col md:flex-row md:max-w-[1300px]">
+            <div class="font-poppins flex-row h-96 w-64 rounded-[25px] shadow-xl mt-2 md:mt-0 bg-cover bg-center" style="background-image: url(assets/img/maintenance.jpg);">
+                <div class="px-5 pb-5 justify-end">
+                    <a href="#">
+                        <h5 class="text-base font-light tracking-tight text-white mt-72">Preventive Maintenance</h5>
+                    </a>
+                    <div class="flex items-center justify-between mt-2">
+                        <button data-modal-target="preventive-maintenance" data-modal-toggle="preventive-maintenance" class="text-blue-500 bg-white hover:bg-gray-300 font-medium rounded-full text-sm px-5 py-1.5 text-center shadow-lg md:shadow-xl">See Photo</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ml-0 md:ml-3 font-poppins flex-row h-96 w-64 rounded-[25px] shadow-xl mt-4 md:mt-0 bg-cover bg-center" style="background-image: url(assets/img/electrical.jpg);">
+                <div class="px-5 pb-5 justify-end">
+                    <a href="#">
+                        <h5 class="text-base font-light tracking-tight text-white mt-72">Electronic Panel</h5>
+                    </a>
+                    <div class="flex items-center justify-between mt-2">
+                        <button data-modal-target="electronic-panel" data-modal-toggle="electronic-panel" class="text-blue-500 bg-white hover:bg-gray-300 font-medium rounded-full text-sm px-5 py-1.5 text-center shadow-lg md:shadow-xl">See Photo</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ml-0 md:ml-3 font-poppins flex-row h-96 w-64 rounded-[25px] shadow-xl mt-4 md:mt-0 bg-cover bg-center" style="background-image: url(assets/img/websitedev.jpg);">
+                <div class="px-5 pb-5 justify-end">
+                    <a href="#">
+                        <h5 class="text-base font-light tracking-tight text-white mt-72">Website Development</h5>
+                    </a>
+                    <div class="flex items-center justify-between mt-2">
+                        <button data-modal-target="mobile-apps" data-modal-toggle="mobile-apps" class="text-blue-500 bg-white hover:bg-gray-300 font-medium rounded-full text-sm px-5 py-1.5 text-center shadow-lg md:shadow-xl">See Photo</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ml-0 md:ml-3 font-poppins flex-row h-96 w-64 rounded-[25px] shadow-xl mt-4 md:mt-0 bg-cover bg-center" style="background-image: url(assets/img/charging.jpg);">
+                <div class="px-5 pb-5 justify-end">
+                    <a href="#">
+                        <h5 class="text-base font-light tracking-tight text-white mt-72">EV Charging</h5>
+                    </a>
+                    <div class="flex items-center justify-between mt-2">
+                        <button data-modal-target="charging" data-modal-toggle="charging" class="text-blue-500 bg-white hover:bg-gray-300 font-medium rounded-full text-sm px-5 py-1.5 text-center shadow-lg md:shadow-xl">See Photo</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ml-0 md:ml-3 font-poppins flex-row h-96 w-64 rounded-[25px] shadow-xl mt-4 md:mt-0 bg-cover bg-center" style="background-image: url(assets/img/cctv.jfif);">
+                <div class="px-5 pb-5 justify-end">
+                    <a href="#">
+                        <h5 class="text-base font-light tracking-tight text-white mt-72">CCTV</h5>
+                    </a>
+                    <div class="flex items-center justify-between mt-2">
+                        <button data-modal-target="cctv" data-modal-toggle="cctv" class="text-blue-500 bg-white hover:bg-gray-300 font-medium rounded-full text-sm px-5 py-1.5 text-center shadow-lg md:shadow-xl">See Photo</button>
+                    </div>
+                </div>
+            </div>
+        </div>    
+
+        <!-- Row 2 -->
+      
+        <div class="ml-0 md:ml-6 mt-4 mx-auto w-full flex flex-nowrap items-center justify-center flex-col md:flex-row md:max-w-[1300px]">
+            <div class="font-poppins flex-row h-96 w-64 rounded-[25px] shadow-xl mt-1 md:mt-0 bg-cover bg-center" style="background-image: url(assets/img/soundsystem.jpg);">
+                <div class="px-5 pb-5 justify-end">
+                    <a href="#">
+                        <h5 class="text-base font-light tracking-tight text-white mt-72">Sound System</h5>
+                    </a>
+                    <div class="flex items-center justify-between mt-2">
+                        <button data-modal-target="soundsystem" data-modal-toggle="soundsystem" class="text-blue-500 bg-white hover:bg-gray-300 font-medium rounded-full text-sm px-5 py-1.5 text-center shadow-lg md:shadow-xl">See Photo</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ml-0 md:ml-3 font-poppins flex-row h-96 w-64 rounded-[25px] shadow-xl mt-4 md:mt-0 bg-cover bg-center" style="background-image: url(assets/img/airconditioner.jpg);">
+                <div class="px-5 pb-5 justify-end">
+                    <a href="#">
+                        <h5 class="text-base font-light tracking-tight text-white mt-72">Air Conditioner</h5>
+                    </a>
+                    <div class="flex items-center justify-between mt-2">
+                        <button data-modal-target="airconditioner" data-modal-toggle="airconditioner" class="text-blue-500 bg-white hover:bg-gray-300 font-medium rounded-full text-sm px-5 py-1.5 text-center shadow-lg md:shadow-xl">See Photo</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ml-0 md:ml-3 font-poppins flex-row h-96 w-64 rounded-[25px] shadow-xl mt-4 md:mt-0 bg-cover bg-center" style="background-image: url(assets/img/pompa.jpg);">
+                <div class="px-5 pb-5 justify-end">
+                    <a href="#">
+                        <h5 class="text-base font-light tracking-tight text-white mt-72">Pompa</h5>
+                    </a>
+                    <div class="flex items-center justify-between mt-2">
+                        <button data-modal-target="pompa" data-modal-toggle="pompa" class="text-blue-500 bg-white hover:bg-gray-300 font-medium rounded-full text-sm px-5 py-1.5 text-center shadow-lg md:shadow-xl">See Photo</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ml-0 md:ml-3 font-poppins flex-row h-96 w-64 rounded-[25px] shadow-xl mt-4 md:mt-0 bg-cover bg-center" style="background-image: url(assets/img/genset.jpg);">
+                <div class="px-5 pb-5 justify-end">
+                    <a href="#">
+                        <h5 class="text-base font-light tracking-tight text-white mt-72">Genset</h5>
+                    </a>
+                    <div class="flex items-center justify-between mt-2">
+                        <button data-modal-target="genset" data-modal-toggle="genset" class="text-blue-500 bg-white hover:bg-gray-300 font-medium rounded-full text-sm px-5 py-1.5 text-center shadow-lg md:shadow-xl">See Photo</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ml-0 md:ml-3 font-poppins flex-row h-96 w-64 rounded-[25px] shadow-xl mt-4 md:mt-0 bg-cover bg-center" style="background-image: url(assets/img/mobileapps.jpg);">
+                <div class="px-5 pb-5 justify-end">
+                    <a href="#">
+                        <h5 class="text-base font-light tracking-tight text-white mt-72">App Development</h5>
+                    </a>
+                    <div class="flex items-center justify-between mt-2">
+                        <button data-modal-target="mobiledev" data-modal-toggle="mobiledev" class="text-blue-500 bg-white hover:bg-gray-300 font-medium rounded-full text-sm px-5 py-1.5 text-center shadow-lg md:shadow-xl">See Photo</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 3 -->
+
+        <div class="ml-0 md:ml-6 mt-4 mx-auto w-full flex flex-nowrap items-center justify-center flex-col md:flex-row md:max-w-[1300px]">
+            <div class="font-poppins flex-row h-96 w-64 rounded-[25px] shadow-xl mt-1 md:mt-0 bg-cover bg-center" style="background-image: url(assets/img/pompasumpit.jpg);">
+                <div class="px-5 pb-5 justify-end">
+                    <a href="#">
+                        <h5 class="text-base font-light tracking-tight text-white mt-72">Pompa Sump Pit</h5>
+                    </a>
+                    <div class="flex items-center justify-between mt-2">
+                        <button data-modal-target="sumppit" data-modal-toggle="sumppit" class="text-blue-500 bg-white hover:bg-gray-300 font-medium rounded-full text-sm px-5 py-1.5 text-center shadow-lg md:shadow-xl">See Photo</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ml-0 md:ml-3 font-poppins flex-row h-96 w-64 rounded-[25px] shadow-xl mt-4 md:mt-0 bg-cover bg-center" style="background-image: url(assets/img/pompadomestic.png);">
+                <div class="px-5 pb-5 justify-end">
+                    <a href="#">
+                        <h5 class="text-base font-light tracking-tight text-white mt-72">Pompa Domestik</h5>
+                    </a>
+                    <div class="flex items-center justify-between mt-2">
+                        <button data-modal-target="pompa-domestik" data-modal-toggle="pompa-domestik" class="text-blue-500 bg-white hover:bg-gray-300 font-medium rounded-full text-sm px-5 py-1.5 text-center shadow-lg md:shadow-xl">See Photo</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ml-0 md:ml-3 font-poppins flex-row h-96 w-64 rounded-[25px] shadow-xl mt-4 md:mt-0 bg-cover bg-center" style="background-image: url(assets/img/aclift.jpg);">
+                <div class="px-5 pb-5 justify-end">
+                    <a href="#">
+                        <h5 class="text-base font-light tracking-tight text-white mt-72">AC Lift</h5>
+                    </a>
+                    <div class="flex items-center justify-between mt-2">
+                        <button data-modal-target="ac-lift" data-modal-toggle="ac-lift" class="text-blue-500 bg-white hover:bg-gray-300 font-medium rounded-full text-sm px-5 py-1.5 text-center shadow-lg md:shadow-xl">See Photo</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ml-0 md:ml-3 font-poppins flex-row h-96 w-64 rounded-[25px] shadow-xl mt-4 md:mt-0 bg-cover bg-center" style="background-image: url(assets/img/accesscontrolsystem.jpg);">
+                <div class="px-5 pb-5 justify-end">
+                    <a href="#">
+                        <h5 class="text-base font-light tracking-tight text-white mt-72">Access Control System</h5>
+                    </a>
+                    <div class="flex items-center justify-between mt-2">
+                        <button data-modal-target="access-control-system" data-modal-toggle="access-control-system" class="text-blue-500 bg-white hover:bg-gray-300 font-medium rounded-full text-sm px-5 py-1.5 text-center shadow-lg md:shadow-xl">See Photo</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ml-0 md:ml-3 font-poppins flex-row h-96 w-64 rounded-[25px] shadow-xl mt-4 md:mt-0 bg-cover bg-center" style="background-image: url(assets/img/accesslift.jpg   );">
+                <div class="px-5 pb-5 justify-end">
+                    <a href="#">
+                        <h5 class="text-base font-light tracking-tight text-white mt-72">Access Control Lift</h5>
+                    </a>
+                    <div class="flex items-center justify-between mt-2">
+                        <button data-modal-target="access-control-lift" data-modal-toggle="access-control-lift" class="text-blue-500 bg-white hover:bg-gray-300 font-medium rounded-full text-sm px-5 py-1.5 text-center shadow-lg md:shadow-xl">See Photo</button>
+                    </div>
+                </div>
+            </div>
+        </div>   
+
+        <!-- Last Row -->
+
+        <div class="ml-0 md:ml-6 mt-4 mx-auto w-full flex flex-nowrap items-center justify-center flex-col md:flex-row md:max-w-[1300px]">
+            <div class="font-poppins flex-row h-96 w-64 md:w-64 rounded-[25px] shadow-xl mt-1 md:mt-0 bg-cover bg-center" style="background-image: url(assets/img/accesscontroldoor.jpg);">
+                <div class="px-5 pb-5 justify-end">
+                    <a href="#">
+                        <h5 class="text-base font-light tracking-tight text-white mt-72">Access Control Door</h5>
+                    </a>
+                    <div class="flex items-center justify-between mt-2">
+                        <button data-modal-target="access-control-door" data-modal-toggle="access-control-door" class="text-blue-500 bg-white hover:bg-gray-300 font-medium rounded-full text-sm px-5 py-1.5 text-center shadow-lg md:shadow-xl">See Photo</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ml-0 md:ml-3 font-poppins flex-row h-96 w-64 md:w-64 rounded-[25px] shadow-xl mt-4 md:mt-0 bg-cover bg-center" style="background-image: url(assets/img/freshairfan.jpg);">
+                <div class="px-5 pb-5 justify-end">
+                    <a href="#">
+                        <h5 class="text-base font-light tracking-tight text-white mt-72">Fresh Air Fan</h5>
+                    </a>
+                    <div class="flex items-center justify-between mt-2">
+                        <button data-modal-target="fresh-air-fan" data-modal-toggle="fresh-air-fan" class="text-blue-500 bg-white hover:bg-gray-300 font-medium rounded-full text-sm px-5 py-1.5 text-center shadow-lg md:shadow-xl">See Photo</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ml-0 md:ml-3 font-poppins flex-row h-96 w-64 md:w-64 rounded-[25px] shadow-xl mt-4 md:mt-0 bg-cover bg-center" style="background-image: url(assets/img/building1.jpg);">
+                <div class="px-5 pb-5 justify-end">
+                    <a href="#">
+                        <h5 class="text-base font-light tracking-tight text-white mt-[262px]">Perbaikan Permasalahan Gedung</h5>
+                    </a>
+                    <div class="flex items-center justify-between mt-2">
+                        <button data-modal-target="perbaikan-permasalahan-gedung" data-modal-toggle="perbaikan-permasalahan-gedung" class="text-blue-500 bg-white hover:bg-gray-300 font-medium rounded-full text-sm px-5 py-1.5 text-center shadow-lg md:shadow-xl">See Photo</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </section>   
+    <!-- Product Section End -->
+
+
+    <!-- Contact Section Start -->
+        <section id="contact" class="bg-white font-poppins mt-10 md:mt-9 mb-14 md:mb-16 mx-auto">
+            <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-6">
+                <div class="mx-auto mb-5 max-w-screen-sm lg:mb-10">
+                    <h2 class="mb-2 md:mb-4 text-3xl md:text-4xl tracking-tight font-extrabold text-gray-900">Let's talk.</h2>
+                    <p class="font-light text-gray-500 sm:text-lg">Feel free to contact with us any time.</p>
+                </div> 
+                <div class="container mx-auto md:-mt-5 font-montserrat py-16 flex items-center justify-center bg-[#0e766d] rounded-lg shadow-xl">
+                    <div class="flex flex-col md:flex-row items-center">
+                      <img src="assets/img/logo/vectorContact.png" alt="Contact" class="-ml-0 mr-0 md:-ml-48 md:mr-10 w-64 h-48">
+                      <div class="flex-col text-center md:text-left px-4 md:px-0">
+                        <h2 class="mt-7 md:mt-0 text-3xl font-semibold text-white">Contact Me</h2>
+                        <p class="text-base font-extralight text-white mt-2 mb-5">Contact me through Whatsapp for direct communication</p>
+                        <a href="https://wa.me/+6283831062662" class="bg-green-500 py-2 px-4 rounded-full text-white font-light hover:bg-green-600">Whatsapp</a>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    <!-- Contact Section End -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+</body>
+</html>
+
+
+<!-- All Modals -->
+<div id="preventive-maintenance" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto fixed inset-0 z-50 justify-center items-center p-4 md:p-0 font-poppins">
+    <div class="relative w-80 md:w-full max-w-md md:max-w-3xl bg-white rounded-xl shadow-lg overflow-hidden">
+        <!-- Modal body -->
+        <div class="flex flex-col md:flex-row">
+            <!-- Carousel -->
+            <div class="relative w-full md:w-2/3">
+                <div id="controls-carousel" class="relative w-full" data-carousel="static">
+                    <!-- Carousel wrapper -->
+                    <div class="relative h-56 md:h-[422px] overflow-hidden">
+                        <div class="duration-700 ease-in-out" data-carousel-item>
+                            <img src="assets/img/logo/pmlistrik.jpg" class="w-full h-full object-cover" alt="Charging">
+                        </div>
+                        <div class="duration-700 ease-in-out" data-carousel-item>
+                            <img src="assets/img/logo/pmhydrantbox.jpg" class="w-full h-full object-cover" alt="Charging">
+                        </div>
+                    </div>
+                    <!-- Slider controls -->
+                    <button type="button" class="absolute top-1/2 left-4 z-30 flex items-center justify-center h-8 w-8 bg-white opacity-40 rounded-full shadow-md hover:bg-gray-200 focus:outline-none" data-carousel-prev>
+                        <span class="sr-only">Previous</span>
+                        <svg class="w-4 h-4 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+                        </svg>
+                    </button>
+                    <button type="button" class="absolute top-1/2 right-4 z-30 flex items-center justify-center h-8 w-8 bg-white opacity-40 rounded-full shadow-md hover:bg-gray-200 focus:outline-none" data-carousel-next>
+                        <span class="sr-only">Next</span>
+                        <svg class="w-4 h-4 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <!-- Side Section -->
+            <div class="w-full md:w-1/3 bg-gray-50 p-4 md:p-6">
+                <div class="flex flex-col h-full">
+                    <!-- Modal header -->
+                    <div class="flex items-center justify-between border-b pb-2 mb-4">
+                        <h3 class="text-xl md:text-2xl font-semibold text-gray-900">Preventive Maintenance</h3>
+                    </div>
+                    <!-- Modal content -->
+                    <p class="text-sm text-gray-600 mb-7 md:mb-14">
+                        Pastahli kami siap mengidentifikasi dan memperbaiki segala permasalahan bangunan, dari struktur hingga fasilitas, memastikan gedung Anda selalu dalam kondisional yang optimal untuk mencegah gangguan yang tidak diinginkan.
+                    </p>
+                    <!-- Buttons -->
+                    <div class="flex justify-between">
+                        <button data-modal-hide="preventive-maintenance" type="button" class="py-1.5 md:py-0.5 px-4 text-sm font-medium text-blue-700 border border-blue-700 bg-white rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500">BACK</button>
+                        <!-- <button type="button" class="py-1.5 md:py-0.5 px-4 text-sm font-medium text-blue-700 border border-blue-700 bg-white rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500" data-carousel-next>NEXT</button> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="electronic-panel" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto fixed inset-0 z-50 justify-center items-center p-4 md:p-0 font-poppins">
+    <div class="relative w-80 md:w-full max-w-md md:max-w-3xl bg-white rounded-xl shadow-lg overflow-hidden">
+        <!-- Modal body -->
+        <div class="flex flex-col md:flex-row">
+            <!-- Carousel -->
+            <div class="relative w-full md:w-2/3">
+                <div id="controls-carousel" class="relative w-full" data-carousel="static">
+                    <!-- Carousel wrapper -->
+                    <div class="relative h-56 md:h-[422px] overflow-hidden">
+                        <div class="duration-700 ease-in-out" data-carousel-item>
+                            <img src="assets/img/logo/panelelektronik2.jpg" class="w-full h-full object-cover" alt="Charging">
+                        </div>
+                        <div class="duration-700 ease-in-out" data-carousel-item>
+                            <img src="assets/img/logo/panelelektronik1.jpg" class="w-full h-full object-cover" alt="Charging">
+                        </div>
+                    </div>
+                    <!-- Slider controls -->
+                    <button type="button" class="absolute top-1/2 left-4 z-30 flex items-center justify-center h-8 w-8 bg-white opacity-40 rounded-full shadow-md hover:bg-gray-200 focus:outline-none" data-carousel-prev>
+                        <span class="sr-only">Previous</span>
+                        <svg class="w-4 h-4 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+                        </svg>
+                    </button>
+                    <button type="button" class="absolute top-1/2 right-4 z-30 flex items-center justify-center h-8 w-8 bg-white opacity-40 rounded-full shadow-md hover:bg-gray-200 focus:outline-none" data-carousel-next>
+                        <span class="sr-only">Next</span>
+                        <svg class="w-4 h-4 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <!-- Side Section -->
+            <div class="w-full md:w-1/3 bg-gray-50 p-4 md:p-6">
+                <div class="flex flex-col h-full">
+                    <!-- Modal header -->
+                    <div class="flex items-center justify-between border-b pb-2 mb-4">
+                        <h3 class="text-xl md:text-2xl font-semibold text-gray-900">Electronic Panel</h3>
+                    </div>
+                    <!-- Modal content -->
+                    <p class="text-sm text-gray-600 mb-7 md:mb-14">
+                        Performa elektronik tanpa gangguan! Perawatan rutin menjaga komponen elektronik tetap bersih, terhubung dengan baik, dan bebas dari kerusakan, sehingga memastikan kinerja maksimal dan umur panjang perangkat Anda.
+                    </p>
+                    <!-- Buttons -->
+                    <div class="flex justify-between">
+                        <button data-modal-hide="electronic-panel" type="button" class="py-1.5 md:py-0.5 px-4 text-sm font-medium text-blue-700 border border-blue-700 bg-white rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500">BACK</button>
+                        <!-- <button type="button" class="py-1.5 md:py-0.5 px-4 text-sm font-medium text-blue-700 border border-blue-700 bg-white rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500" data-carousel-next>NEXT</button> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="mobile-apps" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto fixed inset-0 z-50 justify-center items-center p-4 md:p-0 font-poppins">
+    <div class="relative w-80 md:w-full max-w-md md:max-w-3xl bg-white rounded-xl shadow-lg overflow-hidden">
+        <!-- Modal body -->
+        <div class="flex flex-col md:flex-row">
+            <!-- Carousel -->
+            <div class="relative w-full md:w-2/3">
+                <div id="controls-carousel" class="relative w-full" data-carousel="static">
+                    <!-- Carousel wrapper -->
+                    <div class="relative h-56 md:h-[422px] overflow-hidden">
+                        <div class="duration-700 ease-in-out" data-carousel-item>
+                            <img src="assets/img/customwebdev.jpg" class="w-full h-full object-cover" alt="Charging">
+                        </div>
+                    </div>
+                    <!-- Slider controls -->
+                    <button type="button" class="absolute top-1/2 left-4 z-30 flex items-center justify-center h-8 w-8 bg-white opacity-40 rounded-full shadow-md hover:bg-gray-200 focus:outline-none" data-carousel-prev>
+                        <span class="sr-only">Previous</span>
+                        <svg class="w-4 h-4 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+                        </svg>
+                    </button>
+                    <button type="button" class="absolute top-1/2 right-4 z-30 flex items-center justify-center h-8 w-8 bg-white opacity-40 rounded-full shadow-md hover:bg-gray-200 focus:outline-none" data-carousel-next>
+                        <span class="sr-only">Next</span>
+                        <svg class="w-4 h-4 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <!-- Side Section -->
+            <div class="w-full md:w-1/3 bg-gray-50 p-4 md:p-6">
+                <div class="flex flex-col h-full">
+                    <!-- Modal header -->
+                    <div class="flex items-center justify-between border-b pb-2 mb-4">
+                        <h3 class="text-xl md:text-2xl font-semibold text-gray-900">Custom Website Development</h3>
+                    </div>
+                    <!-- Modal content -->
+                    <p class="text-sm text-gray-600 mb-7 md:mb-14">
+                        Bangun identitas digital yang memukau! Dengan layanan Custom Website Development, kami menciptakan situs web yang menarik, responsif, dan disesuaikan dengan kebutuhan bisnis Anda, memastikan pengalaman pengguna yang tak terlupakan.
+                    </p>
+                    <!-- Buttons -->
+                    <div class="flex justify-between">
+                        <button data-modal-hide="mobile-apps" type="button" class="py-1.5 md:py-0.5 px-4 text-sm font-medium text-blue-700 border border-blue-700 bg-white rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500">BACK</button>
+                        <!-- <button type="button" class="py-1.5 md:py-0.5 px-4 text-sm font-medium text-blue-700 border border-blue-700 bg-white rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500" data-carousel-next>NEXT</button> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="charging" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto fixed inset-0 z-50 justify-center items-center p-4 md:p-0 font-poppins">
+    <div class="relative w-80 md:w-full max-w-md md:max-w-3xl bg-white rounded-xl shadow-lg overflow-hidden">
+        <!-- Modal body -->
+        <div class="flex flex-col md:flex-row">
+            <!-- Carousel -->
+            <div class="relative w-full md:w-2/3">
+                <div id="controls-carousel" class="relative w-full" data-carousel="static">
+                    <!-- Carousel wrapper -->
+                    <div class="relative h-56 md:h-[422px] overflow-hidden">
+                        <div class="duration-700 ease-in-out" data-carousel-item>
+                            <img src="assets/img/logo/charging2.jpeg" class="w-full h-full object-cover" alt="Charging">
+                        </div>
+                        <div class="duration-700 ease-in-out" data-carousel-item>
+                            <img src="assets/img/logo/charging1.jpeg" class="w-full h-full object-cover" alt="Charging">
+                        </div>
+                        <div class="duration-700 ease-in-out" data-carousel-item>
+                            <img src="assets/img/logo/charging3.jpeg" class="w-full h-full object-cover" alt="Charging">
+                        </div>
+                    </div>
+                    <!-- Slider controls -->
+                    <button type="button" class="absolute top-1/2 left-4 z-30 flex items-center justify-center h-8 w-8 bg-white opacity-40 rounded-full shadow-md hover:bg-gray-200 focus:outline-none" data-carousel-prev>
+                        <span class="sr-only">Previous</span>
+                        <svg class="w-4 h-4 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+                        </svg>
+                    </button>
+                    <button type="button" class="absolute top-1/2 right-4 z-30 flex items-center justify-center h-8 w-8 bg-white opacity-40 rounded-full shadow-md hover:bg-gray-200 focus:outline-none" data-carousel-next>
+                        <span class="sr-only">Next</span>
+                        <svg class="w-4 h-4 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <!-- Side Section -->
+            <div class="w-full md:w-1/3 bg-gray-50 p-4 md:p-6">
+                <div class="flex flex-col h-full">
+                    <!-- Modal header -->
+                    <div class="flex items-center justify-between border-b pb-2 mb-4">
+                        <h3 class="text-xl md:text-2xl font-semibold text-gray-900">Instalasi EV Charger</h3>
+                    </div>
+                    <!-- Modal content -->
+                    <p class="text-sm text-gray-600 mb-7 md:mb-14">
+                        Pengisian kendaraan listrik yang aman dan efisien! Kami memastikan EV Charger Anda dalam kondisi prima, dengan koneksi yang kuat dan perangkat lunak terbaru, sehingga Anda dapat mengisi daya kendaraan dengan tenang dan cepat.
+                    </p>
+                    <!-- Buttons -->
+                    <div class="flex justify-between">
+                        <button data-modal-hide="charging" type="button" class="py-1.5 md:py-0.5 px-4 text-sm font-medium text-blue-700 border border-blue-700 bg-white rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500">BACK</button>
+                        <!-- <button type="button" class="py-1.5 md:py-0.5 px-4 text-sm font-medium text-blue-700 border border-blue-700 bg-white rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500" data-carousel-next>NEXT</button> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="cctv" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto fixed inset-0 z-50 justify-center items-center p-4 md:p-0 font-poppins">
+    <div class="relative w-80 md:w-full max-w-md md:max-w-3xl bg-white rounded-xl shadow-lg overflow-hidden">
+        <!-- Modal body -->
+        <div class="flex flex-col md:flex-row">
+            <!-- Carousel -->
+            <div class="relative w-full md:w-2/3">
+                <div id="controls-carousel" class="relative w-full" data-carousel="static">
+                    <!-- Carousel wrapper -->
+                    <div class="relative h-56 md:h-[422px] overflow-hidden">
+                        <div class="duration-700 ease-in-out" data-carousel-item>
+                            <img src="assets/img/logo/cctv.jpg" class="w-full h-full object-cover" alt="Charging">
+                        </div>
+                    </div>
+                    <!-- Slider controls -->
+                    <button type="button" class="absolute top-1/2 left-4 z-30 flex items-center justify-center h-8 w-8 bg-white opacity-40 rounded-full shadow-md hover:bg-gray-200 focus:outline-none" data-carousel-prev>
+                        <span class="sr-only">Previous</span>
+                        <svg class="w-4 h-4 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+                        </svg>
+                    </button>
+                    <button type="button" class="absolute top-1/2 right-4 z-30 flex items-center justify-center h-8 w-8 bg-white opacity-40 rounded-full shadow-md hover:bg-gray-200 focus:outline-none" data-carousel-next>
+                        <span class="sr-only">Next</span>
+                        <svg class="w-4 h-4 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <!-- Side Section -->
+            <div class="w-full md:w-1/3 bg-gray-50 p-4 md:p-6">
+                <div class="flex flex-col h-full">
+                    <!-- Modal header -->
+                    <div class="flex items-center justify-between border-b pb-2 mb-4">
+                        <h3 class="text-xl md:text-2xl font-semibold text-gray-900">CCTV</h3>
+                    </div>
+                    <!-- Modal content -->
+                    <p class="text-sm text-gray-600 mb-7 md:mb-14">
+                        Kejelasan dan keamanan terjamin! Kami menjaga CCTV Anda dalam kondisi terbaik, mulai dari lensa yang bersih hingga koneksi yang kuat, memastikan setiap rekaman tajam dan tidak ada momen yang terlewat.
+                    </p>
+                    <!-- Buttons -->
+                    <div class="flex justify-between">
+                        <button data-modal-hide="cctv" type="button" class="py-1.5 md:py-0.5 px-4 text-sm font-medium text-blue-700 border border-blue-700 bg-white rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500">BACK</button>
+                        <!-- <button type="button" class="py-1.5 md:py-0.5 px-4 text-sm font-medium text-blue-700 border border-blue-700 bg-white rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500" data-carousel-next>NEXT</button> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="soundsystem" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto fixed inset-0 z-50 justify-center items-center p-4 md:p-0 font-poppins">
+    <div class="relative w-80 md:w-full max-w-md md:max-w-3xl bg-white rounded-xl shadow-lg overflow-hidden">
+        <!-- Modal body -->
+        <div class="flex flex-col md:flex-row">
+            <!-- Carousel -->
+            <div class="relative w-full md:w-2/3">
+                <div id="controls-carousel" class="relative w-full" data-carousel="static">
+                    <!-- Carousel wrapper -->
+                    <div class="relative h-56 md:h-[422px] overflow-hidden">
+                        <div class="duration-700 ease-in-out" data-carousel-item>
+                            <img src="assets/img/logo/soundsystem2.jpg" class="w-full h-full object-cover" alt="Charging">
+                        </div>
+                        <div class="duration-700 ease-in-out" data-carousel-item>
+                            <img src="assets/img/logo/soundsystem1.jpg" class="w-full h-full object-cover" alt="Charging">
+                        </div>
+                    </div>
+                    <!-- Slider controls -->
+                    <button type="button" class="absolute top-1/2 left-4 z-30 flex items-center justify-center h-8 w-8 bg-white opacity-40 rounded-full shadow-md hover:bg-gray-200 focus:outline-none" data-carousel-prev>
+                        <span class="sr-only">Previous</span>
+                        <svg class="w-4 h-4 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+                        </svg>
+                    </button>
+                    <button type="button" class="absolute top-1/2 right-4 z-30 flex items-center justify-center h-8 w-8 bg-white opacity-40 rounded-full shadow-md hover:bg-gray-200 focus:outline-none" data-carousel-next>
+                        <span class="sr-only">Next</span>
+                        <svg class="w-4 h-4 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <!-- Side Section -->
+            <div class="w-full md:w-1/3 bg-gray-50 p-4 md:p-6">
+                <div class="flex flex-col h-full">
+                    <!-- Modal header -->
+                    <div class="flex items-center justify-between border-b pb-2 mb-4">
+                        <h3 class="text-xl md:text-2xl font-semibold text-gray-900">Sound System</h3>
+                    </div>
+                    <!-- Modal content -->
+                    <p class="text-sm text-gray-600 mb-7 md:mb-14">
+                        Nikmati kualitas suara sempurna! Dengan preventive maintenance, kami memastikan semua komponen sound system bekerja harmonis, bebas distorsi, dan siap memberikan pengalaman audio yang luar biasa.
+                    </p>
+                    <!-- Buttons -->
+                    <div class="flex justify-between">
+                        <button data-modal-hide="soundsystem" type="button" class="py-1.5 md:py-0.5 px-4 text-sm font-medium text-blue-700 border border-blue-700 bg-white rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500">BACK</button>
+                        <!-- <button type="button" class="py-1.5 md:py-0.5 px-4 text-sm font-medium text-blue-700 border border-blue-700 bg-white rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500" data-carousel-next>NEXT</button> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="airconditioner" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto fixed inset-0 z-50 justify-center items-center p-4 md:p-0 font-poppins">
+    <div class="relative w-80 md:w-full max-w-md md:max-w-3xl bg-white rounded-xl shadow-lg overflow-hidden">
+        <!-- Modal body -->
+        <div class="flex flex-col md:flex-row">
+            <!-- Carousel -->
+            <div class="relative w-full md:w-2/3">
+                <div id="controls-carousel" class="relative w-full" data-carousel="static">
+                    <!-- Carousel wrapper -->
+                    <div class="relative h-56 md:h-[422px] overflow-hidden">
+                        <div class="duration-700 ease-in-out" data-carousel-item>
+                            <img src="assets/img/logo/ac1.jpg" class="w-full h-full object-cover" alt="Charging">
+                        </div>
+                        <div class="duration-700 ease-in-out" data-carousel-item>
+                            <img src="assets/img/logo/ac2.jpg" class="w-full h-full object-cover" alt="Charging">
+                        </div>
+                        <div class="duration-700 ease-in-out" data-carousel-item>
+                            <img src="assets/img/logo/ac3.jpg" class="w-full h-full object-cover" alt="Charging">
+                        </div>
+                        <div class="duration-700 ease-in-out" data-carousel-item>
+                            <img src="assets/img/logo/ac4.jpg" class="w-full h-full object-cover" alt="Charging">
+                        </div>
+                    </div>
+                    <!-- Slider controls -->
+                    <button type="button" class="absolute top-1/2 left-4 z-30 flex items-center justify-center h-8 w-8 bg-white opacity-40 rounded-full shadow-md hover:bg-gray-200 focus:outline-none" data-carousel-prev>
+                        <span class="sr-only">Previous</span>
+                        <svg class="w-4 h-4 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+                        </svg>
+                    </button>
+                    <button type="button" class="absolute top-1/2 right-4 z-30 flex items-center justify-center h-8 w-8 bg-white opacity-40 rounded-full shadow-md hover:bg-gray-200 focus:outline-none" data-carousel-next>
+                        <span class="sr-only">Next</span>
+                        <svg class="w-4 h-4 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <!-- Side Section -->
+            <div class="w-full md:w-1/3 bg-gray-50 p-4 md:p-6">
+                <div class="flex flex-col h-full">
+                    <!-- Modal header -->
+                    <div class="flex items-center justify-between border-b pb-2 mb-4">
+                        <h3 class="text-xl md:text-2xl font-semibold text-gray-900">Air Conditioner</h3>
+                    </div>
+                    <!-- Modal content -->
+                    <p class="text-sm text-gray-600 mb-7 md:mb-14">
+                        Udara sejuk tanpa gangguan! Layanan perawatan kami memastikan filter bersih, refrigeran optimal, dan semua komponen AC bekerja dengan efisiensi tinggi, memberikan kenyamanan maksimal di setiap ruangan.
+                    </p>
+                    <!-- Buttons -->
+                    <div class="flex justify-between">
+                        <button data-modal-hide="airconditioner" type="button" class="py-1.5 md:py-0.5 px-4 text-sm font-medium text-blue-700 border border-blue-700 bg-white rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500">BACK</button>
+                        <!-- <button type="button" class="py-1.5 md:py-0.5 px-4 text-sm font-medium text-blue-700 border border-blue-700 bg-white rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500" data-carousel-next>NEXT</button> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="pompa" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto fixed inset-0 z-50 justify-center items-center p-4 md:p-0 font-poppins">
+    <div class="relative w-80 md:w-full max-w-md md:max-w-3xl bg-white rounded-xl shadow-lg overflow-hidden">
+        <!-- Modal body -->
+        <div class="flex flex-col md:flex-row">
+            <!-- Carousel -->
+            <div class="relative w-full md:w-2/3">
+                <div id="controls-carousel" class="relative w-full" data-carousel="static">
+                    <!-- Carousel wrapper -->
+                    <div class="relative h-56 md:h-[422px] overflow-hidden">
+                        <div class="duration-700 ease-in-out" data-carousel-item>
+                            <img src="assets/img/logo/pompa1.jpg" class="w-full h-full object-cover" alt="Charging">
+                        </div>
+                        <div class="duration-700 ease-in-out" data-carousel-item>
+                            <img src="assets/img/logo/pompa2.jpg" class="w-full h-full object-cover" alt="Charging">
+                        </div>
+                        <div class="duration-700 ease-in-out" data-carousel-item>
+                            <img src="assets/img/logo/pompa3.jpg" class="w-full h-full object-cover" alt="Charging">
+                        </div>
+                    </div>
+                    <!-- Slider controls -->
+                    <button type="button" class="absolute top-1/2 left-4 z-30 flex items-center justify-center h-8 w-8 bg-white opacity-40 rounded-full shadow-md hover:bg-gray-200 focus:outline-none" data-carousel-prev>
+                        <span class="sr-only">Previous</span>
+                        <svg class="w-4 h-4 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+                        </svg>
+                    </button>
+                    <button type="button" class="absolute top-1/2 right-4 z-30 flex items-center justify-center h-8 w-8 bg-white opacity-40 rounded-full shadow-md hover:bg-gray-200 focus:outline-none" data-carousel-next>
+                        <span class="sr-only">Next</span>
+                        <svg class="w-4 h-4 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <!-- Side Section -->
+            <div class="w-full md:w-1/3 bg-gray-50 p-4 md:p-6">
+                <div class="flex flex-col h-full">
+                    <!-- Modal header -->
+                    <div class="flex items-center justify-between border-b pb-2 mb-4">
+                        <h3 class="text-xl md:text-2xl font-semibold text-gray-900">Pompa</h3>
+                    </div>
+                    <!-- Modal content -->
+                    <p class="text-sm text-gray-600 mb-7 md:mb-14">
+                        Maksimalkan kinerja pompa Anda! Layanan preventive maintenance kami memastikan tidak ada kebocoran, filter bersih, dan aliran optimal, sehingga pompa Anda selalu siap bekerja dengan efisiensi terbaik.
+                    </p>
+                    <!-- Buttons -->
+                    <div class="flex justify-between">
+                        <button data-modal-hide="pompa" type="button" class="py-1.5 md:py-0.5 px-4 text-sm font-medium text-blue-700 border border-blue-700 bg-white rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500">BACK</button>
+                        <!-- <button type="button" class="py-1.5 md:py-0.5 px-4 text-sm font-medium text-blue-700 border border-blue-700 bg-white rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500" data-carousel-next>NEXT</button> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="genset" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto fixed inset-0 z-50 justify-center items-center p-4 md:p-0 font-poppins">
+    <div class="relative w-80 md:w-full max-w-md md:max-w-3xl bg-white rounded-xl shadow-lg overflow-hidden">
+        <!-- Modal body -->
+        <div class="flex flex-col md:flex-row">
+            <!-- Carousel -->
+            <div class="relative w-full md:w-2/3">
+                <div id="controls-carousel" class="relative w-full" data-carousel="static">
+                    <!-- Carousel wrapper -->
+                    <div class="relative h-56 md:h-[422px] overflow-hidden">
+                        <div class="duration-700 ease-in-out" data-carousel-item>
+                            <img src="assets/img/logo/genset.jpeg" class="w-full h-full object-cover" alt="Charging">
+                        </div>
+                    </div>
+                    <!-- Slider controls -->
+                    <button type="button" class="absolute top-1/2 left-4 z-30 flex items-center justify-center h-8 w-8 bg-white opacity-40 rounded-full shadow-md hover:bg-gray-200 focus:outline-none" data-carousel-prev>
+                        <span class="sr-only">Previous</span>
+                        <svg class="w-4 h-4 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+                        </svg>
+                    </button>
+                    <button type="button" class="absolute top-1/2 right-4 z-30 flex items-center justify-center h-8 w-8 bg-white opacity-40 rounded-full shadow-md hover:bg-gray-200 focus:outline-none" data-carousel-next>
+                        <span class="sr-only">Next</span>
+                        <svg class="w-4 h-4 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <!-- Side Section -->
+            <div class="w-full md:w-1/3 bg-gray-50 p-4 md:p-6">
+                <div class="flex flex-col h-full">
+                    <!-- Modal header -->
+                    <div class="flex items-center justify-between border-b pb-2 mb-4">
+                        <h3 class="text-xl md:text-2xl font-semibold text-gray-900">Genset</h3>
+                    </div>
+                    <!-- Modal content -->
+                    <p class="text-sm text-gray-600 mb-7 md:mb-14">
+                        Genset selalu siap siaga! Dengan perawatan teratur, kami memastikan bahan bakar, oli, dan sistem pendingin dalam kondisi prima, sehingga genset Anda dapat diandalkan setiap saat untuk kebutuhan daya darurat.
+                    </p>
+                    <!-- Buttons -->
+                    <div class="flex justify-between">
+                        <button data-modal-hide="genset" type="button" class="py-1.5 md:py-0.5 px-4 text-sm font-medium text-blue-700 border border-blue-700 bg-white rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500">BACK</button>
+                        <!-- <button type="button" class="py-1.5 md:py-0.5 px-4 text-sm font-medium text-blue-700 border border-blue-700 bg-white rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500" data-carousel-next>NEXT</button> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="mobiledev" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto fixed inset-0 z-50 justify-center items-center p-4 md:p-0 font-poppins">
+    <div class="relative w-80 md:w-full max-w-md md:max-w-3xl bg-white rounded-xl shadow-lg overflow-hidden">
+        <!-- Modal body -->
+        <div class="flex flex-col md:flex-row">
+            <!-- Carousel -->
+            <div class="relative w-full md:w-2/3">
+                <div id="controls-carousel" class="relative w-full" data-carousel="static">
+                    <!-- Carousel wrapper -->
+                    <div class="relative h-56 md:h-[422px] overflow-hidden">
+                        <div class="duration-700 ease-in-out" data-carousel-item>
+                            <img src="assets/img/logo/mobiledev.jpg" class="w-full h-full object-cover" alt="Charging">
+                        </div>
+                    </div>
+                    <!-- Slider controls -->
+                    <button type="button" class="absolute top-1/2 left-4 z-30 flex items-center justify-center h-8 w-8 bg-white opacity-40 rounded-full shadow-md hover:bg-gray-200 focus:outline-none" data-carousel-prev>
+                        <span class="sr-only">Previous</span>
+                        <svg class="w-4 h-4 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+                        </svg>
+                    </button>
+                    <button type="button" class="absolute top-1/2 right-4 z-30 flex items-center justify-center h-8 w-8 bg-white opacity-40 rounded-full shadow-md hover:bg-gray-200 focus:outline-none" data-carousel-next>
+                        <span class="sr-only">Next</span>
+                        <svg class="w-4 h-4 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <!-- Side Section -->
+            <div class="w-full md:w-1/3 bg-gray-50 p-4 md:p-6">
+                <div class="flex flex-col h-full">
+                    <!-- Modal header -->
+                    <div class="flex items-center justify-between border-b pb-2 mb-4">
+                        <h3 class="text-xl md:text-2xl font-semibold text-gray-900">Mobile App Development</h3>
+                    </div>
+                    <!-- Modal content -->
+                    <p class="text-sm text-gray-600 mb-7 md:mb-14">
+                        Bawa bisnis Anda ke genggaman pelanggan! Kendali banjir yang efisien! Preventive maintenance pada pompa sump pit memastikan sistem drainase bebas hambatan dan selalu siap mengatasi air berlebih, melindungi propertia.
+                    </p>
+                    <!-- Buttons -->
+                    <div class="flex justify-between">
+                        <button data-modal-hide="mobiledev" type="button" class="py-1.5 md:py-0.5 px-4 text-sm font-medium text-blue-700 border border-blue-700 bg-white rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500">BACK</button>
+                        <!-- <button type="button" class="py-1.5 md:py-0.5 px-4 text-sm font-medium text-blue-700 border border-blue-700 bg-white rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500" data-carousel-next>NEXT</button> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="sumppit" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto fixed inset-0 z-50 justify-center items-center p-4 md:p-0 font-poppins">
+    <div class="relative w-80 md:w-full max-w-md md:max-w-3xl bg-white rounded-xl shadow-lg overflow-hidden">
+        <!-- Modal body -->
+        <div class="flex flex-col md:flex-row">
+            <!-- Carousel -->
+            <div class="relative w-full md:w-2/3">
+                <div id="controls-carousel" class="relative w-full" data-carousel="static">
+                    <!-- Carousel wrapper -->
+                    <div class="relative h-56 md:h-[422px] overflow-hidden">
+                        <div class="duration-700 ease-in-out" data-carousel-item>
+                            <img src="assets/img/logo/pompasumpit2.jpg" class="w-full h-full object-cover" alt="Charging">
+                        </div>
+                        <div class="duration-700 ease-in-out" data-carousel-item>
+                            <img src="assets/img/logo/pompasumpit1.jpg" class="w-full h-full object-cover" alt="Charging">
+                        </div>
+                    </div>
+                    <!-- Slider controls -->
+                    <button type="button" class="absolute top-1/2 left-4 z-30 flex items-center justify-center h-8 w-8 bg-white opacity-40 rounded-full shadow-md hover:bg-gray-200 focus:outline-none" data-carousel-prev>
+                        <span class="sr-only">Previous</span>
+                        <svg class="w-4 h-4 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+                        </svg>
+                    </button>
+                    <button type="button" class="absolute top-1/2 right-4 z-30 flex items-center justify-center h-8 w-8 bg-white opacity-40 rounded-full shadow-md hover:bg-gray-200 focus:outline-none" data-carousel-next>
+                        <span class="sr-only">Next</span>
+                        <svg class="w-4 h-4 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <!-- Side Section -->
+            <div class="w-full md:w-1/3 bg-gray-50 p-4 md:p-6">
+                <div class="flex flex-col h-full">
+                    <!-- Modal header -->
+                    <div class="flex items-center justify-between border-b pb-2 mb-4">
+                        <h3 class="text-xl md:text-2xl font-semibold text-gray-900">Pompa Sump Pit</h3>
+                    </div>
+                    <!-- Modal content -->
+                    <p class="text-sm text-gray-600 mb-7 md:mb-14">
+                        Kendali banjir yang efisien! Preventive maintenance pada pompa sump pit memastikan sistem drainase bebas hambatan dan selalu siap mengatasi air berlebih, melindungi properti Anda dari banjir.
+                    </p>
+                    <!-- Buttons -->
+                    <div class="flex justify-between">
+                        <button data-modal-hide="sumppit" type="button" class="py-1.5 md:py-0.5 px-4 text-sm font-medium text-blue-700 border border-blue-700 bg-white rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500">BACK</button>
+                        <!-- <button type="button" class="py-1.5 md:py-0.5 px-4 text-sm font-medium text-blue-700 border border-blue-700 bg-white rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500" data-carousel-next>NEXT</button> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="pompa-domestik" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto fixed inset-0 z-50 justify-center items-center p-4 md:p-0 font-poppins">
+    <div class="relative w-80 md:w-full max-w-md md:max-w-3xl bg-white rounded-xl shadow-lg overflow-hidden">
+        <!-- Modal body -->
+        <div class="flex flex-col md:flex-row">
+            <!-- Carousel -->
+            <div class="relative w-full md:w-2/3">
+                <div id="controls-carousel" class="relative w-full" data-carousel="static">
+                    <!-- Carousel wrapper -->
+                    <div class="relative h-56 md:h-[422px] overflow-hidden">
+                        <div class="duration-700 ease-in-out" data-carousel-item>
+                            <img src="" class="w-full h-full object-cover" alt="Charging">
+                        </div>
+                        <div class="duration-700 ease-in-out" data-carousel-item>
+                            <img src="" class="w-full h-full object-cover" alt="Charging">
+                        </div>
+                    </div>
+                    <!-- Slider controls -->
+                    <button type="button" class="absolute top-1/2 left-4 z-30 flex items-center justify-center h-8 w-8 bg-white opacity-40 rounded-full shadow-md hover:bg-gray-200 focus:outline-none" data-carousel-prev>
+                        <span class="sr-only">Previous</span>
+                        <svg class="w-4 h-4 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+                        </svg>
+                    </button>
+                    <button type="button" class="absolute top-1/2 right-4 z-30 flex items-center justify-center h-8 w-8 bg-white opacity-40 rounded-full shadow-md hover:bg-gray-200 focus:outline-none" data-carousel-next>
+                        <span class="sr-only">Next</span>
+                        <svg class="w-4 h-4 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <!-- Side Section -->
+            <div class="w-full md:w-1/3 bg-gray-50 p-4 md:p-6">
+                <div class="flex flex-col h-full">
+                    <!-- Modal header -->
+                    <div class="flex items-center justify-between border-b pb-2 mb-4">
+                        <h3 class="text-xl md:text-2xl font-semibold text-gray-900">Pompa Domestik</h3>
+                    </div>
+                    <!-- Modal content -->
+                    <p class="text-sm text-gray-600 mb-7 md:mb-14">
+                        Air lancar di setiap kran! Layanan perawatan pompa domestik kami memastikan aliran air yang konsisten dan bebas masalah, memberikan kenyamanan dan kemudahan dalam kebutuhan air rumah tangga Anda.
+                    </p>
+                    <!-- Buttons -->
+                    <div class="flex justify-between">
+                        <button data-modal-hide="pompa-domestik" type="button" class="py-1.5 md:py-0.5 px-4 text-sm font-medium text-blue-700 border border-blue-700 bg-white rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500">BACK</button>
+                        <!-- <button type="button" class="py-1.5 md:py-0.5 px-4 text-sm font-medium text-blue-700 border border-blue-700 bg-white rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500" data-carousel-next>NEXT</button> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="ac-lift" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto fixed inset-0 z-50 justify-center items-center p-4 md:p-0 font-poppins">
+    <div class="relative w-80 md:w-full max-w-md md:max-w-3xl bg-white rounded-xl shadow-lg overflow-hidden">
+        <!-- Modal body -->
+        <div class="flex flex-col md:flex-row">
+            <!-- Carousel -->
+            <div class="relative w-full md:w-2/3">
+                <div id="controls-carousel" class="relative w-full" data-carousel="static">
+                    <!-- Carousel wrapper -->
+                    <div class="relative h-56 md:h-[422px] overflow-hidden">
+                        <div class="duration-700 ease-in-out" data-carousel-item>
+                            <img src="assets/img/logo/aclift1.jpg" class="w-full h-full object-cover" alt="Charging">
+                        </div>
+                        <div class="duration-700 ease-in-out" data-carousel-item>
+                            <img src="assets/img/logo/aclift2.jpg" class="w-full h-full object-cover" alt="Charging">
+                        </div>
+                        <div class="duration-700 ease-in-out" data-carousel-item>
+                            <img src="assets/img/logo/aclift3.jpg" class="w-full h-full object-cover" alt="Charging">
+                        </div>
+                    </div>
+                    <!-- Slider controls -->
+                    <button type="button" class="absolute top-1/2 left-4 z-30 flex items-center justify-center h-8 w-8 bg-white opacity-40 rounded-full shadow-md hover:bg-gray-200 focus:outline-none" data-carousel-prev>
+                        <span class="sr-only">Previous</span>
+                        <svg class="w-4 h-4 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+                        </svg>
+                    </button>
+                    <button type="button" class="absolute top-1/2 right-4 z-30 flex items-center justify-center h-8 w-8 bg-white opacity-40 rounded-full shadow-md hover:bg-gray-200 focus:outline-none" data-carousel-next>
+                        <span class="sr-only">Next</span>
+                        <svg class="w-4 h-4 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <!-- Side Section -->
+            <div class="w-full md:w-1/3 bg-gray-50 p-4 md:p-6">
+                <div class="flex flex-col h-full">
+                    <!-- Modal header -->
+                    <div class="flex items-center justify-between border-b pb-2 mb-4">
+                        <h3 class="text-xl md:text-2xl font-semibold text-gray-900">AC Lift</h3>
+                    </div>
+                    <!-- Modal content -->
+                    <p class="text-sm text-gray-600 mb-7 md:mb-14">
+                        Kenyamanan di setiap lantai! Perawatan AC lift kami memastikan pendingin udara di dalam lift selalu berfungsi optimal, memberikan kenyamanan bagi penghuni dan tamu sepanjang perjalanan vertikal mereka.
+                    </p>
+                    <!-- Buttons -->
+                    <div class="flex justify-between">
+                        <button data-modal-hide="ac-lift" type="button" class="py-1.5 md:py-0.5 px-4 text-sm font-medium text-blue-700 border border-blue-700 bg-white rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500">BACK</button>
+                        <!-- <button type="button" class="py-1.5 md:py-0.5 px-4 text-sm font-medium text-blue-700 border border-blue-700 bg-white rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500" data-carousel-next>NEXT</button> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="access-control-system" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto fixed inset-0 z-50 justify-center items-center p-4 md:p-0 font-poppins">
+    <div class="relative w-80 md:w-full max-w-md md:max-w-3xl bg-white rounded-xl shadow-lg overflow-hidden">
+        <!-- Modal body -->
+        <div class="flex flex-col md:flex-row">
+            <!-- Carousel -->
+            <div class="relative w-full md:w-2/3">
+                <div id="controls-carousel" class="relative w-full" data-carousel="static">
+                    <!-- Carousel wrapper -->
+                    <div class="relative h-56 md:h-[422px] overflow-hidden">
+                        <div class="duration-700 ease-in-out" data-carousel-item>
+                            <img src="assets/img/logo/accesscontrolsystem.jpg" class="w-full h-full object-cover" alt="Charging">
+                        </div>
+                    </div>
+                    <!-- Slider controls -->
+                    <button type="button" class="absolute top-1/2 left-4 z-30 flex items-center justify-center h-8 w-8 bg-white opacity-40 rounded-full shadow-md hover:bg-gray-200 focus:outline-none" data-carousel-prev>
+                        <span class="sr-only">Previous</span>
+                        <svg class="w-4 h-4 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+                        </svg>
+                    </button>
+                    <button type="button" class="absolute top-1/2 right-4 z-30 flex items-center justify-center h-8 w-8 bg-white opacity-40 rounded-full shadow-md hover:bg-gray-200 focus:outline-none" data-carousel-next>
+                        <span class="sr-only">Next</span>
+                        <svg class="w-4 h-4 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <!-- Side Section -->
+            <div class="w-full md:w-1/3 bg-gray-50 p-4 md:p-6">
+                <div class="flex flex-col h-full">
+                    <!-- Modal header -->
+                    <div class="flex items-center justify-between border-b pb-2 mb-4">
+                        <h3 class="text-xl md:text-2xl font-semibold text-gray-900">Access Control System</h3>
+                    </div>
+                    <!-- Modal content -->
+                    <p class="text-sm text-gray-600 mb-7 md:mb-14">
+                        Keamanan akses yang canggih! Layanan maintenance kami menjaga sistem kontrol akses Anda tetap handal, memastikan hanya orang yang berwenang dapat masuk, memberikan ketenangan pikiran dan keamanan maksimal.
+                    </p>
+                    <!-- Buttons -->
+                    <div class="flex justify-between">
+                        <button data-modal-hide="access-control-system" type="button" class="py-1.5 md:py-0.5 px-4 text-sm font-medium text-blue-700 border border-blue-700 bg-white rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500">BACK</button>
+                        <!-- <button type="button" class="py-1.5 md:py-0.5 px-4 text-sm font-medium text-blue-700 border border-blue-700 bg-white rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500" data-carousel-next>NEXT</button> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="access-control-door" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto fixed inset-0 z-50 justify-center items-center p-4 md:p-0 font-poppins">
+    <div class="relative w-80 md:w-full max-w-md md:max-w-3xl bg-white rounded-xl shadow-lg overflow-hidden">
+        <!-- Modal body -->
+        <div class="flex flex-col md:flex-row">
+            <!-- Carousel -->
+            <div class="relative w-full md:w-2/3">
+                <div id="controls-carousel" class="relative w-full" data-carousel="static">
+                    <!-- Carousel wrapper -->
+                    <div class="relative h-56 md:h-[422px] overflow-hidden">
+                        <div class="duration-700 ease-in-out" data-carousel-item>
+                            <img src="assets/img/logo/accesscontroldoor.jpg" class="w-full h-full object-cover" alt="Charging">
+                        </div>
+                    </div>
+                    <!-- Slider controls -->
+                    <button type="button" class="absolute top-1/2 left-4 z-30 flex items-center justify-center h-8 w-8 bg-white opacity-40 rounded-full shadow-md hover:bg-gray-200 focus:outline-none" data-carousel-prev>
+                        <span class="sr-only">Previous</span>
+                        <svg class="w-4 h-4 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+                        </svg>
+                    </button>
+                    <button type="button" class="absolute top-1/2 right-4 z-30 flex items-center justify-center h-8 w-8 bg-white opacity-40 rounded-full shadow-md hover:bg-gray-200 focus:outline-none" data-carousel-next>
+                        <span class="sr-only">Next</span>
+                        <svg class="w-4 h-4 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <!-- Side Section -->
+            <div class="w-full md:w-1/3 bg-gray-50 p-4 md:p-6">
+                <div class="flex flex-col h-full">
+                    <!-- Modal header -->
+                    <div class="flex items-center justify-between border-b pb-2 mb-4">
+                        <h3 class="text-xl md:text-2xl font-semibold text-gray-900">Access Control Door</h3>
+                    </div>
+                    <!-- Modal content -->
+                    <p class="text-sm text-gray-600 mb-7 md:mb-14">
+                        Perlindungan pintu akses! Kami memastikan setiap pintu dengan kontrol akses berfungsi sempurna, memberikan keamanan yang tak tertandingi dan menghindari akses yang tidak sah ke area penting.
+                    </p>
+                    <!-- Buttons -->
+                    <div class="flex justify-between">
+                        <button data-modal-hide="access-control-door" type="button" class="py-1.5 md:py-0.5 px-4 text-sm font-medium text-blue-700 border border-blue-700 bg-white rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500">BACK</button>
+                        <!-- <button type="button" class="py-1.5 md:py-0.5 px-4 text-sm font-medium text-blue-700 border border-blue-700 bg-white rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500" data-carousel-next>NEXT</button> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="access-control-lift" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto fixed inset-0 z-50 justify-center items-center p-4 md:p-0 font-poppins">
+    <div class="relative w-80 md:w-full max-w-md md:max-w-3xl bg-white rounded-xl shadow-lg overflow-hidden">
+        <!-- Modal body -->
+        <div class="flex flex-col md:flex-row">
+            <!-- Carousel -->
+            <div class="relative w-full md:w-2/3">
+                <div id="controls-carousel" class="relative w-full" data-carousel="static">
+                    <!-- Carousel wrapper -->
+                    <div class="relative h-56 md:h-[422px] overflow-hidden">
+                        <div class="duration-700 ease-in-out" data-carousel-item>
+                            <img src="assets/img/logo/accesscontrollift.jpg" class="w-full h-full object-cover" alt="Charging">
+                        </div>
+                    </div>
+                    <!-- Slider controls -->
+                    <button type="button" class="absolute top-1/2 left-4 z-30 flex items-center justify-center h-8 w-8 bg-white opacity-40 rounded-full shadow-md hover:bg-gray-200 focus:outline-none" data-carousel-prev>
+                        <span class="sr-only">Previous</span>
+                        <svg class="w-4 h-4 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+                        </svg>
+                    </button>
+                    <button type="button" class="absolute top-1/2 right-4 z-30 flex items-center justify-center h-8 w-8 bg-white opacity-40 rounded-full shadow-md hover:bg-gray-200 focus:outline-none" data-carousel-next>
+                        <span class="sr-only">Next</span>
+                        <svg class="w-4 h-4 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <!-- Side Section -->
+            <div class="w-full md:w-1/3 bg-gray-50 p-4 md:p-6">
+                <div class="flex flex-col h-full">
+                    <!-- Modal header -->
+                    <div class="flex items-center justify-between border-b pb-2 mb-4">
+                        <h3 class="text-xl md:text-2xl font-semibold text-gray-900">Access Control Lift</h3>
+                    </div>
+                    <!-- Modal content -->
+                    <p class="text-sm text-gray-600 mb-7 md:mb-14">
+                        Keamanan tingkat tinggi di lift! Dengan preventive maintenance, kami memastikan hanya pengguna berwenang yang dapat mengakses lantai tertentu, meningkatkan keamanan dan pengendalian akses di gedung Anda.
+                    </p>
+                    <!-- Buttons -->
+                    <div class="flex justify-between">
+                        <button data-modal-hide="access-control-lift" type="button" class="py-1.5 md:py-0.5 px-4 text-sm font-medium text-blue-700 border border-blue-700 bg-white rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500">BACK</button>
+                        <!-- <button type="button" class="py-1.5 md:py-0.5 px-4 text-sm font-medium text-blue-700 border border-blue-700 bg-white rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500" data-carousel-next>NEXT</button> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="perbaikan-permasalahan-gedung" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto fixed inset-0 z-50 justify-center items-center p-4 md:p-0 font-poppins">
+    <div class="relative w-80 md:w-full max-w-md md:max-w-3xl bg-white rounded-xl shadow-lg overflow-hidden">
+        <!-- Modal body -->
+        <div class="flex flex-col md:flex-row">
+            <!-- Carousel -->
+            <div class="relative w-full md:w-2/3">
+                <div id="controls-carousel" class="relative w-full" data-carousel="static">
+                    <!-- Carousel wrapper -->
+                    <div class="relative h-56 md:h-[422px] overflow-hidden">
+                        <div class="duration-700 ease-in-out" data-carousel-item>
+                            <img src="" class="w-full h-full object-cover" alt="Charging">
+                        </div>
+                        <div class="duration-700 ease-in-out" data-carousel-item>
+                            <img src="" class="w-full h-full object-cover" alt="Charging">
+                        </div>
+                    </div>
+                    <!-- Slider controls -->
+                    <button type="button" class="absolute top-1/2 left-4 z-30 flex items-center justify-center h-8 w-8 bg-white opacity-40 rounded-full shadow-md hover:bg-gray-200 focus:outline-none" data-carousel-prev>
+                        <span class="sr-only">Previous</span>
+                        <svg class="w-4 h-4 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+                        </svg>
+                    </button>
+                    <button type="button" class="absolute top-1/2 right-4 z-30 flex items-center justify-center h-8 w-8 bg-white opacity-40 rounded-full shadow-md hover:bg-gray-200 focus:outline-none" data-carousel-next>
+                        <span class="sr-only">Next</span>
+                        <svg class="w-4 h-4 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <!-- Side Section -->
+            <div class="w-full md:w-1/3 bg-gray-50 p-4 md:p-6">
+                <div class="flex flex-col h-full">
+                    <!-- Modal header -->
+                    <div class="flex items-center justify-between border-b pb-2 mb-4">
+                        <h3 class="text-xl md:text-2xl font-semibold text-gray-900">Perbaikan Permasalahan Gedung</h3>
+                    </div>
+                    <!-- Modal content -->
+                    <p class="text-sm text-gray-600 mb-7 md:mb-14">
+                        Solusi komprehensif untuk segala masalah gedung! Tim ahli kami siap mengidentifikasi dan memperbaiki segala permasalahan bangunan, dari struktur hingga fasilitas, memastikan gedung Anda selalu dalam kondisi prima dan aman.
+                    </p>
+                    <!-- Buttons -->
+                    <div class="flex justify-between">
+                        <button data-modal-hide="perbaikan-permasalahan-gedung" type="button" class="py-1.5 md:py-0.5 px-4 text-sm font-medium text-blue-700 border border-blue-700 bg-white rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500">BACK</button>
+                        <!-- <button type="button" class="py-1.5 md:py-0.5 px-4 text-sm font-medium text-blue-700 border border-blue-700 bg-white rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500" data-carousel-next>NEXT</button> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="fresh-air-fan" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto fixed inset-0 z-50 justify-center items-center p-4 md:p-0 font-poppins">
+    <div class="relative w-80 md:w-full max-w-md md:max-w-3xl bg-white rounded-xl shadow-lg overflow-hidden">
+        <!-- Modal body -->
+        <div class="flex flex-col md:flex-row">
+            <!-- Carousel -->
+            <div class="relative w-full md:w-2/3">
+                <div id="controls-carousel" class="relative w-full" data-carousel="static">
+                    <!-- Carousel wrapper -->
+                    <div class="relative h-56 md:h-[422px] overflow-hidden">
+                        <div class="duration-700 ease-in-out" data-carousel-item>
+                            <img src="assets/img/logo/freshairfan1.jpg" class="w-full h-full object-cover" alt="Charging">
+                        </div>
+                        <div class="duration-700 ease-in-out" data-carousel-item>
+                            <img src="assets/img/logo/freshairfan2.jpg" class="w-full h-full object-cover" alt="Charging">
+                        </div>
+                    </div>
+                    <!-- Slider controls -->
+                    <button type="button" class="absolute top-1/2 left-4 z-30 flex items-center justify-center h-8 w-8 bg-white opacity-40 rounded-full shadow-md hover:bg-gray-200 focus:outline-none" data-carousel-prev>
+                        <span class="sr-only">Previous</span>
+                        <svg class="w-4 h-4 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+                        </svg>
+                    </button>
+                    <button type="button" class="absolute top-1/2 right-4 z-30 flex items-center justify-center h-8 w-8 bg-white opacity-40 rounded-full shadow-md hover:bg-gray-200 focus:outline-none" data-carousel-next>
+                        <span class="sr-only">Next</span>
+                        <svg class="w-4 h-4 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <!-- Side Section -->
+            <div class="w-full md:w-1/3 bg-gray-50 p-4 md:p-6">
+                <div class="flex flex-col h-full">
+                    <!-- Modal header -->
+                    <div class="flex items-center justify-between border-b pb-2 mb-4">
+                        <h3 class="text-xl md:text-2xl font-semibold text-gray-900">Fresh Air Fan</h3>
+                    </div>
+                    <!-- Modal content -->
+                    <p class="text-sm text-gray-600 mb-7 md:mb-14">
+                        Jaga udara segar mengalir tanpa henti! Layanan preventive maintenance Fresh Air Fan kami memastikan kebersihan filter, kelancaran aliran udara, dan kinerja motor yang optimal, sehingga ruangan Anda selalu terasa sejuk, bersih, dan nyaman.
+                    </p>
+                    <!-- Buttons -->
+                    <div class="flex justify-between">
+                        <button data-modal-hide="fresh-air-fan" type="button" class="py-1.5 md:py-0.5 px-4 text-sm font-medium text-blue-700 border border-blue-700 bg-white rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500">BACK</button>
+                        <!-- <button type="button" class="py-1.5 md:py-0.5 px-4 text-sm font-medium text-blue-700 border border-blue-700 bg-white rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500" data-carousel-next>NEXT</button> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
