@@ -2,7 +2,7 @@
 
 // Firebase configuration 
 const firebaseConfig = {
-  apiKey: "AIzaSyBNKXVdCRfTr7iKHW7SQ5RvNlBkLQkq2z8", 
+  apiKey: import.meta, 
   authDomain: "fineer-fix.firebaseapp.com",
   projectId: "fineer-fix",
   storageBucket: "fineer-fix.appspot.com",
