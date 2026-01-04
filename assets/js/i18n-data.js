@@ -1,244 +1,352 @@
-// Internationalization Data for Triple S Website
+// Internationalization Data for Sumber Sarana Solusindo Website
 const i18nData = {
-    id: {
-        // Navigation
-        nav: {
-            home: "Beranda",
-            projects: "Proyek",
-            services: "Layanan",
-            about: "Tentang",
-            contact: "Kontak",
-            cta: "Dapatkan Penawaran"
-        },
-
-        // Hero Section
-        hero: {
-            title: {
-                line1: "Mitra Terpercaya Anda untuk",
-                line2: "Layanan Peralatan Gedung"
-            },
-            subtitle: "Kami menyediakan layanan mekanikal & elektrikal berbasis teknologi dengan integrasi CMMS canggih untuk performa gedung yang optimal.",
-            cta: {
-                consultation: "Hubungi Kami",
-                work: "Lihat Karya Kami"
-            },
-            scrollIndicator: "Gulir untuk Menjelajahi"
-        },
-
-        // CMMS Section
-        cmms: {
-            badge: "BERTENAGA TEKNOLOGI",
-            title: "Didukung dengan",
-            title_highlight: "Aplikasi Web CMMS",
-            description: "Optimalkan perawatan gedung Anda dengan <span class='font-bold text-[#0061AE]'>CMMS</span> yang cerdas! Kelola pemeliharaan, pantau aset, dan cegah downtime, semuanya dalam satu sistem terpusat.",
-            cta: "Pelajari Lebih Lanjut tentang CMMS"
-        },
-
-        // Projects Section
-        projects: {
-            badge: "PORTOFOLIO KAMI",
-            title: "Proyek Aktif yang Kami",
-            title_highlight: "Banggakan",
-            subtitle: "Temukan proyek-proyek terbaru kami dalam bidang pemeliharaan gedung dan teknologi yang menunjukkan keahlian dan komitmen kami terhadap keunggulan."
-        },
-
-        // Services Section
-        services: {
-            badge: "LAYANAN PROFESIONAL",
-            title: "Layanan Lengkap untuk",
-            title_highlight: "Kebutuhan Gedung Anda",
-            subtitle: "Dari pemeliharaan preventif hingga solusi teknologi canggih, kami menyediakan layanan komprehensif untuk memastikan gedung Anda beroperasi dengan optimal.",
-            details: "Lihat Detail"
-        },
-
-        // About Section
-        about: {
-            title: "Mengapa Memilih Sumber Sarana Solusindo?",
-            subtitle: "Mitra terpercaya Anda untuk solusi pemeliharaan gedung dan teknologi yang komprehensif. Kami mengkhususkan diri dalam layanan mekanikal & elektrikal, didukung oleh teknologi CMMS mutakhir."
-        },
-
-        // Contact Section
-        contact: {
-            title: "Hubungi Kami",
-            subtitle: "Siap mengoptimalkan pemeliharaan gedung Anda? Hubungi kami untuk konsultasi profesional.",
-            form: {
-                sendMessage: "Kirim Pesan",
-                firstName: "Nama Depan *",
-                lastName: "Nama Belakang *",
-                email: "Alamat Email *",
-                company: "Perusahaan",
-                service: "Pilih layanan",
-                message: "Ceritakan tentang kebutuhan proyek Anda...",
-                submit: "Kirim Pesan"
-            },
-            info: {
-                title: "Informasi Kontak",
-                phone: "Telepon",
-                email: "Email",
-                office: "Kantor",
-                hours: "Jam Operasional",
-                hoursDetail: {
-                    weekday: "Sen-Jum: 8AM-6PM",
-                    emergency: "Darurat: 24/7"
-                },
-                assistance: "Untuk bantuan segera:",
-                whatsapp: "WhatsApp",
-                callNow: "Hubungi Sekarang"
-            }
-        },
-
-        // Service Options
-        serviceOptions: {
-            default: "Pilih layanan",
-            preventiveMaintenance: "Pemeliharaan Preventif",
-            electrical: "Layanan Kelistrikan",
-            hvac: "Layanan HVAC",
-            accessControl: "Sistem Kontrol Akses",
-            cctv: "Instalasi CCTV",
-            websiteDevelopment: "Pengembangan Website",
-            mobileDevelopment: "Pengembangan Aplikasi Mobile",
-            cmms: "Implementasi CMMS",
-            other: "Lainnya"
-        },
-
-        // Modal/General Actions
-        actions: {
-            close: "Tutup",
-            viewDetails: "Lihat Detail",
-            getQuote: "Dapatkan Penawaran",
-            learnMore: "Pelajari Lebih Lanjut"
-        },
-
-        // Company Info
-        company: {
-            tagline: "Building Solutions",
-            name: "Triple S",
-            fullName: "Sumber Sarana Solusindo"
-        }
+  id: {
+    // Navigation
+    nav: {
+      home: "Beranda",
+      projects: "Proyek",
+      services: "Layanan",
+      about: "Tentang Kami",
+      contact: "Kontak",
     },
 
-    en: {
-        // Navigation
-        nav: {
-            home: "Home",
-            projects: "Projects",
-            services: "Services",
-            about: "About",
-            contact: "Contact",
-            cta: "Get Quote"
-        },
+    // Hero Section
+    hero: {
+      company: "SUMBER SARANA SOLUSINDO",
+      title: {
+        line1: "Mitra Terpercaya",
+        line2: "Layanan Peralatan Gedung Anda",
+      },
+      subtitle:
+        "Kami menyediakan layanan mekanikal dan elektrikal berbasis teknologi dengan integrasi CMMS canggih untuk performa gedung yang optimal.",
+      cta: {
+        consultation: "Hubungi Kami",
+        work: "Lihat Portofolio",
+      },
+      scrollIndicator: "Gulir untuk Menjelajahi",
+    },
 
-        // Hero Section
-        hero: {
-            title: {
-                line1: "Your Trustworthy",
-                line2: "Building Equipment Service"
-            },
-            subtitle: "We provide technology-based mechanical & electrical services with advanced CMMS integration for optimal building performance.",
-            cta: {
-                consultation: "Request Consultation",
-                work: "View Our Work"
-            },
-            scrollIndicator: "Scroll to Explore"
-        },
+    // CMMS Section
+    cmms: {
+      badge: "TEKNOLOGI TERDEPAN",
+      title: "Didukung dengan",
+      titleHighlight: "Aplikasi Web CMMS",
+      description:
+        "Optimalkan perawatan gedung Anda dengan CMMS yang cerdas! Kelola pemeliharaan, pantau aset, dan cegah downtime dalam satu sistem terpusat yang aman dan efisien.",
+      features: {
+        autoBackup: "Cadangan Otomatis",
+        dataSecurity: "Keamanan Data",
+        highEfficiency: "Efisiensi Tinggi",
+        realTimeMonitoring: "Pemantauan Real-time",
+      },
+      cta: "Pelajari Lebih Lanjut tentang CMMS",
+    },
 
-        // CMMS Section
-        cmms: {
-            badge: "TECHNOLOGY POWERED",
-            title: "Supported with",
-            title_highlight: "CMMS Web App",
-            description: "Optimize your building maintenance with smart <span class='font-bold text-[#0061AE]'>CMMS</span>! Manage maintenance, monitor assets, and prevent downtime, all in one centralized system.",
-            cta: "Learn More About CMMS"
-        },
+    // Projects Section
+    projects: {
+      badge: "PORTOFOLIO KAMI",
+      title: "Proyek Aktif yang Kami",
+      titleHighlight: "Banggakan",
+      subtitle:
+        "Temukan proyek-proyek terbaru dalam bidang pemeliharaan gedung dan teknologi yang menunjukkan keahlian serta komitmen kami terhadap keunggulan.",
+      project1: {
+        name: "Essence Darmawangsa",
+        description:
+          "Sistem pemeliharaan gedung komprehensif dengan integrasi CMMS canggih untuk kompleks residensial mewah.",
+        status: "Aktif",
+        location: "Jakarta",
+      },
+      project2: {
+        name: "Niffaro Park",
+        description:
+          "Kompleks perkantoran modern dengan teknologi gedung pintar dan sistem manajemen fasilitas yang komprehensif.",
+        status: "Aktif",
+        location: "Jakarta",
+      },
+    },
 
-        // Projects Section
-        projects: {
-            badge: "OUR PORTFOLIO",
-            title: "Active Projects We're",
-            title_highlight: "Proud Of",
-            subtitle: "Discover our latest building maintenance and technology projects that showcase our expertise and commitment to excellence."
-        },
+    // Services Section
+    services: {
+      badge: "LAYANAN KAMI",
+      title: "Solusi Pemeliharaan Gedung",
+      titleHighlight: "yang Komprehensif",
+      subtitle:
+        "Jelajahi berbagai layanan profesional yang dirancang untuk menjaga gedung Anda beroperasi dengan performa puncak menggunakan teknologi terkini dan keahlian terbaik.",
+      seeMore: "Lihat Layanan Lainnya",
+      seeLess: "Tampilkan Lebih Sedikit",
+      viewDetails: "Lihat Detail",
+    },
 
-        // Services Section
-        services: {
-            badge: "PROFESSIONAL SERVICES",
-            title: "Complete Services for",
-            title_highlight: "Your Building Needs",
-            subtitle: "From preventive maintenance to advanced technology solutions, we provide comprehensive services to ensure your building operates optimally.",
-            details: "View Details"
-        },
+    // About Section
+    about: {
+      title: "Mengapa Memilih Sumber Sarana Solusindo?",
+      subtitle:
+        "Mitra terpercaya untuk solusi pemeliharaan gedung dan teknologi yang komprehensif. Kami mengkhususkan diri dalam layanan mekanikal dan elektrikal yang didukung oleh teknologi CMMS mutakhir.",
+      feature1: {
+        title: "Profesional Bersertifikat",
+        description:
+          "Tim kami terdiri dari teknisi bersertifikat dengan pengalaman bertahun-tahun dalam pemeliharaan gedung dan solusi teknologi.",
+      },
+      feature2: {
+        title: "Layanan Darurat 24/7",
+        description:
+          "Dukungan darurat sepanjang waktu untuk memastikan operasional gedung Anda tidak pernah terhenti dan selalu berjalan optimal.",
+      },
+      feature3: {
+        title: "Teknologi CMMS",
+        description:
+          "Sistem Manajemen Pemeliharaan Terkomputerisasi yang canggih untuk performa gedung optimal dan keamanan data terjamin.",
+      },
+    },
 
-        // About Section
-        about: {
-            title: "Why Choose Sumber Sarana Solusindo?",
-            subtitle: "Your trusted partner for comprehensive building maintenance and technology solutions. We specialize in mechanical & electrical services, backed by cutting-edge CMMS technology."
+    // Contact Section
+    contact: {
+      title: "Hubungi Kami",
+      subtitle:
+        "Siap mengoptimalkan pemeliharaan gedung Anda? Hubungi kami untuk konsultasi profesional.",
+      form: {
+        sendMessage: "Kirim Pesan kepada Kami",
+        firstName: "Nama Depan *",
+        lastName: "Nama Belakang *",
+        email: "Alamat Email *",
+        company: "Perusahaan",
+        service: "Pilih Layanan",
+        message: "Ceritakan kebutuhan proyek Anda...",
+        submit: "Kirim Pesan",
+      },
+      info: {
+        title: "Informasi Kontak",
+        phone: "Telepon",
+        email: "Email",
+        office: "Kantor",
+        hours: "Jam Operasional",
+        hoursDetail: {
+          weekday: "Sen–Jum: 08.00–18.00",
+          weekend: "Sabtu: Tutup",
+          emergency: "Darurat: 24/7",
         },
+        assistance: "Untuk bantuan segera:",
+        whatsapp: "WhatsApp",
+        callNow: "Hubungi Sekarang",
+      },
+    },
 
-        // Contact Section
-        contact: {
-            title: "Get In Touch With Us",
-            subtitle: "Ready to optimize your building maintenance? Contact us for a professional consultation.",
-            form: {
-                sendMessage: "Send us a Message",
-                firstName: "First Name *",
-                lastName: "Last Name *",
-                email: "Email Address *",
-                company: "Company",
-                service: "Select a service",
-                message: "Tell us about your project requirements...",
-                submit: "Send Message"
-            },
-            info: {
-                title: "Contact Information",
-                phone: "Phone",
-                email: "Email",
-                office: "Office",
-                hours: "Hours",
-                hoursDetail: {
-                    weekday: "Mon-Fri: 8AM-6PM",
-                    emergency: "Emergency: 24/7"
-                },
-                assistance: "For immediate assistance:",
-                whatsapp: "WhatsApp",
-                callNow: "Call Now"
-            }
+    // Service Options (for contact form dropdown)
+    serviceOptions: {
+      default: "Pilih Layanan",
+      preventiveMaintenance: "Pemeliharaan Preventif",
+      electrical: "Layanan Kelistrikan",
+      hvac: "Layanan HVAC",
+      accessControl: "Sistem Kontrol Akses",
+      cctv: "Instalasi CCTV",
+      websiteDevelopment: "Pengembangan Website",
+      mobileDevelopment: "Pengembangan Aplikasi Mobile",
+      cmms: "Implementasi CMMS",
+      other: "Lainnya",
+    },
+
+    // Modal/General Actions
+    actions: {
+      close: "Tutup",
+      viewDetails: "Lihat Detail",
+      getQuote: "Dapatkan Penawaran",
+      learnMore: "Pelajari Lebih Lanjut",
+      openInMaps: "Buka di Maps",
+    },
+
+    // Company Info
+    company: {
+      tagline: "Solusi Peralatan Gedung",
+      name: "Triple S",
+      fullName: "Sumber Sarana Solusindo",
+      description:
+        "Penyedia layanan mekanikal dan elektrikal terpercaya dengan teknologi CMMS canggih",
+    },
+
+    // Meta Information
+    meta: {
+      loading: "Memuat layanan...",
+      error: "Terjadi kesalahan saat memuat data",
+      noResults: "Tidak ada hasil ditemukan",
+    },
+  },
+
+  en: {
+    // Navigation
+    nav: {
+      home: "Home",
+      projects: "Projects",
+      services: "Services",
+      about: "About Us",
+      contact: "Contact",
+    },
+
+    // Hero Section
+    hero: {
+      company: "SUMBER SARANA SOLUSINDO",
+      title: {
+        line1: "Your Trustworthy",
+        line2: "Building Equipment Service",
+      },
+      subtitle:
+        "We provide technology-based mechanical and electrical services with advanced CMMS integration for optimal building performance.",
+      cta: {
+        consultation: "Contact Us",
+        work: "View Our Portfolio",
+      },
+      scrollIndicator: "Scroll to Explore",
+    },
+
+    // CMMS Section
+    cmms: {
+      badge: "TECHNOLOGY POWERED",
+      title: "Supported with",
+      titleHighlight: "CMMS Web Application",
+      description:
+        "Optimize your building maintenance with intelligent CMMS! Manage maintenance, monitor assets, and prevent downtime in one secure and efficient centralized system.",
+      features: {
+        autoBackup: "Automatic Backup",
+        dataSecurity: "Data Security",
+        highEfficiency: "High Efficiency",
+        realTimeMonitoring: "Real-time Monitoring",
+      },
+      cta: "Learn More About CMMS",
+    },
+
+    // Projects Section
+    projects: {
+      badge: "OUR PORTFOLIO",
+      title: "Active Projects We're",
+      titleHighlight: "Proud Of",
+      subtitle:
+        "Discover our latest building maintenance and technology projects that showcase our expertise and commitment to excellence.",
+      project1: {
+        name: "Essence Darmawangsa",
+        description:
+          "Comprehensive building maintenance system with advanced CMMS integration for luxury residential complex.",
+        status: "Active",
+        location: "Jakarta",
+      },
+      project2: {
+        name: "Niffaro Park",
+        description:
+          "Modern office complex featuring smart building technology and comprehensive facility management systems.",
+        status: "Active",
+        location: "Jakarta",
+      },
+    },
+
+    // Services Section
+    services: {
+      badge: "OUR SERVICES",
+      title: "Comprehensive Building",
+      titleHighlight: "Maintenance Solutions",
+      subtitle:
+        "Explore our wide range of professional services designed to keep your building operating at peak performance with cutting-edge technology and expert craftsmanship.",
+      seeMore: "See More Services",
+      seeLess: "Show Less",
+      viewDetails: "View Details",
+    },
+
+    // About Section
+    about: {
+      title: "Why Choose Sumber Sarana Solusindo?",
+      subtitle:
+        "Your trusted partner for comprehensive building maintenance and technology solutions. We specialize in mechanical and electrical services backed by cutting-edge CMMS technology.",
+      feature1: {
+        title: "Certified Professionals",
+        description:
+          "Our team consists of certified technicians with years of experience in building maintenance and technology solutions.",
+      },
+      feature2: {
+        title: "24/7 Emergency Service",
+        description:
+          "Round-the-clock emergency support to ensure your building operations never stop and always run optimally.",
+      },
+      feature3: {
+        title: "CMMS Technology",
+        description:
+          "Advanced Computerized Maintenance Management System for optimal building performance and guaranteed data security.",
+      },
+    },
+
+    // Contact Section
+    contact: {
+      title: "Get In Touch With Us",
+      subtitle:
+        "Ready to optimize your building maintenance? Contact us for a professional consultation.",
+      form: {
+        sendMessage: "Send us a Message",
+        firstName: "First Name *",
+        lastName: "Last Name *",
+        email: "Email Address *",
+        company: "Company",
+        service: "Select a Service",
+        message: "Tell us about your project requirements...",
+        submit: "Send Message",
+      },
+      info: {
+        title: "Contact Information",
+        phone: "Phone",
+        email: "Email",
+        office: "Office",
+        hours: "Business Hours",
+        hoursDetail: {
+          weekday: "Mon–Fri: 8AM–6PM",
+          weekend: "Saturday: Closed",
+          emergency: "Emergency: 24/7",
         },
+        assistance: "For immediate assistance:",
+        whatsapp: "WhatsApp",
+        callNow: "Call Now",
+      },
+    },
 
-        // Service Options
-        serviceOptions: {
-            default: "Select a service",
-            preventiveMaintenance: "Preventive Maintenance",
-            electrical: "Electrical Services",
-            hvac: "HVAC Services",
-            accessControl: "Access Control Systems",
-            cctv: "CCTV Installation",
-            websiteDevelopment: "Website Development",
-            mobileDevelopment: "Mobile App Development",
-            cmms: "CMMS Implementation",
-            other: "Other"
-        },
+    // Service Options (for contact form dropdown)
+    serviceOptions: {
+      default: "Select a Service",
+      preventiveMaintenance: "Preventive Maintenance",
+      electrical: "Electrical Services",
+      hvac: "HVAC Services",
+      accessControl: "Access Control Systems",
+      cctv: "CCTV Installation",
+      websiteDevelopment: "Website Development",
+      mobileDevelopment: "Mobile App Development",
+      cmms: "CMMS Implementation",
+      other: "Other",
+    },
 
-        // Modal/General Actions
-        actions: {
-            close: "Close",
-            viewDetails: "View Details",
-            getQuote: "Get Quote",
-            learnMore: "Learn More"
-        },
+    // Modal/General Actions
+    actions: {
+      close: "Close",
+      viewDetails: "View Details",
+      getQuote: "Get Quote",
+      learnMore: "Learn More",
+      openInMaps: "Open in Maps",
+    },
 
-        // Company Info
-        company: {
-            tagline: "Building Solutions",
-            name: "Triple S",
-            fullName: "Sumber Sarana Solusindo"
-        }
-    }
+    // Company Info
+    company: {
+      tagline: "Building Equipment Solutions",
+      name: "Triple S",
+      fullName: "Sumber Sarana Solusindo",
+      description:
+        "Trusted mechanical and electrical service provider with advanced CMMS technology",
+    },
+
+    // Meta Information
+    meta: {
+      loading: "Loading services...",
+      error: "An error occurred while loading data",
+      noResults: "No results found",
+    },
+  },
 };
 
 // Make globally available
 window.i18nData = i18nData;
 
 // Export for use in other files
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = i18nData;
+if (typeof module !== "undefined" && module.exports) {
+  module.exports = i18nData;
 }
