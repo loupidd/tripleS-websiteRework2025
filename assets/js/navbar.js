@@ -128,7 +128,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // === Mobile Menu Functionality ===
     const mobileMenuButton = document.getElementById('mobileMenuButton');
-    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileMenu = document.getElementById('mobile-menu');
 
     function toggleMobileMenu() {
         if (mobileMenuButton && mobileMenu) {
@@ -136,6 +136,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             mobileMenuButton.classList.toggle('active', !isOpen);
             mobileMenu.classList.toggle('active', !isOpen);
+            mobileMenu.classList.toggle('hidden', isOpen);
             
             // Prevent body scroll when menu is open
             document.body.style.overflow = isOpen ? 'auto' : 'hidden';
@@ -188,17 +189,103 @@ document.addEventListener('DOMContentLoaded', function() {
     // Update active nav item on page load
     updateActiveNavItem();
 
-    // === Navbar Scroll Effects ===
+    // === Navbar Scroll Effects with Color Transitions ===
     const navbar = document.querySelector('.navbar-scroll');
+    const navItems = document.querySelectorAll('.nav-item');
+    const hamburgerLines = document.querySelectorAll('.hamburger-line');
     let lastScrollY = window.scrollY;
     let ticking = false;
+
+    function updateNavbarColors(isScrolled) {
+        if (isScrolled) {
+            // Scrolled state - white background with dark text
+            navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+            navbar.style.backdropFilter = 'blur(25px)';
+            navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.08)';
+            navbar.style.borderBottom = '1px solid rgba(0, 0, 0, 0.06)';
+            
+            // Change all nav links to dark color
+            navItems.forEach(item => {
+                if (!item.classList.contains('active')) {
+                    item.style.color = '#0F5F98';
+                }
+            });
+            
+            // Change language toggle text to dark
+            if (desktopIdText) desktopIdText.style.color = '#0F5F98';
+            if (desktopEnText) desktopEnText.style.color = '#0F5F98';
+            if (mobileIdText) mobileIdText.style.color = '#0F5F98';
+            if (mobileEnText) mobileEnText.style.color = '#0F5F98';
+            
+            // Change hamburger menu to dark
+            hamburgerLines.forEach(line => {
+                line.style.backgroundColor = '#0F5F98';
+            });
+            
+            // Update mobile menu background
+            if (mobileMenu) {
+                mobileMenu.style.background = 'rgba(255, 255, 255, 0.98)';
+                mobileMenu.style.backdropFilter = 'blur(25px)';
+                
+                // Update mobile nav items color
+                document.querySelectorAll('.mobile-nav-item').forEach(item => {
+                    if (!item.classList.contains('active')) {
+                        item.style.color = '#0F5F98';
+                    }
+                });
+            }
+            
+        } else {
+            // Top of page - transparent background with white text
+            navbar.style.background = 'rgba(255, 255, 255, 0.08)';
+            navbar.style.backdropFilter = 'blur(20px)';
+            navbar.style.boxShadow = 'none';
+            navbar.style.borderBottom = '1px solid rgba(255, 255, 255, 0.1)';
+            
+            // Reset nav links to white
+            navItems.forEach(item => {
+                if (!item.classList.contains('active')) {
+                    item.style.color = 'white';
+                }
+            });
+            
+            // Reset language toggle text to white
+            if (desktopIdText) desktopIdText.style.color = 'rgba(255, 255, 255, 0.7)';
+            if (desktopEnText) desktopEnText.style.color = 'rgba(255, 255, 255, 0.7)';
+            if (mobileIdText) mobileIdText.style.color = 'rgba(255, 255, 255, 0.7)';
+            if (mobileEnText) mobileEnText.style.color = 'rgba(255, 255, 255, 0.7)';
+            
+            // Reset hamburger menu to white
+            hamburgerLines.forEach(line => {
+                line.style.backgroundColor = 'white';
+            });
+            
+            // Reset mobile menu background
+            if (mobileMenu) {
+                mobileMenu.style.background = 'rgba(255, 255, 255, 0.08)';
+                mobileMenu.style.backdropFilter = 'blur(20px)';
+                
+                // Reset mobile nav items color
+                document.querySelectorAll('.mobile-nav-item').forEach(item => {
+                    if (!item.classList.contains('active')) {
+                        item.style.color = 'white';
+                    }
+                });
+            }
+        }
+    }
 
     function updateNavbarOnScroll() {
         const scrollY = window.scrollY;
         
         if (navbar) {
-            // Add scrolled class when scrolled down
-            navbar.classList.toggle('scrolled', scrollY > 50);
+            const isScrolled = scrollY > 50;
+            
+            // Add/remove scrolled class
+            navbar.classList.toggle('scrolled', isScrolled);
+            
+            // Update colors based on scroll position
+            updateNavbarColors(isScrolled);
             
             // Optional: Hide navbar when scrolling down, show when scrolling up
             if (scrollY > lastScrollY && scrollY > 100) {
@@ -354,11 +441,12 @@ window.TripleSNavbar = {
     },
     
     getCurrentLanguage: function() {
-        return window.currentLanguage || 'id';
+        return localStorage.getItem('preferredLanguage') || 'id';
     },
     
     setLanguage: function(lang) {
         if (['id', 'en'].includes(lang)) {
+            localStorage.setItem('preferredLanguage', lang);
             const event = new CustomEvent('languageChanged', { detail: { language: lang } });
             document.dispatchEvent(event);
         }

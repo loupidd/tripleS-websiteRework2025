@@ -624,3 +624,164 @@ div[style*="background-image"].aspect-\[4\/5\] {
 .carousel-next:active {
   transform: scale(0.95);
 }
+/* ========================================
+   NAVBAR COLOR TRANSITION ENHANCEMENTS
+   Add this to your existing style.css
+   ======================================== */
+
+/* Smooth transitions for navbar elements */
+.navbar-scroll {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s ease;
+}
+
+.nav-item {
+    transition: color 0.4s ease, background-color 0.3s ease, opacity 0.3s ease;
+}
+
+.hamburger-line {
+    transition: background-color 0.4s ease, transform 0.3s ease, opacity 0.3s ease;
+}
+
+#desktopIdText,
+#desktopEnText,
+#mobileIdText,
+#mobileEnText {
+    transition: color 0.4s ease, opacity 0.3s ease;
+}
+
+/* Mobile menu transitions */
+.mobile-menu {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-nav-item {
+    transition: color 0.4s ease, background-color 0.3s ease;
+}
+
+/* Hover states for scrolled navbar (white background) */
+.navbar-scroll.scrolled .nav-item:hover {
+    color: #0F5F98 !important;
+    background-color: rgba(122, 197, 255, 0.15);
+}
+
+/* Hover states for non-scrolled navbar (transparent background) */
+.navbar-scroll:not(.scrolled) .nav-item:hover {
+    color: white !important;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Active nav item styling for both states */
+.navbar-scroll.scrolled .nav-item.active {
+    color: white !important;
+    background: linear-gradient(135deg, #7AC5FF, #0F5F98);
+}
+
+.navbar-scroll:not(.scrolled) .nav-item.active {
+    color: white !important;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Mobile nav hover states */
+.navbar-scroll.scrolled .mobile-nav-item:hover {
+    background: rgba(122, 197, 255, 0.15);
+    color: #0F5F98;
+}
+
+.navbar-scroll:not(.scrolled) .mobile-nav-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+/* Mobile nav active states */
+.navbar-scroll.scrolled .mobile-nav-item.active {
+    color: white !important;
+    background: rgba(15, 95, 152, 0.2);
+}
+
+.navbar-scroll:not(.scrolled) .mobile-nav-item.active {
+    color: white !important;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Language toggle transitions */
+.language-toggle,
+.mobile-lang-toggle {
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.navbar-scroll.scrolled .language-toggle,
+.navbar-scroll.scrolled .mobile-lang-toggle {
+    background: rgba(15, 95, 152, 0.1);
+    border-color: rgba(15, 95, 152, 0.2);
+}
+
+/* Logo filter transition */
+.navbar-scroll img {
+    transition: filter 0.4s ease, transform 0.3s ease;
+}
+
+.navbar-scroll.scrolled img {
+    filter: brightness(0.85) saturate(1.1);
+}
+
+/* Ensure smooth mobile menu background transition */
+.mobile-menu {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Override mobile menu background when scrolled */
+.navbar-scroll.scrolled ~ .mobile-menu,
+.navbar-scroll.scrolled .mobile-menu {
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(25px);
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+/* Smooth color transition for mobile menu items */
+.mobile-nav-item .w-2 {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Focus states with proper contrast */
+.navbar-scroll.scrolled .nav-item:focus-visible,
+.navbar-scroll.scrolled .mobile-nav-item:focus-visible {
+    outline: 2px solid #0F5F98;
+    outline-offset: 2px;
+}
+
+.navbar-scroll:not(.scrolled) .nav-item:focus-visible,
+.navbar-scroll:not(.scrolled) .mobile-nav-item:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.8);
+    outline-offset: 2px;
+}
+
+/* Ensure proper contrast for language toggle in both states */
+.navbar-scroll.scrolled .language-toggle:hover,
+.navbar-scroll.scrolled .mobile-lang-toggle:hover {
+    background: rgba(15, 95, 152, 0.15);
+}
+
+.navbar-scroll:not(.scrolled) .language-toggle:hover,
+.navbar-scroll:not(.scrolled) .mobile-lang-toggle:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* Prevent FOUC (Flash of Unstyled Content) */
+.navbar-scroll * {
+    transition-delay: 0s;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .navbar-scroll,
+    .nav-item,
+    .mobile-nav-item,
+    .hamburger-line,
+    .language-toggle,
+    .mobile-lang-toggle {
+        transition: none !important;
+    }
+}

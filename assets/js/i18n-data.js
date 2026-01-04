@@ -27,7 +27,7 @@ const i18nData = {
 
         // CMMS Section
         cmms: {
-            badge: "🚀 BERTENAGA TEKNOLOGI",
+            badge: "BERTENAGA TEKNOLOGI",
             title: "Didukung dengan",
             title_highlight: "Aplikasi Web CMMS",
             description: "Optimalkan perawatan gedung Anda dengan <span class='font-bold text-[#0061AE]'>CMMS</span> yang cerdas! Kelola pemeliharaan, pantau aset, dan cegah downtime, semuanya dalam satu sistem terpusat.",
@@ -36,7 +36,7 @@ const i18nData = {
 
         // Projects Section
         projects: {
-            badge: "🏢 PORTOFOLIO KAMI",
+            badge: "PORTOFOLIO KAMI",
             title: "Proyek Aktif yang Kami",
             title_highlight: "Banggakan",
             subtitle: "Temukan proyek-proyek terbaru kami dalam bidang pemeliharaan gedung dan teknologi yang menunjukkan keahlian dan komitmen kami terhadap keunggulan."
@@ -44,7 +44,7 @@ const i18nData = {
 
         // Services Section
         services: {
-            badge: "⚡ LAYANAN PROFESIONAL",
+            badge: "LAYANAN PROFESIONAL",
             title: "Layanan Lengkap untuk",
             title_highlight: "Kebutuhan Gedung Anda",
             subtitle: "Dari pemeliharaan preventif hingga solusi teknologi canggih, kami menyediakan layanan komprehensif untuk memastikan gedung Anda beroperasi dengan optimal.",
@@ -144,7 +144,7 @@ const i18nData = {
 
         // CMMS Section
         cmms: {
-            badge: "🚀 TECHNOLOGY POWERED",
+            badge: "TECHNOLOGY POWERED",
             title: "Supported with",
             title_highlight: "CMMS Web App",
             description: "Optimize your building maintenance with smart <span class='font-bold text-[#0061AE]'>CMMS</span>! Manage maintenance, monitor assets, and prevent downtime, all in one centralized system.",
@@ -153,7 +153,7 @@ const i18nData = {
 
         // Projects Section
         projects: {
-            badge: "🏢 OUR PORTFOLIO",
+            badge: "OUR PORTFOLIO",
             title: "Active Projects We're",
             title_highlight: "Proud Of",
             subtitle: "Discover our latest building maintenance and technology projects that showcase our expertise and commitment to excellence."
@@ -161,7 +161,7 @@ const i18nData = {
 
         // Services Section
         services: {
-            badge: "⚡ PROFESSIONAL SERVICES",
+            badge: "PROFESSIONAL SERVICES",
             title: "Complete Services for",
             title_highlight: "Your Building Needs",
             subtitle: "From preventive maintenance to advanced technology solutions, we provide comprehensive services to ensure your building operates optimally.",
