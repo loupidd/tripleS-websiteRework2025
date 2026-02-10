@@ -17,7 +17,6 @@ jobs:
 
       - name: Create Firebase config
         run: |
-          mkdir -p assets/js
           cat > assets/js/config.js << 'CONFIGEOF'
           export const firebaseConfig = {
             apiKey: "${{ secrets.FIREBASE_API_KEY }}",
@@ -29,18 +28,15 @@ jobs:
           };
           CONFIGEOF
 
-      - name: Show generated config
+      - name: Verify files to deploy
         run: |
-          echo "=== Generated config.js ==="
+          echo "=== Config.js ==="
           cat assets/js/config.js
-          echo "==========================="
+          echo ""
+          echo "=== Files to deploy ==="
+          find . -type f -not -path '*/\.*' | head -20
 
-      - name: List files to deploy
-        run: |
-          echo "Files that will be deployed:"
-          ls -laR
-
-      - name: Deploy to Hostinger via FTP
+      - name: Deploy via FTP (forced)
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
@@ -49,7 +45,8 @@ jobs:
           protocol: ftp
           port: 21
           server-dir: /public_html/
-          dry-run: false
+          log-level: verbose
+          dangerous-clean-slate: true # Force complete re-upload
 
-      - name: Verify deployment
-        run: echo "Deployment completed to sssolusindo.com"
+      - name: Success
+        run: echo "✅ Deployed to https://sssolusindo.com"
