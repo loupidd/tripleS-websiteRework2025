@@ -17,7 +17,7 @@ jobs:
 
       - name: Generate Firebase Config
         run: |
-          cat > assets/js/data/firebase-config.js << EOF
+          cat > assets/js/config.js << 'EOF'
           export const firebaseConfig = {
             apiKey: "${{ secrets.FIREBASE_API_KEY }}",
             authDomain: "${{ secrets.FIREBASE_AUTH_DOMAIN }}",
@@ -29,7 +29,7 @@ jobs:
           EOF
 
       - name: Verify Config Generated
-        run: cat assets/js/data/firebase-config.js
+        run: cat assets/js/config.js
 
       - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5

@@ -1,5 +1,5 @@
 // Import Firebase config
-import { firebaseConfig } from "./firebase-config.js";
+import { firebaseConfig } from "../config.js";
 
 // Import Firebase modules
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
@@ -7,13 +7,14 @@ import {
   getFirestore,
   collection,
   getDocs,
+  query,
+  orderBy,
 } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-// Your existing code continues here...
 console.log("Firebase initialized successfully");
 
 // Global modal functions
@@ -59,7 +60,7 @@ function createServiceCard(card) {
 function createServiceModal(card) {
   const safeId = card.id.replace(/[^a-zA-Z0-9]/g, "-");
   const features = card.modalContent?.features || [];
-  const badge = card.modalContent?.badge || "🔧 SERVICE";
+  const badge = card.modalContent?.badge || "SERVICE";
 
   // Split title intelligently
   const titleWords = card.title.split(" ");
@@ -150,9 +151,7 @@ async function loadServicesFromFirebase() {
   const servicesGrid = document.getElementById("servicesGrid");
 
   if (!servicesGrid) {
-    console.error(
-      'Services grid element not found! Make sure element with id="servicesGrid" exists.',
-    );
+    console.error("Services grid element not found!");
     return;
   }
 
@@ -187,7 +186,7 @@ async function loadServicesFromFirebase() {
       console.warn("No cards found in Firebase");
       servicesGrid.innerHTML = `
         <div class="col-span-full py-12 text-center">
-          <div class="bg-[#F8F8F8] rounded-2xl p-8 inline-block">
+          <div class="bg-gray-50 rounded-2xl p-8 inline-block">
             <svg class="mx-auto h-16 w-16 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
             </svg>
@@ -205,7 +204,7 @@ async function loadServicesFromFirebase() {
       .map((card) => createServiceCard(card))
       .join("");
 
-    // Render modals - append to body
+    // Render modals
     const modalsHTML = cards.map((card) => createServiceModal(card)).join("");
 
     // Remove old modals
@@ -220,15 +219,10 @@ async function loadServicesFromFirebase() {
 
     console.log(`Successfully loaded ${cards.length} service cards!`);
 
-    // Update mobile toggle count if it exists
+    // Update mobile toggle count
     const moreServicesCount = document.getElementById("moreServicesCount");
     if (moreServicesCount && cards.length > 4) {
       moreServicesCount.textContent = `+${cards.length - 4}`;
-    }
-
-    // Trigger language update if i18n is available
-    if (window.currentLanguage && typeof updateLanguage === "function") {
-      setTimeout(() => updateLanguage(window.currentLanguage), 100);
     }
   } catch (error) {
     console.error("Error loading services:", error);
@@ -269,5 +263,5 @@ if (document.readyState === "loading") {
   loadServicesFromFirebase();
 }
 
-// Also expose the function globally for manual refresh
+// Expose globally for manual refresh
 window.reloadFirebaseCards = loadServicesFromFirebase;
