@@ -1,45 +1,46 @@
+// Import Firebase config
+import { firebaseConfig } from "./firebase-config.js";
 
-
-// Firebase configuration 
-const firebaseConfig = {
-  apiKey: import.meta, 
-  authDomain: "fineer-fix.firebaseapp.com",
-  projectId: "fineer-fix",
-  storageBucket: "fineer-fix.appspot.com",
-};
-
-// Initialize Firebase (using CDN version)
+// Import Firebase modules
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-import { getFirestore, collection, query, orderBy, getDocs } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+import {
+  getFirestore,
+  collection,
+  getDocs,
+} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
+// Your existing code continues here...
+console.log("Firebase initialized successfully");
+
 // Global modal functions
-window.openServiceModal = function(modalId) {
+window.openServiceModal = function (modalId) {
   const modal = document.getElementById(modalId);
   if (modal) {
-    modal.classList.remove('hidden');
-    modal.classList.add('flex');
-    document.body.style.overflow = 'hidden';
+    modal.classList.remove("hidden");
+    modal.classList.add("flex");
+    document.body.style.overflow = "hidden";
   }
 };
 
-window.closeServiceModal = function(modalId) {
+window.closeServiceModal = function (modalId) {
   const modal = document.getElementById(modalId);
   if (modal) {
-    modal.classList.add('hidden');
-    modal.classList.remove('flex');
-    document.body.style.overflow = '';
+    modal.classList.add("hidden");
+    modal.classList.remove("flex");
+    document.body.style.overflow = "";
   }
 };
 
 // Function to create service card HTML
 function createServiceCard(card) {
-  const safeId = card.id.replace(/[^a-zA-Z0-9]/g, '-');
+  const safeId = card.id.replace(/[^a-zA-Z0-9]/g, "-");
   return `
     <div class="services-grid-card group relative overflow-hidden bg-white rounded-2xl shadow-xl hover-lift transition-all duration-500 border border-gray-100">
-      <div class="aspect-[4/5] bg-cover bg-center relative service-card-bg" style="background-image: url('${card.imageUrl || 'assets/img/maintenance.jpg'}');">
+      <div class="aspect-[4/5] bg-cover bg-center relative service-card-bg" style="background-image: url('${card.imageUrl || "assets/img/maintenance.jpg"}');">
         <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
         <div class="absolute bottom-0 left-0 right-0 p-6">
           <h3 class="text-lg font-semibold text-white mb-3">${card.title}</h3>
@@ -56,15 +57,15 @@ function createServiceCard(card) {
 
 // Function to create modal HTML
 function createServiceModal(card) {
-  const safeId = card.id.replace(/[^a-zA-Z0-9]/g, '-');
+  const safeId = card.id.replace(/[^a-zA-Z0-9]/g, "-");
   const features = card.modalContent?.features || [];
-  const badge = card.modalContent?.badge || '🔧 SERVICE';
-  
+  const badge = card.modalContent?.badge || "🔧 SERVICE";
+
   // Split title intelligently
-  const titleWords = card.title.split(' ');
+  const titleWords = card.title.split(" ");
   const lastWord = titleWords.pop();
-  const firstPart = titleWords.join(' ');
-  
+  const firstPart = titleWords.join(" ");
+
   return `
     <div id="modal-${safeId}" tabindex="-1" aria-hidden="true"
       class="hidden fixed inset-0 z-50 items-center justify-center p-4 modal-backdrop font-poppins"
@@ -81,7 +82,7 @@ function createServiceModal(card) {
           <div class="relative w-full lg:w-2/3">
             <div class="relative w-full h-64 md:h-80 lg:h-[500px]">
               <div class="relative h-full overflow-hidden rounded-l-3xl">
-                <img src="${card.imageUrl || 'assets/img/maintenance.jpg'}" class="w-full h-full object-cover" alt="${card.title}">
+                <img src="${card.imageUrl || "assets/img/maintenance.jpg"}" class="w-full h-full object-cover" alt="${card.title}">
               </div>
             </div>
           </div>
@@ -94,7 +95,7 @@ function createServiceModal(card) {
             </div>
 
             <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6 leading-tight">
-              ${firstPart ? firstPart + ' <br>' : ''}
+              ${firstPart ? firstPart + " <br>" : ""}
               <span class="bg-gradient-to-r from-[#7AC5FF] to-[#0F5F98] bg-clip-text text-transparent">
                 ${lastWord}
               </span>
@@ -104,9 +105,14 @@ function createServiceModal(card) {
               ${card.description}
             </p>
 
-            ${features.length > 0 ? `
+            ${
+              features.length > 0
+                ? `
             <div class="space-y-4 mb-8">
-              ${features.map(feature => feature ? `
+              ${features
+                .map((feature) =>
+                  feature
+                    ? `
                 <div class="flex items-center space-x-3">
                   <div class="w-6 h-6 bg-gradient-to-r from-[#7AC5FF] to-[#0F5F98] rounded-full flex items-center justify-center flex-shrink-0">
                     <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -115,9 +121,14 @@ function createServiceModal(card) {
                   </div>
                   <span class="text-gray-700 font-medium">${feature}</span>
                 </div>
-              ` : '').join('')}
+              `
+                    : "",
+                )
+                .join("")}
             </div>
-            ` : ''}
+            `
+                : ""
+            }
 
             <div class="flex justify-center">
               <button onclick="closeServiceModal('modal-${safeId}')" type="button"
@@ -134,16 +145,18 @@ function createServiceModal(card) {
 
 // Load cards from Firebase
 async function loadServicesFromFirebase() {
-  console.log('Starting to load services from Firebase...');
-  
-  const servicesGrid = document.getElementById('servicesGrid');
-  
+  console.log("Starting to load services from Firebase...");
+
+  const servicesGrid = document.getElementById("servicesGrid");
+
   if (!servicesGrid) {
-    console.error('Services grid element not found! Make sure element with id="servicesGrid" exists.');
+    console.error(
+      'Services grid element not found! Make sure element with id="servicesGrid" exists.',
+    );
     return;
   }
 
-  console.log('Found servicesGrid element');
+  console.log("Found servicesGrid element");
 
   // Show loading state
   servicesGrid.innerHTML = `
@@ -154,24 +167,24 @@ async function loadServicesFromFirebase() {
   `;
 
   try {
-    console.log('Fetching from Firestore...');
-    
+    console.log("Fetching from Firestore...");
+
     // Fetch cards from Firestore
     const q = query(collection(db, "landingPageCards"), orderBy("order"));
     const querySnapshot = await getDocs(q);
-    
+
     console.log(`Received ${querySnapshot.size} cards from Firebase`);
 
     const cards = [];
     querySnapshot.forEach((doc) => {
       cards.push({
         id: doc.id,
-        ...doc.data()
+        ...doc.data(),
       });
     });
 
     if (cards.length === 0) {
-      console.warn('No cards found in Firebase');
+      console.warn("No cards found in Firebase");
       servicesGrid.innerHTML = `
         <div class="col-span-full py-12 text-center">
           <div class="bg-[#F8F8F8] rounded-2xl p-8 inline-block">
@@ -185,45 +198,46 @@ async function loadServicesFromFirebase() {
       return;
     }
 
-    console.log('Rendering cards...');
+    console.log("Rendering cards...");
 
     // Render cards
-    servicesGrid.innerHTML = cards.map(card => createServiceCard(card)).join('');
-    
+    servicesGrid.innerHTML = cards
+      .map((card) => createServiceCard(card))
+      .join("");
+
     // Render modals - append to body
-    const modalsHTML = cards.map(card => createServiceModal(card)).join('');
-    
+    const modalsHTML = cards.map((card) => createServiceModal(card)).join("");
+
     // Remove old modals
     const oldModals = document.querySelectorAll('[id^="modal-"]');
-    oldModals.forEach(modal => modal.remove());
-    
+    oldModals.forEach((modal) => modal.remove());
+
     // Add new modals
-    const modalsContainer = document.createElement('div');
-    modalsContainer.id = 'firebase-modals-container';
+    const modalsContainer = document.createElement("div");
+    modalsContainer.id = "firebase-modals-container";
     modalsContainer.innerHTML = modalsHTML;
     document.body.appendChild(modalsContainer);
 
     console.log(`Successfully loaded ${cards.length} service cards!`);
 
     // Update mobile toggle count if it exists
-    const moreServicesCount = document.getElementById('moreServicesCount');
+    const moreServicesCount = document.getElementById("moreServicesCount");
     if (moreServicesCount && cards.length > 4) {
       moreServicesCount.textContent = `+${cards.length - 4}`;
     }
 
     // Trigger language update if i18n is available
-    if (window.currentLanguage && typeof updateLanguage === 'function') {
+    if (window.currentLanguage && typeof updateLanguage === "function") {
       setTimeout(() => updateLanguage(window.currentLanguage), 100);
     }
-
   } catch (error) {
-    console.error('Error loading services:', error);
-    console.error('Error details:', {
+    console.error("Error loading services:", error);
+    console.error("Error details:", {
       message: error.message,
       code: error.code,
-      stack: error.stack
+      stack: error.stack,
     });
-    
+
     servicesGrid.innerHTML = `
       <div class="col-span-full py-12 text-center">
         <div class="bg-red-50 rounded-2xl p-8 inline-block">
@@ -242,16 +256,16 @@ async function loadServicesFromFirebase() {
 }
 
 // Initialize when DOM is ready
-console.log('Firebase cards loader script initialized');
+console.log("Firebase cards loader script initialized");
 
-if (document.readyState === 'loading') {
-  console.log('Waiting for DOMContentLoaded...');
-  document.addEventListener('DOMContentLoaded', () => {
-    console.log('DOM ready, loading services');
+if (document.readyState === "loading") {
+  console.log("Waiting for DOMContentLoaded...");
+  document.addEventListener("DOMContentLoaded", () => {
+    console.log("DOM ready, loading services");
     loadServicesFromFirebase();
   });
 } else {
-  console.log('DOM already ready, loading services immediately');
+  console.log("DOM already ready, loading services immediately");
   loadServicesFromFirebase();
 }
 

@@ -21,7 +21,7 @@ const i18nData = {
         "Kami menyediakan layanan mekanikal dan elektrikal berbasis teknologi dengan integrasi CMMS canggih untuk performa gedung yang optimal.",
       cta: {
         consultation: "Hubungi Kami",
-        work: "Lihat Portofolio",
+        work: "Lihat Layanan Kami",
       },
       scrollIndicator: "Gulir untuk Menjelajahi",
     },
@@ -192,7 +192,7 @@ const i18nData = {
         "We provide technology-based mechanical and electrical services with advanced CMMS integration for optimal building performance.",
       cta: {
         consultation: "Contact Us",
-        work: "View Our Portfolio",
+        work: "View Our Services",
       },
       scrollIndicator: "Scroll to Explore",
     },
