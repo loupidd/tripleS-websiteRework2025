@@ -1,5 +1,5 @@
 // This file will be generated during deployment
-window.FIREBASE_CONFIG = {
+window.firebaseConfig = {
   apiKey: "{{FIREBASE_API_KEY}}",
   authDomain: "{{FIREBASE_AUTH_DOMAIN}}",
   projectId: "{{FIREBASE_PROJECT_ID}}",
