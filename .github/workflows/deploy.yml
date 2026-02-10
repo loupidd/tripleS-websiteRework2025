@@ -8,16 +8,17 @@ on:
 
 jobs:
   deploy:
-    name: Deploy to Production
+    name: Deploy Website
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
+      - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Generate Firebase Config
+      - name: Create Firebase config
         run: |
-          cat > assets/js/config.js << 'EOF'
+          mkdir -p assets/js
+          cat > assets/js/config.js << 'CONFIGEOF'
           export const firebaseConfig = {
             apiKey: "${{ secrets.FIREBASE_API_KEY }}",
             authDomain: "${{ secrets.FIREBASE_AUTH_DOMAIN }}",
@@ -26,14 +27,20 @@ jobs:
             messagingSenderId: "${{ secrets.FIREBASE_MESSAGING_SENDER_ID }}",
             appId: "${{ secrets.FIREBASE_APP_ID }}"
           };
-          EOF
+          CONFIGEOF
 
-      - name: Verify Generated Config
+      - name: Show generated config
         run: |
-          echo "Config generated successfully"
+          echo "=== Generated config.js ==="
           cat assets/js/config.js
+          echo "==========================="
 
-      - name: Deploy via FTP
+      - name: List files to deploy
+        run: |
+          echo "Files that will be deployed:"
+          ls -laR
+
+      - name: Deploy to Hostinger via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
@@ -42,15 +49,7 @@ jobs:
           protocol: ftp
           port: 21
           server-dir: /public_html/
-          exclude: |
-            **/.git*
-            **/.git*/**
-            **/node_modules/**
-            **/.DS_Store
-            **/.env
-            .github/**
-            README.md
-            .gitignore
+          dry-run: false
 
-      - name: Deployment Complete
-        run: echo "Deployed to sssolusindo.com"
+      - name: Verify deployment
+        run: echo "Deployment completed to sssolusindo.com"
