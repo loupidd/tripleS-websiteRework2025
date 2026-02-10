@@ -8,16 +8,16 @@ on:
 
 jobs:
   deploy:
-    name: Deploy Website
+    name: Deploy to Hostinger
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Create Firebase config
+      - name: Generate Firebase Config
         run: |
-          cat > assets/js/config.js << 'CONFIGEOF'
+          cat > assets/js/config.js << EOF
           export const firebaseConfig = {
             apiKey: "${{ secrets.FIREBASE_API_KEY }}",
             authDomain: "${{ secrets.FIREBASE_AUTH_DOMAIN }}",
@@ -26,17 +26,20 @@ jobs:
             messagingSenderId: "${{ secrets.FIREBASE_MESSAGING_SENDER_ID }}",
             appId: "${{ secrets.FIREBASE_APP_ID }}"
           };
-          CONFIGEOF
+          EOF
 
-      - name: Verify files to deploy
+      - name: Verify Generated Config
         run: |
-          echo "=== Config.js ==="
+          echo "========================================="
+          echo "Generated config.js content:"
+          echo "========================================="
           cat assets/js/config.js
+          echo "========================================="
           echo ""
-          echo "=== Files to deploy ==="
-          find . -type f -not -path '*/\.*' | head -20
+          echo "Checking for syntax errors..."
+          node -c assets/js/config.js || echo "⚠️ Config has syntax errors!"
 
-      - name: Deploy via FTP (forced)
+      - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
@@ -46,7 +49,17 @@ jobs:
           port: 21
           server-dir: /public_html/
           log-level: verbose
-          dangerous-clean-slate: true # Force complete re-upload
+          dangerous-clean-slate: true
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            **/.DS_Store
+            .github/**
+            README.md
+            .gitignore
 
-      - name: Success
-        run: echo "✅ Deployed to https://sssolusindo.com"
+      - name: Deployment Complete
+        run: |
+          echo "✅ Deployment successful!"
+          echo "Live at: https://sssolusindo.com"
