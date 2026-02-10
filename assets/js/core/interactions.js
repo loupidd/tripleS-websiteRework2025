@@ -10,7 +10,7 @@ const SiteInteractions = {
     this.initServiceToggle();
     this.initSmoothScroll();
     this.initFormValidation();
-    console.log("🎯 Interactions initialized");
+    console.log("Interactions initialized");
   },
 
   // ============================================
@@ -436,7 +436,7 @@ if (document.readyState === "loading") {
 
 // Console greeting
 console.log(
-  "%c🏢 Sumber Sarana Solusindo",
+  "%cSumber Sarana Solusindo",
   "color: #0F5F98; font-size: 20px; font-weight: bold;",
 );
 console.log(
@@ -444,6 +444,6 @@ console.log(
   "color: #7AC5FF; font-size: 14px;",
 );
 console.log(
-  "%cBuilt with ❤️ using Tailwind CSS, Alpine.js & GSAP",
+  "%cBuilt using Tailwind CSS, Alpine.js & GSAP",
   "color: #666; font-size: 12px;",
 );

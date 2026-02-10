@@ -28,8 +28,10 @@ jobs:
           };
           EOF
 
-      - name: Verify Config Generated
-        run: cat assets/js/config.js
+      - name: Verify Generated Config
+        run: |
+          echo "Config generated successfully"
+          cat assets/js/config.js
 
       - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
@@ -49,8 +51,6 @@ jobs:
             .github/**
             README.md
             .gitignore
-            package.json
-            package-lock.json
 
       - name: Deployment Complete
         run: echo "Deployed to sssolusindo.com"

@@ -6,7 +6,7 @@ const SiteAnimations = {
   init() {
     this.initGSAP();
     this.initScrollAnimations();
-    console.log("✨ Animations initialized");
+    console.log("Animations initialized");
   },
 
   // ============================================
