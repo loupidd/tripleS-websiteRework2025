@@ -1,15 +1,15 @@
 // Import Firebase config
-import { firebaseConfig } from "../config.js";
+import { firebaseConfig } from "../config";
 
 // Import Firebase modules
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { initializeApp } from "firebase/app";
 import {
   getFirestore,
   collection,
   getDocs,
   query,
   orderBy,
-} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+} from "firebase/firestore";
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
