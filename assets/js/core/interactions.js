@@ -324,8 +324,9 @@ const SiteInteractions = {
 
     const updateCount = () => {
       if (!count) return;
-      const allCards = grid.querySelectorAll(".group");
-      const hidden = Math.max(0, allCards.length - 4);
+      const allCards = grid.querySelectorAll(".services-grid-card");
+      const visibleOnMobile = 4;
+      const hidden = Math.max(0, allCards.length - visibleOnMobile);
 
       if (hidden > 0) {
         count.textContent = `+${hidden}`;
@@ -339,14 +340,31 @@ const SiteInteractions = {
       if (window.innerWidth >= 768) return;
 
       isExpanded = !isExpanded;
-      grid.classList.toggle("expanded", isExpanded);
+
+      // Toggle expanded class
+      if (isExpanded) {
+        grid.classList.add("expanded");
+      } else {
+        grid.classList.remove("expanded");
+      }
+
+      // Rotate icon
       toggleIcon.style.transform = isExpanded
         ? "rotate(180deg)"
         : "rotate(0deg)";
 
-      if (overlay) overlay.style.opacity = isExpanded ? "0" : "1";
-      if (count) count.style.opacity = isExpanded ? "0" : "1";
+      // Hide/show overlay
+      if (overlay) {
+        overlay.style.opacity = isExpanded ? "0" : "1";
+        overlay.style.pointerEvents = isExpanded ? "none" : "auto";
+      }
 
+      // Hide/show count badge
+      if (count) {
+        count.style.opacity = isExpanded ? "0" : "1";
+      }
+
+      // Update button text
       const lang = localStorage.getItem("preferredLanguage") || "id";
       if (window.i18nData?.[lang] && toggleText) {
         toggleText.textContent = isExpanded
@@ -354,37 +372,68 @@ const SiteInteractions = {
           : window.i18nData[lang].services.seeMore;
       }
 
+      // Smooth scroll when collapsing
       if (!isExpanded) {
         const section = document.getElementById("details");
         if (section) {
-          window.scrollTo({ top: section.offsetTop - 100, behavior: "smooth" });
+          const offsetTop = section.offsetTop - 100;
+          window.scrollTo({
+            top: offsetTop,
+            behavior: "smooth",
+          });
         }
       }
     };
 
     const initMobileView = () => {
       if (window.innerWidth < 768) {
+        // Mobile: collapsed by default
         grid.classList.remove("expanded");
         isExpanded = false;
         toggleIcon.style.transform = "rotate(0deg)";
-        if (overlay) overlay.style.opacity = "1";
+        if (overlay) {
+          overlay.style.opacity = "1";
+          overlay.style.pointerEvents = "auto";
+        }
         updateCount();
+
+        // Show toggle button
+        if (toggle.parentElement) {
+          toggle.parentElement.style.display = "flex";
+        }
       } else {
+        // Desktop: always expanded, hide toggle
         grid.classList.add("expanded");
-        if (overlay) overlay.style.opacity = "0";
+        if (overlay) {
+          overlay.style.opacity = "0";
+          overlay.style.pointerEvents = "none";
+        }
         if (count) count.style.display = "none";
+
+        // Hide toggle button
+        if (toggle.parentElement) {
+          toggle.parentElement.style.display = "none";
+        }
       }
     };
 
+    // Event listeners
     toggle.addEventListener("click", toggleServices);
     window.addEventListener("resize", initMobileView);
 
-    const observer = new MutationObserver(() => updateCount());
+    // Observer for when cards load
+    const observer = new MutationObserver(() => {
+      updateCount();
+      // Re-initialize view when cards change
+      setTimeout(initMobileView, 100);
+    });
     observer.observe(grid, { childList: true, subtree: true });
 
+    // Initialize
     initMobileView();
     setTimeout(updateCount, 1000);
 
+    // Listen for language changes
     document.addEventListener("languageChanged", (e) => {
       const lang = e.detail.language;
       if (window.i18nData?.[lang] && toggleText) {

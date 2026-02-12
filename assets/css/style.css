@@ -893,3 +893,58 @@ body.lang-switched * {
 .animation-complete {
   will-change: auto;
 }
+
+/* Services grid mobile collapse */
+#servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  position: relative;
+  transition: max-height 0.5s ease-out;
+}
+
+/* Mobile: show only 4 cards by default */
+@media (max-width: 768px) {
+  #servicesGrid:not(.expanded) {
+    max-height: 850px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  #servicesGrid:not(.expanded)::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: linear-gradient(to bottom, transparent, white);
+    pointer-events: none;
+  }
+
+  #servicesGrid.expanded {
+    max-height: none;
+    overflow: visible;
+  }
+
+  #servicesGrid.expanded::after {
+    display: none;
+  }
+
+  /* Show only first 4 cards on mobile when collapsed */
+  #servicesGrid:not(.expanded) .services-grid-card:nth-child(n + 5) {
+    display: none;
+  }
+}
+
+/* Desktop: always show all cards */
+@media (min-width: 769px) {
+  #servicesGrid {
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  #servicesGrid .services-grid-card {
+    display: block !important;
+  }
+}
