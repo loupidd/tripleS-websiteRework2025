@@ -17,6 +17,7 @@ jobs:
 
       - name: Generate Firebase Config
         run: |
+          mkdir -p assets/js
           echo 'export const firebaseConfig = {' > assets/js/config.js
           echo '  apiKey: "${{ secrets.FIREBASE_API_KEY }}",' >> assets/js/config.js
           echo '  authDomain: "${{ secrets.FIREBASE_AUTH_DOMAIN }}",' >> assets/js/config.js
@@ -35,9 +36,9 @@ jobs:
           echo "========================================="
           echo ""
           echo "Checking for syntax errors..."
-          node -c assets/js/config.js || echo "⚠️ Config has syntax errors!"
+          node -c assets/js/config.js || echo "Config has syntax errors!"
 
-      - name: Deploy via FTP
+      - name: Deploy via FTP (Safe Sync Mode)
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
@@ -47,7 +48,6 @@ jobs:
           port: 21
           server-dir: /public_html/
           log-level: verbose
-          dangerous-clean-slate: true
           exclude: |
             **/.git*
             **/.git*/**
@@ -59,5 +59,5 @@ jobs:
 
       - name: Deployment Complete
         run: |
-          echo "✅ Deployment successful!"
+          echo "Deployment successful!"
           echo "Live at: https://sssolusindo.com"

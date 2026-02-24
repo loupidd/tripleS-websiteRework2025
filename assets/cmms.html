@@ -1,0 +1,2146 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CMMS Web App — Sumber Sarana Solusindo</title>
+
+    <!-- Fonts: Montserrat + Poppins (matching index.html) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              montserrat: ["Montserrat", "sans-serif"],
+              poppins: ["Poppins", "sans-serif"],
+            },
+            colors: {
+              blue: {
+                primary: "#0061ae",
+                light: "#7ac5ff",
+                mid: "#0f5f98",
+                dark: "#0f3a5f",
+                pale: "#ebf5ff",
+                pale2: "#d6ecff",
+              },
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- AOS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+    />
+
+    <!-- Custom CSS — shared with index (one level up) -->
+    <link rel="stylesheet" href="../assets/css/style.css" />
+
+  </head>
+
+  <body
+    class="font-poppins bg-white text-gray-700 overflow-x-hidden scroll-smooth"
+  >
+    <!-- ════════════════════════════════════════
+         NAVBAR  
+    ════════════════════════════════════════ -->
+    <nav
+      class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 font-poppins"
+      id="navbar"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20">
+          <!-- Logo -->
+          <div class="flex items-center group">
+            <a
+              href="../index.html"
+              class="flex items-center space-x-3 relative overflow-hidden rounded-xl p-2 hover:bg-black/5 transition-all duration-300"
+            >
+              <div class="relative">
+                <img
+                  src="../assets/img/LOGO_FINAL1.webp"
+                  class="h-10 md:h-12 transition-all duration-300 group-hover:scale-110"
+                  alt="Triple S Logo"
+                />
+              </div>
+            </a>
+          </div>
+
+          <!-- Desktop Nav -->
+          <div class="hidden md:flex items-center space-x-1">
+            <div
+              class="flex items-center space-x-1 bg-[#0061ae]/8 backdrop-blur-sm rounded-full p-1 border border-[#0061ae]/15"
+            >
+              <a
+                href="../index.html#home"
+                class="nav-item group relative px-4 py-2.5 text-sm font-medium text-gray-600 hover:text-[#0061ae] transition-all duration-300 rounded-full"
+                data-i18n="nav.home"
+              >
+                <span class="relative z-10">Home</span>
+                <div
+                  class="absolute inset-0 bg-gradient-to-r from-[#7AC5FF] to-[#0F5F98] rounded-full opacity-0 group-hover:opacity-10 transition-all duration-300"
+                ></div>
+                <div
+                  class="absolute inset-0 bg-[#0061ae]/5 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 scale-95 group-hover:scale-100"
+                ></div>
+              </a>
+
+              <a
+                href="../index.html#projects"
+                class="nav-item group relative px-4 py-2.5 text-sm font-medium text-gray-600 hover:text-[#0061ae] transition-all duration-300 rounded-full"
+                data-i18n="nav.projects"
+              >
+                <span class="relative z-10">Projects</span>
+                <div
+                  class="absolute inset-0 bg-gradient-to-r from-[#7AC5FF] to-[#0F5F98] rounded-full opacity-0 group-hover:opacity-10 transition-all duration-300"
+                ></div>
+                <div
+                  class="absolute inset-0 bg-[#0061ae]/5 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 scale-95 group-hover:scale-100"
+                ></div>
+              </a>
+
+              <a
+                href="../index.html#details"
+                class="nav-item group relative px-4 py-2.5 text-sm font-medium text-gray-600 hover:text-[#0061ae] transition-all duration-300 rounded-full"
+                data-i18n="nav.services"
+              >
+                <span class="relative z-10">Services</span>
+                <div
+                  class="absolute inset-0 bg-gradient-to-r from-[#7AC5FF] to-[#0F5F98] rounded-full opacity-0 group-hover:opacity-10 transition-all duration-300"
+                ></div>
+                <div
+                  class="absolute inset-0 bg-[#0061ae]/5 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 scale-95 group-hover:scale-100"
+                ></div>
+              </a>
+
+              <a
+                href="../index.html#about"
+                class="nav-item group relative px-4 py-2.5 text-sm font-medium text-gray-600 hover:text-[#0061ae] transition-all duration-300 rounded-full"
+                data-i18n="nav.about"
+              >
+                <span class="relative z-10">About</span>
+                <div
+                  class="absolute inset-0 bg-gradient-to-r from-[#7AC5FF] to-[#0F5F98] rounded-full opacity-0 group-hover:opacity-10 transition-all duration-300"
+                ></div>
+                <div
+                  class="absolute inset-0 bg-[#0061ae]/5 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 scale-95 group-hover:scale-100"
+                ></div>
+              </a>
+
+              <a
+                href="../index.html#contact"
+                class="nav-item group relative px-4 py-2.5 text-sm font-medium text-gray-600 hover:text-[#0061ae] transition-all duration-300 rounded-full"
+                data-i18n="nav.contact"
+              >
+                <span class="relative z-10">Contact</span>
+                <div
+                  class="absolute inset-0 bg-gradient-to-r from-[#7AC5FF] to-[#0F5F98] rounded-full opacity-0 group-hover:opacity-10 transition-all duration-300"
+                ></div>
+                <div
+                  class="absolute inset-0 bg-[#0061ae]/5 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 scale-95 group-hover:scale-100"
+                ></div>
+              </a>
+
+              <!-- CMMS — active state -->
+              <a
+                href="cmms.html"
+                class="nav-item group relative px-4 py-2.5 text-sm font-semibold text-[#0061ae] transition-all duration-300 rounded-full"
+                data-i18n="nav.cmms"
+              >
+                <span class="relative z-10 flex items-center gap-1.5">
+                  <span class="relative flex h-1.5 w-1.5">
+                    <span
+                      class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#7AC5FF] opacity-75"
+                    ></span>
+                    <span
+                      class="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#7AC5FF]"
+                    ></span>
+                  </span>
+                  CMMS
+                </span>
+                <!-- active background -->
+                <div
+                  class="absolute inset-0 bg-gradient-to-r from-[#7AC5FF]/20 to-[#0061ae]/20 rounded-full"
+                ></div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right: Language toggle -->
+          <div class="hidden md:flex items-center space-x-4">
+            <div class="relative flex items-center space-x-3">
+              <span id="desktopIdText" class="text-gray-500 text-sm font-medium"
+                >ID</span
+              >
+              <div class="relative">
+                <button
+                  id="languageToggle"
+                  class="language-toggle relative w-14 h-7 bg-[#0061ae]/10 backdrop-blur-sm rounded-full border border-[#0061ae]/20 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#0061ae]/30 hover:bg-[#0061ae]/20"
+                >
+                  <div
+                    id="toggleSlider"
+                    class="absolute top-0.5 left-0.5 w-6 h-6 bg-gradient-to-r from-[#7AC5FF] to-[#0F5F98] rounded-full shadow-lg transform transition-transform duration-300 ease-in-out flex items-center justify-center"
+                  >
+                    <svg
+                      class="w-3 h-3 text-white"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
+                      ></path>
+                    </svg>
+                  </div>
+                </button>
+              </div>
+              <span id="desktopEnText" class="text-gray-500 text-sm font-medium"
+                >EN</span
+              >
+            </div>
+          </div>
+
+          <!-- Mobile: lang + hamburger -->
+          <div class="md:hidden flex items-center space-x-3">
+            <!-- Mobile Language Toggle -->
+            <div class="flex items-center space-x-2">
+              <span id="mobileIdText" class="text-gray-500 text-xs font-medium"
+                >ID</span
+              >
+              <button
+                id="mobileLangToggle"
+                class="relative w-10 h-5 bg-[#0061ae]/10 rounded-full border border-[#0061ae]/20 transition-all duration-300"
+              >
+                <div
+                  id="mobileToggleSlider"
+                  class="absolute top-0.5 left-0.5 w-4 h-4 bg-gradient-to-r from-[#7AC5FF] to-[#0F5F98] rounded-full transform transition-transform duration-300 ease-in-out flex items-center justify-center"
+                >
+                  <svg
+                    class="w-2 h-2 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
+                    ></path>
+                  </svg>
+                </div>
+              </button>
+              <span id="mobileEnText" class="text-gray-500 text-xs font-medium"
+                >EN</span
+              >
+            </div>
+
+            <!-- Hamburger -->
+            <button
+              type="button"
+              id="mobileMenuButton"
+              class="mobile-menu-button relative w-10 h-10 text-gray-700 hover:bg-[#0061ae]/10 rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#0061ae]/30"
+              aria-controls="mobile-menu"
+              aria-expanded="false"
+            >
+              <span class="sr-only">Open main menu</span>
+              <div class="absolute inset-0 flex items-center justify-center">
+                <div class="hamburger-lines space-y-1">
+                  <div
+                    class="hamburger-line w-5 h-0.5 bg-current transform transition-all duration-300"
+                  ></div>
+                  <div
+                    class="hamburger-line w-5 h-0.5 bg-current transform transition-all duration-300"
+                  ></div>
+                  <div
+                    class="hamburger-line w-5 h-0.5 bg-current transform transition-all duration-300"
+                  ></div>
+                </div>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div class="mobile-menu md:hidden" id="mobile-menu">
+        <div
+          class="bg-white/95 backdrop-blur-xl border-t border-gray-100 shadow-2xl"
+        >
+          <div class="px-4 py-6 space-y-1">
+            <a
+              href="../index.html#home"
+              class="mobile-nav-item group flex items-center px-4 py-3 text-gray-700 hover:text-[#0061ae] hover:bg-[#0061ae]/5 rounded-xl transition-all duration-300"
+              data-i18n="nav.home"
+            >
+              <div class="flex items-center space-x-3">
+                <div
+                  class="w-2 h-2 bg-gradient-to-r from-[#7AC5FF] to-[#0F5F98] rounded-full opacity-40 group-hover:opacity-100 transition-opacity duration-300"
+                ></div>
+                <span class="font-medium">Home</span>
+              </div>
+            </a>
+
+            <a
+              href="../index.html#projects"
+              class="mobile-nav-item group flex items-center px-4 py-3 text-gray-600 hover:text-[#0061ae] hover:bg-[#0061ae]/5 rounded-xl transition-all duration-300"
+              data-i18n="nav.projects"
+            >
+              <div class="flex items-center space-x-3">
+                <div
+                  class="w-2 h-2 bg-gradient-to-r from-[#7AC5FF] to-[#0F5F98] rounded-full opacity-40 group-hover:opacity-100 transition-opacity duration-300"
+                ></div>
+                <span class="font-medium">Projects</span>
+              </div>
+            </a>
+
+            <a
+              href="../index.html#details"
+              class="mobile-nav-item group flex items-center px-4 py-3 text-gray-600 hover:text-[#0061ae] hover:bg-[#0061ae]/5 rounded-xl transition-all duration-300"
+              data-i18n="nav.services"
+            >
+              <div class="flex items-center space-x-3">
+                <div
+                  class="w-2 h-2 bg-gradient-to-r from-[#7AC5FF] to-[#0F5F98] rounded-full opacity-40 group-hover:opacity-100 transition-opacity duration-300"
+                ></div>
+                <span class="font-medium">Services</span>
+              </div>
+            </a>
+
+            <a
+              href="../index.html#about"
+              class="mobile-nav-item group flex items-center px-4 py-3 text-gray-600 hover:text-[#0061ae] hover:bg-[#0061ae]/5 rounded-xl transition-all duration-300"
+              data-i18n="nav.about"
+            >
+              <div class="flex items-center space-x-3">
+                <div
+                  class="w-2 h-2 bg-gradient-to-r from-[#7AC5FF] to-[#0F5F98] rounded-full opacity-40 group-hover:opacity-100 transition-opacity duration-300"
+                ></div>
+                <span class="font-medium">About</span>
+              </div>
+            </a>
+
+            <a
+              href="../index.html#contact"
+              class="mobile-nav-item group flex items-center px-4 py-3 text-gray-600 hover:text-[#0061ae] hover:bg-[#0061ae]/5 rounded-xl transition-all duration-300"
+              data-i18n="nav.contact"
+            >
+              <div class="flex items-center space-x-3">
+                <div
+                  class="w-2 h-2 bg-gradient-to-r from-[#7AC5FF] to-[#0F5F98] rounded-full opacity-40 group-hover:opacity-100 transition-opacity duration-300"
+                ></div>
+                <span class="font-medium">Contact</span>
+              </div>
+            </a>
+
+            <!-- CMMS — active in mobile too -->
+            <div class="pt-2 mt-2 border-t border-gray-100">
+              <a
+                href="cmms.html"
+                class="mobile-nav-item group flex items-center px-4 py-3 text-[#0061ae] bg-[#0061ae]/5 rounded-xl transition-all duration-300"
+                data-i18n="nav.cmms"
+              >
+                <div class="flex items-center space-x-3">
+                  <span class="relative flex h-2 w-2">
+                    <span
+                      class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#7AC5FF] opacity-75"
+                    ></span>
+                    <span
+                      class="relative inline-flex rounded-full h-2 w-2 bg-[#7AC5FF]"
+                    ></span>
+                  </span>
+                  <span class="font-semibold">CMMS</span>
+                  <span
+                    class="ml-1 px-1.5 py-0.5 text-[10px] font-bold rounded-full bg-gradient-to-r from-[#7AC5FF] to-[#0F5F98] text-white leading-none"
+                    >App</span
+                  >
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- END NAVBAR -->
+
+    <!-- ══════════════════════════════════════
+         HERO
+    ══════════════════════════════════════ -->
+    <section
+      class="relative pt-[152px] pb-20 px-8 md:px-20 overflow-hidden bg-white"
+    >
+      <div class="hero-wave"></div>
+      <div class="hero-bg-dots"></div>
+      <div
+        class="hero-blob-1 absolute -top-16 -right-16 w-[300px] h-[300px] rounded-full"
+      ></div>
+      <div
+        class="hero-blob-2 absolute bottom-16 -left-10 w-[200px] h-[200px] rounded-full"
+      ></div>
+
+      <div class="hero-content relative z-10 max-w-[680px]">
+        <div
+          class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/20 border border-white/35 text-[11px] font-bold text-white tracking-[0.1em] uppercase mb-6 backdrop-blur-sm"
+        >
+          <div
+            class="badge-dot w-[7px] h-[7px] rounded-full bg-[#7dffbd]"
+          ></div>
+          <span data-i18n="cmms.hero.badge">Technology Powered · CMMS</span>
+        </div>
+
+        <h1
+          class="text-[clamp(36px,4.5vw,60px)] font-extrabold leading-[1.1] tracking-tight mb-[18px] text-white"
+        >
+          <span data-i18n="cmms.hero.title1">Supported with</span><br />
+          <span class="text-gradient-light" data-i18n="cmms.hero.title2"
+            >CMMS Web App</span
+          >
+        </h1>
+
+        <p
+          class="text-base text-white/80 leading-[1.75] max-w-[520px] mb-12 font-normal"
+          data-i18n="cmms.hero.desc"
+        >
+          Optimize your building MEP maintenance with intelligent CMMS — manage
+          work orders, monitor assets, and prevent downtime in one secure and
+          efficient centralized system.
+        </p>
+      </div>
+
+     <!-- Stats Strip -->
+<div
+  class="stats-strip stats-strip-grid grid grid-cols-4 bg-white rounded-[20px] overflow-hidden border border-gray-200 relative z-10 mt-12"
+  data-aos="fade-up"
+  data-aos-delay="200"
+>
+  <!-- Equipments -->
+  <div class="stat-item px-6 py-7 text-center border-r border-gray-200">
+    <div class="stat-number">
+      <!-- prettier-ignore -->
+      <count-up>3045</count-up>
+    </div>
+    <div
+      class="text-[11px] font-semibold text-gray-400 uppercase tracking-[0.07em]"
+    >
+      Equipments
+    </div>
+  </div>
+
+  <!-- Maintenance Activities -->
+  <div class="stat-item px-6 py-7 text-center border-r border-gray-200">
+    <div class="stat-number">
+      <!-- prettier-ignore -->
+      <count-up>244</count-up>
+    </div>
+    <div
+      class="text-[11px] font-semibold text-gray-400 uppercase tracking-[0.07em]"
+    >
+      Maintenance Activities
+    </div>
+  </div>
+
+  <!-- Companies -->
+  <div class="stat-item px-6 py-7 text-center border-r border-gray-200">
+    <div class="stat-number">
+      <!-- prettier-ignore -->
+      <count-up>2</count-up>
+    </div>
+    <div
+      class="text-[11px] font-semibold text-gray-400 uppercase tracking-[0.07em]"
+    >
+      Companies
+    </div>
+  </div>
+
+  <!-- Workers -->
+  <div class="stat-item px-6 py-7 text-center">
+    <div class="stat-number">
+      <!-- prettier-ignore -->
+      <count-up>24</count-up>
+    </div>
+    <div
+      class="text-[11px] font-semibold text-gray-400 uppercase tracking-[0.07em]"
+    >
+      Workers
+    </div>
+  </div>
+</div>
+
+    <!-- ══════════════════════════════════════
+         SYSTEM MAP
+    ══════════════════════════════════════ -->
+    <section class="py-20 px-8 md:px-20 bg-gray-50">
+      <div data-aos="fade-up">
+        <div
+          class="section-badge-grad inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-[11px] font-bold text-white tracking-[0.08em] uppercase mb-4"
+        >
+          <svg
+            width="12"
+            height="12"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+          >
+            <circle cx="12" cy="12" r="3" />
+            <path d="M12 2v2M12 20v2M2 12h2M20 12h2" />
+          </svg>
+          <span data-i18n="cmms.map.badge">System Architecture</span>
+        </div>
+        <h2
+          class="text-[clamp(26px,3vw,40px)] font-extrabold text-blue-primary tracking-tight leading-[1.15] mb-3.5"
+        >
+          <span data-i18n="cmms.map.title1">How Everything</span>
+          <span class="text-gradient-blue" data-i18n="cmms.map.title2"
+            >Connects</span
+          >
+        </h2>
+        <p
+          class="text-[15px] text-gray-600 leading-[1.75] max-w-[600px] mb-12 font-normal"
+          data-i18n="cmms.map.desc"
+        >
+          Every module is interlinked — from a field trouble report all the way
+          to digital management sign-off, every action traces through one
+          unified chain.
+        </p>
+      </div>
+
+      <div
+        class="map-wrapper max-w-[960px] mx-auto bg-white rounded-[24px] border border-gray-200 p-10"
+        data-aos="fade-up"
+        data-aos-delay="100"
+      >
+        <svg
+          viewBox="0 0 960 540"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          style="width: 100%; height: auto"
+        >
+          <defs>
+            <linearGradient id="lineGrad" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#7AC5FF" stop-opacity="0.5" />
+              <stop offset="100%" stop-color="#0061AE" stop-opacity="0.5" />
+            </linearGradient>
+            <filter id="softglow">
+              <feGaussianBlur stdDeviation="4" result="blur" />
+              <feMerge>
+                <feMergeNode in="blur" />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
+            <marker
+              id="arrowBlue"
+              markerWidth="7"
+              markerHeight="7"
+              refX="5"
+              refY="3.5"
+              orient="auto"
+            >
+              <polygon points="0 0, 7 3.5, 0 7" fill="rgba(0,97,174,0.4)" />
+            </marker>
+          </defs>
+          <line
+            x1="480"
+            y1="195"
+            x2="210"
+            y2="105"
+            stroke="url(#lineGrad)"
+            stroke-width="1.5"
+            stroke-dasharray="6,4"
+            marker-end="url(#arrowBlue)"
+          />
+          <line
+            x1="480"
+            y1="195"
+            x2="750"
+            y2="105"
+            stroke="url(#lineGrad)"
+            stroke-width="1.5"
+            stroke-dasharray="6,4"
+            marker-end="url(#arrowBlue)"
+          />
+          <line
+            x1="480"
+            y1="195"
+            x2="120"
+            y2="290"
+            stroke="url(#lineGrad)"
+            stroke-width="1.5"
+            stroke-dasharray="6,4"
+            marker-end="url(#arrowBlue)"
+          />
+          <line
+            x1="480"
+            y1="195"
+            x2="840"
+            y2="290"
+            stroke="url(#lineGrad)"
+            stroke-width="1.5"
+            stroke-dasharray="6,4"
+            marker-end="url(#arrowBlue)"
+          />
+          <line
+            x1="480"
+            y1="195"
+            x2="210"
+            y2="420"
+            stroke="url(#lineGrad)"
+            stroke-width="1.5"
+            stroke-dasharray="6,4"
+            marker-end="url(#arrowBlue)"
+          />
+          <line
+            x1="480"
+            y1="195"
+            x2="480"
+            y2="420"
+            stroke="url(#lineGrad)"
+            stroke-width="1.5"
+            stroke-dasharray="6,4"
+            marker-end="url(#arrowBlue)"
+          />
+          <line
+            x1="480"
+            y1="195"
+            x2="750"
+            y2="420"
+            stroke="url(#lineGrad)"
+            stroke-width="1.5"
+            stroke-dasharray="6,4"
+            marker-end="url(#arrowBlue)"
+          />
+          <circle
+            cx="480"
+            cy="195"
+            r="70"
+            fill="#EBF5FF"
+            stroke="#0061AE"
+            stroke-width="2"
+            filter="url(#softglow)"
+          />
+          <circle
+            cx="480"
+            cy="195"
+            r="58"
+            fill="#D6ECFF"
+            stroke="#7AC5FF"
+            stroke-width="1"
+          />
+          <text
+            x="480"
+            y="188"
+            text-anchor="middle"
+            fill="#0061AE"
+            font-family="Montserrat,sans-serif"
+            font-size="13"
+            font-weight="800"
+          >
+            WORK
+          </text>
+          <text
+            x="480"
+            y="207"
+            text-anchor="middle"
+            fill="#0061AE"
+            font-family="Montserrat,sans-serif"
+            font-size="13"
+            font-weight="800"
+          >
+            ORDER
+          </text>
+          <text
+            x="480"
+            y="226"
+            text-anchor="middle"
+            fill="#0F5F98"
+            font-family="Montserrat,sans-serif"
+            font-size="8.5"
+            font-weight="500"
+          >
+            PM · CM · CERT · TR
+          </text>
+          <rect
+            x="100"
+            y="62"
+            width="180"
+            height="74"
+            rx="12"
+            fill="white"
+            stroke="#D6ECFF"
+            stroke-width="1.5"
+            filter="url(#softglow)"
+          />
+          <rect
+            x="100"
+            y="62"
+            width="180"
+            height="5"
+            rx="2.5"
+            fill="url(#lineGrad)"
+          />
+          <text
+            x="190"
+            y="100"
+            text-anchor="middle"
+            fill="#0061AE"
+            font-family="Montserrat,sans-serif"
+            font-size="12"
+            font-weight="700"
+          >
+            Trouble Report
+          </text>
+          <text
+            x="190"
+            y="120"
+            text-anchor="middle"
+            fill="#94A3B8"
+            font-family="Montserrat,sans-serif"
+            font-size="9.5"
+          >
+            Linked → Work Order
+          </text>
+          <rect
+            x="680"
+            y="62"
+            width="180"
+            height="74"
+            rx="12"
+            fill="white"
+            stroke="#D6ECFF"
+            stroke-width="1.5"
+            filter="url(#softglow)"
+          />
+          <rect
+            x="680"
+            y="62"
+            width="180"
+            height="5"
+            rx="2.5"
+            fill="url(#lineGrad)"
+          />
+          <text
+            x="770"
+            y="100"
+            text-anchor="middle"
+            fill="#0061AE"
+            font-family="Montserrat,sans-serif"
+            font-size="12"
+            font-weight="700"
+          >
+            Schedule
+          </text>
+          <text
+            x="770"
+            y="120"
+            text-anchor="middle"
+            fill="#94A3B8"
+            font-family="Montserrat,sans-serif"
+            font-size="9.5"
+          >
+            WO + Trouble Report
+          </text>
+          <rect
+            x="25"
+            y="255"
+            width="180"
+            height="74"
+            rx="12"
+            fill="white"
+            stroke="#D6ECFF"
+            stroke-width="1.5"
+            filter="url(#softglow)"
+          />
+          <rect
+            x="25"
+            y="255"
+            width="180"
+            height="5"
+            rx="2.5"
+            fill="url(#lineGrad)"
+          />
+          <text
+            x="115"
+            y="293"
+            text-anchor="middle"
+            fill="#0061AE"
+            font-family="Montserrat,sans-serif"
+            font-size="12"
+            font-weight="700"
+          >
+            Equipment List
+          </text>
+          <text
+            x="115"
+            y="313"
+            text-anchor="middle"
+            fill="#94A3B8"
+            font-family="Montserrat,sans-serif"
+            font-size="9.5"
+          >
+            Linked → Work Order
+          </text>
+          <rect
+            x="755"
+            y="255"
+            width="180"
+            height="74"
+            rx="12"
+            fill="#FFFBEB"
+            stroke="#FDE68A"
+            stroke-width="1.5"
+            filter="url(#softglow)"
+          />
+          <rect
+            x="755"
+            y="255"
+            width="180"
+            height="5"
+            rx="2.5"
+            fill="#F59E0B"
+          />
+          <text
+            x="845"
+            y="293"
+            text-anchor="middle"
+            fill="#92400E"
+            font-family="Montserrat,sans-serif"
+            font-size="12"
+            font-weight="700"
+          >
+            Digital Approval
+          </text>
+          <text
+            x="845"
+            y="313"
+            text-anchor="middle"
+            fill="#B45309"
+            font-family="Montserrat,sans-serif"
+            font-size="9.5"
+          >
+            Linked to all modules
+          </text>
+          <rect
+            x="100"
+            y="390"
+            width="180"
+            height="74"
+            rx="12"
+            fill="white"
+            stroke="#D6ECFF"
+            stroke-width="1.5"
+            filter="url(#softglow)"
+          />
+          <rect
+            x="100"
+            y="390"
+            width="180"
+            height="5"
+            rx="2.5"
+            fill="url(#lineGrad)"
+          />
+          <text
+            x="190"
+            y="428"
+            text-anchor="middle"
+            fill="#0061AE"
+            font-family="Montserrat,sans-serif"
+            font-size="12"
+            font-weight="700"
+          >
+            User List
+          </text>
+          <text
+            x="190"
+            y="447"
+            text-anchor="middle"
+            fill="#94A3B8"
+            font-family="Montserrat,sans-serif"
+            font-size="9.5"
+          >
+            Role Based Authority
+          </text>
+          <rect
+            x="390"
+            y="390"
+            width="180"
+            height="74"
+            rx="12"
+            fill="white"
+            stroke="#A7F3D0"
+            stroke-width="1.5"
+            filter="url(#softglow)"
+          />
+          <rect
+            x="390"
+            y="390"
+            width="180"
+            height="5"
+            rx="2.5"
+            fill="#34D399"
+          />
+          <text
+            x="480"
+            y="428"
+            text-anchor="middle"
+            fill="#065F46"
+            font-family="Montserrat,sans-serif"
+            font-size="12"
+            font-weight="700"
+          >
+            Site Choice
+          </text>
+          <text
+            x="480"
+            y="447"
+            text-anchor="middle"
+            fill="#94A3B8"
+            font-family="Montserrat,sans-serif"
+            font-size="9.5"
+          >
+            Linked to User Role
+          </text>
+          <rect
+            x="680"
+            y="390"
+            width="180"
+            height="74"
+            rx="12"
+            fill="white"
+            stroke="#DDD6FE"
+            stroke-width="1.5"
+            filter="url(#softglow)"
+          />
+          <rect
+            x="680"
+            y="390"
+            width="180"
+            height="5"
+            rx="2.5"
+            fill="#8B5CF6"
+          />
+          <text
+            x="770"
+            y="421"
+            text-anchor="middle"
+            fill="#5B21B6"
+            font-family="Montserrat,sans-serif"
+            font-size="12"
+            font-weight="700"
+          >
+            WO Types
+          </text>
+          <text
+            x="770"
+            y="439"
+            text-anchor="middle"
+            fill="#94A3B8"
+            font-family="Montserrat,sans-serif"
+            font-size="9.5"
+          >
+            Prev · Corr · Cert
+          </text>
+          <text
+            x="770"
+            y="455"
+            text-anchor="middle"
+            fill="#94A3B8"
+            font-family="Montserrat,sans-serif"
+            font-size="9.5"
+          >
+            Trouble Report
+          </text>
+        </svg>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         HIGHLIGHTS
+    ══════════════════════════════════════ -->
+    <section class="py-20 px-8 md:px-20" id="highlights">
+      <div data-aos="fade-up">
+        <div
+          class="section-badge-grad inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-[11px] font-bold text-white tracking-[0.08em] uppercase mb-4"
+        >
+          <svg
+            width="12"
+            height="12"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+          >
+            <path
+              d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+            />
+          </svg>
+          <span data-i18n="cmms.highlights.badge">Core Modules</span>
+        </div>
+        <h2
+          class="text-[clamp(26px,3vw,40px)] font-extrabold text-blue-primary tracking-tight leading-[1.15] mb-3.5"
+        >
+          <span data-i18n="cmms.highlights.title1">System</span>
+          <span class="text-gradient-blue" data-i18n="cmms.highlights.title2"
+            >Highlights</span
+          >
+        </h2>
+        <p
+          class="text-[15px] text-gray-600 leading-[1.75] max-w-[600px] mb-12 font-normal"
+          data-i18n="cmms.highlights.desc"
+        >
+          Eight interconnected modules covering every aspect of MEP maintenance
+          — from field operations to executive approval.
+        </p>
+      </div>
+
+      <div
+        class="grid gap-5"
+        style="grid-template-columns: repeat(auto-fit, minmax(340px, 1fr))"
+      >
+        <!-- Card 1: Work Order -->
+        <div
+          class="h-card bg-white border border-gray-200 rounded-[20px] overflow-hidden"
+          data-aos="fade-up"
+          data-aos-delay="0"
+        >
+          <div class="flex items-start gap-4 pt-7 px-7">
+            <div
+              class="w-12 h-12 rounded-[14px] flex items-center justify-center flex-shrink-0 bg-violet-50"
+            >
+              <svg
+                class="w-[22px] h-[22px] stroke-violet-700 fill-none"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+                />
+                <path d="M9 12l2 2 4-4" />
+              </svg>
+            </div>
+            <div>
+              <div
+                class="text-[10px] font-bold text-gray-400 tracking-[0.12em] uppercase mb-1"
+                data-i18n="cmms.card.num1"
+              >
+                Highlight 01
+              </div>
+              <div
+                class="text-[17px] font-bold text-gray-800 leading-[1.3]"
+                data-i18n="cmms.card.title1"
+              >
+                Work Order Management
+              </div>
+            </div>
+          </div>
+          <p
+            class="px-7 pt-3.5 text-[13.5px] text-gray-600 leading-[1.7]"
+            data-i18n="cmms.card.desc1"
+          >
+            Four distinct work order types — Preventive Maintenance, Corrective
+            Maintenance, Certification, and Trouble Report. Each follows its own
+            defined workflow with automated assignment, progress tracking, and
+            escalation paths.
+          </p>
+          <div class="flex flex-wrap gap-2 px-7 py-4">
+            <span
+              class="text-[10.5px] font-semibold px-3 py-1 rounded-full border border-blue-pale2 text-blue-primary bg-blue-pale"
+              data-i18n="cmms.tag.preventive"
+              >Preventive</span
+            >
+            <span
+              class="text-[10.5px] font-semibold px-3 py-1 rounded-full border border-blue-pale2 text-blue-primary bg-blue-pale"
+              data-i18n="cmms.tag.corrective"
+              >Corrective</span
+            >
+            <span
+              class="text-[10.5px] font-semibold px-3 py-1 rounded-full border border-blue-pale2 text-blue-primary bg-blue-pale"
+              data-i18n="cmms.tag.certification"
+              >Certification</span
+            >
+            <span
+              class="text-[10.5px] font-semibold px-3 py-1 rounded-full border-amber-200 text-amber-900 bg-amber-50 border"
+              data-i18n="cmms.tag.troublereport"
+              >Trouble Report</span
+            >
+          </div>
+          <div
+            class="mx-5 mb-5 rounded-xl border border-gray-200 bg-gray-50 aspect-video flex items-center justify-center"
+          >
+            <div class="flex flex-col items-center gap-2.5 text-gray-400">
+              <svg
+                class="w-8 h-8 stroke-[#7ac5ff] fill-none opacity-60"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+              >
+                <rect x="3" y="3" width="18" height="18" rx="2" />
+                <path d="M7 8h10M7 12h10M7 16h6" />
+              </svg>
+              <span
+                class="text-[11px] font-semibold tracking-[0.06em] uppercase"
+                data-i18n="cmms.screenshot"
+                >Screenshot</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: TR → WO -->
+        <div
+          class="h-card bg-white border border-gray-200 rounded-[20px] overflow-hidden"
+          data-aos="fade-up"
+          data-aos-delay="60"
+        >
+          <div class="flex items-start gap-4 pt-7 px-7">
+            <div
+              class="w-12 h-12 rounded-[14px] flex items-center justify-center flex-shrink-0 bg-rose-50"
+            >
+              <svg
+                class="w-[22px] h-[22px] stroke-rose-600 fill-none"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"
+                />
+                <line x1="12" y1="9" x2="12" y2="13" />
+                <line x1="12" y1="17" x2="12.01" y2="17" />
+              </svg>
+            </div>
+            <div>
+              <div
+                class="text-[10px] font-bold text-gray-400 tracking-[0.12em] uppercase mb-1"
+                data-i18n="cmms.card.num2"
+              >
+                Highlight 02
+              </div>
+              <div
+                class="text-[17px] font-bold text-gray-800 leading-[1.3]"
+                data-i18n="cmms.card.title2"
+              >
+                Trouble Report → Work Order Link
+              </div>
+            </div>
+          </div>
+          <p
+            class="px-7 pt-3.5 text-[13.5px] text-gray-600 leading-[1.7]"
+            data-i18n="cmms.card.desc2"
+          >
+            Any submitted Trouble Report can be directly escalated into a formal
+            Work Order. This creates an automatic traceability chain — from the
+            field complaint all the way to resolution and sign-off, eliminating
+            manual follow-up gaps.
+          </p>
+          <div class="flex flex-wrap gap-2 px-7 py-4">
+            <span
+              class="text-[10.5px] font-semibold px-3 py-1 rounded-full border border-blue-pale2 text-blue-primary bg-blue-pale"
+              data-i18n="cmms.tag.autoesc"
+              >Auto-escalation</span
+            >
+            <span
+              class="text-[10.5px] font-semibold px-3 py-1 rounded-full border border-blue-pale2 text-blue-primary bg-blue-pale"
+              data-i18n="cmms.tag.trace"
+              >Traceability</span
+            >
+            <span
+              class="text-[10.5px] font-semibold px-3 py-1 rounded-full border border-blue-pale2 text-blue-primary bg-blue-pale"
+              data-i18n="cmms.tag.rootcause"
+              >Root Cause Linking</span
+            >
+          </div>
+          <div
+            class="mx-5 mb-5 rounded-xl border border-gray-200 bg-gray-50 aspect-video flex items-center justify-center"
+          >
+            <div class="flex flex-col items-center gap-2.5 text-gray-400">
+              <svg
+                class="w-8 h-8 stroke-[#7ac5ff] fill-none opacity-60"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+              >
+                <path d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+              <span
+                class="text-[11px] font-semibold tracking-[0.06em] uppercase"
+                data-i18n="cmms.screenshot"
+                >Screenshot</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: User List -->
+        <div
+          class="h-card bg-white border border-gray-200 rounded-[20px] overflow-hidden"
+          data-aos="fade-up"
+          data-aos-delay="120"
+        >
+          <div class="flex items-start gap-4 pt-7 px-7">
+            <div
+              class="w-12 h-12 rounded-[14px] flex items-center justify-center flex-shrink-0 bg-blue-pale"
+            >
+              <svg
+                class="w-[22px] h-[22px] stroke-blue-primary fill-none"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="M23 21v-2a4 4 0 00-3-3.87" />
+                <path d="M16 3.13a4 4 0 010 7.75" />
+              </svg>
+            </div>
+            <div>
+              <div
+                class="text-[10px] font-bold text-gray-400 tracking-[0.12em] uppercase mb-1"
+                data-i18n="cmms.card.num3"
+              >
+                Highlight 03
+              </div>
+              <div
+                class="text-[17px] font-bold text-gray-800 leading-[1.3]"
+                data-i18n="cmms.card.title3"
+              >
+                User List & Management
+              </div>
+            </div>
+          </div>
+          <p
+            class="px-7 pt-3.5 text-[13.5px] text-gray-600 leading-[1.7]"
+            data-i18n="cmms.card.desc3"
+          >
+            Full user directory with profile management, workload visibility,
+            and assignment tracking. Users are tied to specific roles and sites
+            ensuring contextually accurate and auditable task assignment.
+          </p>
+          <div class="flex flex-wrap gap-2 px-7 py-4">
+            <span
+              class="text-[10.5px] font-semibold px-3 py-1 rounded-full border border-blue-pale2 text-blue-primary bg-blue-pale"
+              data-i18n="cmms.tag.profiles"
+              >User Profiles</span
+            >
+            <span
+              class="text-[10.5px] font-semibold px-3 py-1 rounded-full border border-blue-pale2 text-blue-primary bg-blue-pale"
+              data-i18n="cmms.tag.workload"
+              >Workload Tracking</span
+            >
+            <span
+              class="text-[10.5px] font-semibold px-3 py-1 rounded-full border border-blue-pale2 text-blue-primary bg-blue-pale"
+              data-i18n="cmms.tag.assignment"
+              >Assignment History</span
+            >
+          </div>
+          <div
+            class="mx-5 mb-5 rounded-xl border border-gray-200 bg-gray-50 aspect-video flex items-center justify-center"
+          >
+            <div class="flex flex-col items-center gap-2.5 text-gray-400">
+              <svg
+                class="w-8 h-8 stroke-[#7ac5ff] fill-none opacity-60"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+              >
+                <circle cx="12" cy="8" r="4" />
+                <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
+              </svg>
+              <span
+                class="text-[11px] font-semibold tracking-[0.06em] uppercase"
+                data-i18n="cmms.screenshot"
+                >Screenshot</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4: Schedule -->
+        <div
+          class="h-card bg-white border border-gray-200 rounded-[20px] overflow-hidden"
+          data-aos="fade-up"
+          data-aos-delay="0"
+        >
+          <div class="flex items-start gap-4 pt-7 px-7">
+            <div
+              class="w-12 h-12 rounded-[14px] flex items-center justify-center flex-shrink-0 bg-blue-pale"
+            >
+              <svg
+                class="w-[22px] h-[22px] stroke-blue-primary fill-none"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                <line x1="16" y1="2" x2="16" y2="6" />
+                <line x1="8" y1="2" x2="8" y2="6" />
+                <line x1="3" y1="10" x2="21" y2="10" />
+              </svg>
+            </div>
+            <div>
+              <div
+                class="text-[10px] font-bold text-gray-400 tracking-[0.12em] uppercase mb-1"
+                data-i18n="cmms.card.num4"
+              >
+                Highlight 04
+              </div>
+              <div
+                class="text-[17px] font-bold text-gray-800 leading-[1.3]"
+                data-i18n="cmms.card.title4"
+              >
+                Schedule Management
+              </div>
+            </div>
+          </div>
+          <p
+            class="px-7 pt-3.5 text-[13.5px] text-gray-600 leading-[1.7]"
+            data-i18n="cmms.card.desc4"
+          >
+            Unified scheduling engine connected to both Work Orders and Trouble
+            Reports. Preventive maintenance schedules auto-generate WOs on due
+            dates, while Trouble Reports can be slotted for tracked resolution
+            timelines.
+          </p>
+          <div class="flex flex-wrap gap-2 px-7 py-4">
+            <span
+              class="text-[10.5px] font-semibold px-3 py-1 rounded-full border border-blue-pale2 text-blue-primary bg-blue-pale"
+              data-i18n="cmms.tag.autowo"
+              >Auto WO Generation</span
+            >
+            <span
+              class="text-[10.5px] font-semibold px-3 py-1 rounded-full border border-blue-pale2 text-blue-primary bg-blue-pale"
+              data-i18n="cmms.tag.calendar"
+              >Calendar View</span
+            >
+            <span
+              class="text-[10.5px] font-semibold px-3 py-1 rounded-full border border-blue-pale2 text-blue-primary bg-blue-pale"
+              data-i18n="cmms.tag.alerts"
+              >Deadline Alerts</span
+            >
+          </div>
+          <div
+            class="mx-5 mb-5 rounded-xl border border-gray-200 bg-gray-50 aspect-video flex items-center justify-center"
+          >
+            <div class="flex flex-col items-center gap-2.5 text-gray-400">
+              <svg
+                class="w-8 h-8 stroke-[#7ac5ff] fill-none opacity-60"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+              >
+                <rect x="3" y="4" width="18" height="18" rx="2" />
+                <line x1="16" y1="2" x2="16" y2="6" />
+                <line x1="8" y1="2" x2="8" y2="6" />
+                <line x1="3" y1="10" x2="21" y2="10" />
+              </svg>
+              <span
+                class="text-[11px] font-semibold tracking-[0.06em] uppercase"
+                data-i18n="cmms.screenshot"
+                >Screenshot</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5: Equipment -->
+        <div
+          class="h-card bg-white border border-gray-200 rounded-[20px] overflow-hidden"
+          data-aos="fade-up"
+          data-aos-delay="60"
+        >
+          <div class="flex items-start gap-4 pt-7 px-7">
+            <div
+              class="w-12 h-12 rounded-[14px] flex items-center justify-center flex-shrink-0 bg-amber-50"
+            >
+              <svg
+                class="w-[22px] h-[22px] stroke-amber-600 fill-none"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
+                />
+              </svg>
+            </div>
+            <div>
+              <div
+                class="text-[10px] font-bold text-gray-400 tracking-[0.12em] uppercase mb-1"
+                data-i18n="cmms.card.num5"
+              >
+                Highlight 05
+              </div>
+              <div
+                class="text-[17px] font-bold text-gray-800 leading-[1.3]"
+                data-i18n="cmms.card.title5"
+              >
+                Equipment List → Work Order
+              </div>
+            </div>
+          </div>
+          <p
+            class="px-7 pt-3.5 text-[13.5px] text-gray-600 leading-[1.7]"
+            data-i18n="cmms.card.desc5"
+          >
+            Full equipment registry linked directly to Work Orders. Each asset
+            carries its complete history of maintenance activities,
+            certifications, and trouble reports. Technicians can look up any
+            equipment and immediately see its full service record.
+          </p>
+          <div class="flex flex-wrap gap-2 px-7 py-4">
+            <span
+              class="text-[10.5px] font-semibold px-3 py-1 rounded-full border border-blue-pale2 text-blue-primary bg-blue-pale"
+              data-i18n="cmms.tag.registry"
+              >Asset Registry</span
+            >
+            <span
+              class="text-[10.5px] font-semibold px-3 py-1 rounded-full border border-blue-pale2 text-blue-primary bg-blue-pale"
+              data-i18n="cmms.tag.history"
+              >Service History</span
+            >
+            <span
+              class="text-[10.5px] font-semibold px-3 py-1 rounded-full border border-blue-pale2 text-blue-primary bg-blue-pale"
+              data-i18n="cmms.tag.wolinkage"
+              >WO Linkage</span
+            >
+          </div>
+          <div
+            class="mx-5 mb-5 rounded-xl border border-gray-200 bg-gray-50 aspect-video flex items-center justify-center"
+          >
+            <div class="flex flex-col items-center gap-2.5 text-gray-400">
+              <svg
+                class="w-8 h-8 stroke-[#7ac5ff] fill-none opacity-60"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+              >
+                <circle cx="12" cy="12" r="3" />
+                <path d="M12 2v2M12 20v2M2 12h2M20 12h2" />
+              </svg>
+              <span
+                class="text-[11px] font-semibold tracking-[0.06em] uppercase"
+                data-i18n="cmms.screenshot"
+                >Screenshot</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 6: Site Choice -->
+        <div
+          class="h-card bg-white border border-gray-200 rounded-[20px] overflow-hidden"
+          data-aos="fade-up"
+          data-aos-delay="120"
+        >
+          <div class="flex items-start gap-4 pt-7 px-7">
+            <div
+              class="w-12 h-12 rounded-[14px] flex items-center justify-center flex-shrink-0 bg-emerald-50"
+            >
+              <svg
+                class="w-[22px] h-[22px] stroke-emerald-600 fill-none"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+            </div>
+            <div>
+              <div
+                class="text-[10px] font-bold text-gray-400 tracking-[0.12em] uppercase mb-1"
+                data-i18n="cmms.card.num6"
+              >
+                Highlight 06
+              </div>
+              <div
+                class="text-[17px] font-bold text-gray-800 leading-[1.3]"
+                data-i18n="cmms.card.title6"
+              >
+                Site Choice & User Role Linkage
+              </div>
+            </div>
+          </div>
+          <p
+            class="px-7 pt-3.5 text-[13.5px] text-gray-600 leading-[1.7]"
+            data-i18n="cmms.card.desc6"
+          >
+            Multi-site support with site-scoped data visibility. Each user is
+            assigned to one or more sites and their data access is automatically
+            scoped. A technician at Site A cannot see or modify data belonging
+            to Site B unless explicitly authorized.
+          </p>
+          <div class="flex flex-wrap gap-2 px-7 py-4">
+            <span
+              class="text-[10.5px] font-semibold px-3 py-1 rounded-full border border-blue-pale2 text-blue-primary bg-blue-pale"
+              data-i18n="cmms.tag.multisite"
+              >Multi-site</span
+            >
+            <span
+              class="text-[10.5px] font-semibold px-3 py-1 rounded-full border border-blue-pale2 text-blue-primary bg-blue-pale"
+              data-i18n="cmms.tag.scoping"
+              >Data Scoping</span
+            >
+            <span
+              class="text-[10.5px] font-semibold px-3 py-1 rounded-full border-emerald-200 text-emerald-800 bg-emerald-50 border"
+              data-i18n="cmms.tag.access"
+              >Access Control</span
+            >
+          </div>
+          <div
+            class="mx-5 mb-5 rounded-xl border border-gray-200 bg-gray-50 aspect-video flex items-center justify-center"
+          >
+            <div class="flex flex-col items-center gap-2.5 text-gray-400">
+              <svg
+                class="w-8 h-8 stroke-[#7ac5ff] fill-none opacity-60"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+              >
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+              <span
+                class="text-[11px] font-semibold tracking-[0.06em] uppercase"
+                data-i18n="cmms.screenshot"
+                >Screenshot</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 7: Role -->
+        <div
+          class="h-card bg-white border border-gray-200 rounded-[20px] overflow-hidden"
+          data-aos="fade-up"
+          data-aos-delay="0"
+        >
+          <div class="flex items-start gap-4 pt-7 px-7">
+            <div
+              class="w-12 h-12 rounded-[14px] flex items-center justify-center flex-shrink-0 bg-teal-50"
+            >
+              <svg
+                class="w-[22px] h-[22px] stroke-teal-600 fill-none"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                <path d="M7 11V7a5 5 0 0110 0v4" />
+              </svg>
+            </div>
+            <div>
+              <div
+                class="text-[10px] font-bold text-gray-400 tracking-[0.12em] uppercase mb-1"
+                data-i18n="cmms.card.num7"
+              >
+                Highlight 07
+              </div>
+              <div
+                class="text-[17px] font-bold text-gray-800 leading-[1.3]"
+                data-i18n="cmms.card.title7"
+              >
+                Role-Based Authority
+              </div>
+            </div>
+          </div>
+          <p
+            class="px-7 pt-3.5 text-[13.5px] text-gray-600 leading-[1.7]"
+            data-i18n="cmms.card.desc7"
+          >
+            Granular permission system across all modules. Roles are defined at
+            the system level — Admin, Supervisor, Technician, Approver, and
+            Viewer — each with precise access rights per module. Permissions
+            cascade from site level down to individual user actions.
+          </p>
+          <div class="flex flex-wrap gap-2 px-7 py-4">
+            <span
+              class="text-[10.5px] font-semibold px-3 py-1 rounded-full border border-blue-pale2 text-blue-primary bg-blue-pale"
+              data-i18n="cmms.role.admin"
+              >Admin</span
+            >
+            <span
+              class="text-[10.5px] font-semibold px-3 py-1 rounded-full border border-blue-pale2 text-blue-primary bg-blue-pale"
+              data-i18n="cmms.role.supervisor"
+              >Supervisor</span
+            >
+            <span
+              class="text-[10.5px] font-semibold px-3 py-1 rounded-full border border-blue-pale2 text-blue-primary bg-blue-pale"
+              data-i18n="cmms.role.tech"
+              >Technician</span
+            >
+            <span
+              class="text-[10.5px] font-semibold px-3 py-1 rounded-full border-amber-200 text-amber-900 bg-amber-50 border"
+              data-i18n="cmms.role.approver"
+              >Approver</span
+            >
+          </div>
+          <div
+            class="mx-5 mb-5 rounded-xl border border-gray-200 bg-gray-50 aspect-video flex items-center justify-center"
+          >
+            <div class="flex flex-col items-center gap-2.5 text-gray-400">
+              <svg
+                class="w-8 h-8 stroke-[#7ac5ff] fill-none opacity-60"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+              >
+                <rect x="3" y="11" width="18" height="11" rx="2" />
+                <path d="M7 11V7a5 5 0 0110 0v4" />
+              </svg>
+              <span
+                class="text-[11px] font-semibold tracking-[0.06em] uppercase"
+                data-i18n="cmms.screenshot"
+                >Screenshot</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 8: Digital Approval -->
+        <div
+          class="h-card bg-white border border-gray-200 rounded-[20px] overflow-hidden"
+          data-aos="fade-up"
+          data-aos-delay="60"
+        >
+          <div class="flex items-start gap-4 pt-7 px-7">
+            <div
+              class="w-12 h-12 rounded-[14px] flex items-center justify-center flex-shrink-0 bg-amber-50"
+            >
+              <svg
+                class="w-[22px] h-[22px] stroke-amber-600 fill-none"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+            </div>
+            <div>
+              <div
+                class="text-[10px] font-bold text-gray-400 tracking-[0.12em] uppercase mb-1"
+                data-i18n="cmms.card.num8"
+              >
+                Highlight 08
+              </div>
+              <div
+                class="text-[17px] font-bold text-gray-800 leading-[1.3]"
+                data-i18n="cmms.card.title8"
+              >
+                Digital Approval System
+              </div>
+            </div>
+          </div>
+          <p
+            class="px-7 pt-3.5 text-[13.5px] text-gray-600 leading-[1.7]"
+            data-i18n="cmms.card.desc8"
+          >
+            End-to-end digital approval workflow linked to all major system
+            actions — WO creation, WO closure, Trouble Report escalation,
+            Certification issuance, and Schedule changes. Multi-level approvals
+            with timestamped signatures replace paper-based sign-off entirely.
+          </p>
+          <div class="flex flex-wrap gap-2 px-7 py-4">
+            <span
+              class="text-[10.5px] font-semibold px-3 py-1 rounded-full border-amber-200 text-amber-900 bg-amber-50 border"
+              data-i18n="cmms.tag.multilevel"
+              >Multi-level</span
+            >
+            <span
+              class="text-[10.5px] font-semibold px-3 py-1 rounded-full border-amber-200 text-amber-900 bg-amber-50 border"
+              data-i18n="cmms.tag.timestamped"
+              >Timestamped</span
+            >
+            <span
+              class="text-[10.5px] font-semibold px-3 py-1 rounded-full border-amber-200 text-amber-900 bg-amber-50 border"
+              data-i18n="cmms.tag.paperless"
+              >Paperless</span
+            >
+            <span
+              class="text-[10.5px] font-semibold px-3 py-1 rounded-full border border-blue-pale2 text-blue-primary bg-blue-pale"
+              data-i18n="cmms.tag.audit"
+              >Audit Trail</span
+            >
+          </div>
+          <div
+            class="mx-5 mb-5 rounded-xl border border-gray-200 bg-gray-50 aspect-video flex items-center justify-center"
+          >
+            <div class="flex flex-col items-center gap-2.5 text-gray-400">
+              <svg
+                class="w-8 h-8 stroke-[#7ac5ff] fill-none opacity-60"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+              >
+                <polyline points="20 6 9 17 4 12" />
+                <circle cx="12" cy="12" r="10" />
+              </svg>
+              <span
+                class="text-[11px] font-semibold tracking-[0.06em] uppercase"
+                data-i18n="cmms.screenshot"
+                >Screenshot</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ══════════════════════════════════════
+         PROCESS FLOW
+    ══════════════════════════════════════ -->
+    <section class="py-20 px-8 md:px-20 bg-gray-50">
+      <div data-aos="fade-up">
+        <div
+          class="section-badge-grad inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-[11px] font-bold text-white tracking-[0.08em] uppercase mb-4"
+        >
+          <svg
+            width="12"
+            height="12"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+          >
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+          <span data-i18n="cmms.flow.badge">End-to-End Workflow</span>
+        </div>
+        <h2
+          class="text-[clamp(26px,3vw,40px)] font-extrabold text-blue-primary tracking-tight leading-[1.15] mb-3.5"
+        >
+          <span data-i18n="cmms.flow.title1">Process</span>
+          <span class="text-gradient-blue" data-i18n="cmms.flow.title2"
+            >Flow</span
+          >
+        </h2>
+        <p
+          class="text-[15px] text-gray-600 leading-[1.75] max-w-[600px] mb-12 font-normal"
+          data-i18n="cmms.flow.desc"
+        >
+          From a fault on the floor to a closed and digitally approved work
+          order — see how the system handles every step automatically.
+        </p>
+      </div>
+
+      <div class="mt-12">
+        <!-- Step 1 -->
+        <div
+          class="flow-step grid gap-x-5"
+          style="grid-template-columns: 56px 1fr"
+          data-aos="fade-up"
+          data-aos-delay="0"
+        >
+          <div class="flex flex-col items-center">
+            <div
+              class="flow-dot-grad w-12 h-12 rounded-full flex items-center justify-center text-white font-extrabold text-[15px] flex-shrink-0 relative z-10"
+            >
+              1
+            </div>
+            <div class="flow-line"></div>
+          </div>
+          <div class="pt-1 pb-10">
+            <div
+              class="text-[17px] font-bold text-gray-800 mb-2"
+              data-i18n="cmms.step1.title"
+            >
+              Field Report Submitted
+            </div>
+            <div
+              class="text-sm text-gray-600 leading-[1.7] max-w-[620px]"
+              data-i18n="cmms.step1.desc"
+            >
+              A technician or operator submits a Trouble Report via CMMS,
+              describing the fault, affected equipment, and site. The report is
+              time-stamped and assigned a unique reference number automatically.
+            </div>
+            <div class="flex flex-wrap gap-2 mt-3.5">
+              <span
+                class="text-[11px] font-semibold px-3 py-1 rounded-full bg-blue-pale text-blue-primary border border-blue-pale2"
+                data-i18n="cmms.step1.p1"
+                >Trouble Report Module</span
+              >
+              <span
+                class="text-[11px] font-semibold px-3 py-1 rounded-full bg-blue-pale text-blue-primary border border-blue-pale2"
+                data-i18n="cmms.step1.p2"
+                >Equipment Registry</span
+              >
+              <span
+                class="text-[11px] font-semibold px-3 py-1 rounded-full bg-blue-pale text-blue-primary border border-blue-pale2"
+                data-i18n="cmms.step1.p3"
+                >Site Scope</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div
+          class="flow-step grid gap-x-5"
+          style="grid-template-columns: 56px 1fr"
+          data-aos="fade-up"
+          data-aos-delay="80"
+        >
+          <div class="flex flex-col items-center">
+            <div
+              class="flow-dot-grad w-12 h-12 rounded-full flex items-center justify-center text-white font-extrabold text-[15px] flex-shrink-0 relative z-10"
+            >
+              2
+            </div>
+            <div class="flow-line"></div>
+          </div>
+          <div class="pt-1 pb-10">
+            <div
+              class="text-[17px] font-bold text-gray-800 mb-2"
+              data-i18n="cmms.step2.title"
+            >
+              Supervisor Review & Work Order Creation
+            </div>
+            <div
+              class="text-sm text-gray-600 leading-[1.7] max-w-[620px]"
+              data-i18n="cmms.step2.desc"
+            >
+              The Supervisor receives a notification, reviews the report, and
+              creates a formal Work Order — selecting the type (Corrective,
+              Preventive, Certification) and assigning a technician based on
+              skill and availability.
+            </div>
+            <div class="flex flex-wrap gap-2 mt-3.5">
+              <span
+                class="text-[11px] font-semibold px-3 py-1 rounded-full bg-blue-pale text-blue-primary border border-blue-pale2"
+                data-i18n="cmms.step2.p1"
+                >Work Order Module</span
+              >
+              <span
+                class="text-[11px] font-semibold px-3 py-1 rounded-full bg-blue-pale text-blue-primary border border-blue-pale2"
+                data-i18n="cmms.step2.p2"
+                >User List</span
+              >
+              <span
+                class="text-[11px] font-semibold px-3 py-1 rounded-full bg-blue-pale text-blue-primary border border-blue-pale2"
+                data-i18n="cmms.step2.p3"
+                >Role Authority</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div
+          class="flow-step grid gap-x-5"
+          style="grid-template-columns: 56px 1fr"
+          data-aos="fade-up"
+          data-aos-delay="160"
+        >
+          <div class="flex flex-col items-center">
+            <div
+              class="flow-dot-grad w-12 h-12 rounded-full flex items-center justify-center text-white font-extrabold text-[15px] flex-shrink-0 relative z-10"
+            >
+              3
+            </div>
+            <div class="flow-line"></div>
+          </div>
+          <div class="pt-1 pb-10">
+            <div
+              class="text-[17px] font-bold text-gray-800 mb-2"
+              data-i18n="cmms.step3.title"
+            >
+              Schedule Assignment
+            </div>
+            <div
+              class="text-sm text-gray-600 leading-[1.7] max-w-[620px]"
+              data-i18n="cmms.step3.desc"
+            >
+              The WO is placed on the maintenance schedule with a target
+              completion date. The system checks for conflicts with existing
+              preventive maintenance windows and flags overlaps automatically.
+            </div>
+            <div class="flex flex-wrap gap-2 mt-3.5">
+              <span
+                class="text-[11px] font-semibold px-3 py-1 rounded-full bg-blue-pale text-blue-primary border border-blue-pale2"
+                data-i18n="cmms.step3.p1"
+                >Schedule Module</span
+              >
+              <span
+                class="text-[11px] font-semibold px-3 py-1 rounded-full bg-blue-pale text-blue-primary border border-blue-pale2"
+                data-i18n="cmms.step3.p2"
+                >Preventive Calendar</span
+              >
+              <span
+                class="text-[11px] font-semibold px-3 py-1 rounded-full bg-blue-pale text-blue-primary border border-blue-pale2"
+                data-i18n="cmms.step3.p3"
+                >Conflict Detection</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div
+          class="flow-step grid gap-x-5"
+          style="grid-template-columns: 56px 1fr"
+          data-aos="fade-up"
+          data-aos-delay="240"
+        >
+          <div class="flex flex-col items-center">
+            <div
+              class="flow-dot-grad w-12 h-12 rounded-full flex items-center justify-center text-white font-extrabold text-[15px] flex-shrink-0 relative z-10"
+            >
+              4
+            </div>
+            <div class="flow-line"></div>
+          </div>
+          <div class="pt-1 pb-10">
+            <div
+              class="text-[17px] font-bold text-gray-800 mb-2"
+              data-i18n="cmms.step4.title"
+            >
+              Execution & Progress Update
+            </div>
+            <div
+              class="text-sm text-gray-600 leading-[1.7] max-w-[620px]"
+              data-i18n="cmms.step4.desc"
+            >
+              The assigned technician updates the WO in real time — logging
+              labor hours, findings, parts used, and photos. The equipment's
+              service record updates simultaneously. All actions are logged
+              against the technician's user profile.
+            </div>
+            <div class="flex flex-wrap gap-2 mt-3.5">
+              <span
+                class="text-[11px] font-semibold px-3 py-1 rounded-full bg-blue-pale text-blue-primary border border-blue-pale2"
+                data-i18n="cmms.step4.p1"
+                >Equipment Log</span
+              >
+              <span
+                class="text-[11px] font-semibold px-3 py-1 rounded-full bg-blue-pale text-blue-primary border border-blue-pale2"
+                data-i18n="cmms.step4.p2"
+                >Technician Profile</span
+              >
+              <span
+                class="text-[11px] font-semibold px-3 py-1 rounded-full bg-blue-pale text-blue-primary border border-blue-pale2"
+                data-i18n="cmms.step4.p3"
+                >Real-time Update</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 5 -->
+        <div
+          class="flow-step grid gap-x-5"
+          style="grid-template-columns: 56px 1fr"
+          data-aos="fade-up"
+          data-aos-delay="320"
+        >
+          <div class="flex flex-col items-center">
+            <div
+              class="flow-dot-grad w-12 h-12 rounded-full flex items-center justify-center text-white font-extrabold text-[15px] flex-shrink-0 relative z-10"
+            >
+              5
+            </div>
+          </div>
+          <div class="pt-1 pb-10">
+            <div
+              class="text-[17px] font-bold text-gray-800 mb-2"
+              data-i18n="cmms.step5.title"
+            >
+              Digital Approval & WO Closure
+            </div>
+            <div
+              class="text-sm text-gray-600 leading-[1.7] max-w-[620px]"
+              data-i18n="cmms.step5.desc"
+            >
+              Upon completion, the WO is submitted for approval. The Supervisor
+              reviews and routes to the Approver for final digital sign-off.
+              Multi-level approvals are captured with timestamps in a
+              tamper-proof audit trail. The Trouble Report is marked resolved
+              and permanently linked to the closed WO.
+            </div>
+            <div class="flex flex-wrap gap-2 mt-3.5">
+              <span
+                class="text-[11px] font-semibold px-3 py-1 rounded-full bg-blue-pale text-blue-primary border border-blue-pale2"
+                data-i18n="cmms.step5.p1"
+                >Digital Approval</span
+              >
+              <span
+                class="text-[11px] font-semibold px-3 py-1 rounded-full bg-blue-pale text-blue-primary border border-blue-pale2"
+                data-i18n="cmms.step5.p2"
+                >Audit Trail</span
+              >
+              <span
+                class="text-[11px] font-semibold px-3 py-1 rounded-full bg-blue-pale text-blue-primary border border-blue-pale2"
+                data-i18n="cmms.step5.p3"
+                >TR Closure</span
+              >
+              <span
+                class="text-[11px] font-semibold px-3 py-1 rounded-full bg-blue-pale text-blue-primary border border-blue-pale2"
+                data-i18n="cmms.step5.p4"
+                >Equipment Update</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         CTA
+    ══════════════════════════════════════ -->
+    <section
+      class="cta-section relative py-24 px-8 md:px-20 text-center overflow-hidden bg-hero-gradient"
+    >
+      <div
+        class="cta-blob-1 absolute w-[400px] h-[400px] rounded-full -top-24 -right-24"
+      ></div>
+      <div
+        class="cta-blob-2 absolute w-[300px] h-[300px] rounded-full -bottom-20 -left-16"
+      ></div>
+
+      <div data-aos="fade-up" class="relative z-10">
+        <h2
+          class="text-[clamp(28px,4vw,48px)] font-extrabold text-white tracking-tight mb-4"
+        >
+          <span data-i18n="cmms.cta.title1">Ready to Optimize Your</span><br />
+          <span class="text-gradient-light" data-i18n="cmms.cta.title2"
+            >MEP Maintenance?</span
+          >
+        </h2>
+        <p
+          class="text-base text-white/75 max-w-[440px] mx-auto mb-10 leading-[1.7]"
+          data-i18n="cmms.cta.desc"
+        >
+          Connect with us to learn how CMMS can be deployed for your facility —
+          tailored to your team's scale and workflow.
+        </p>
+        <div class="flex gap-4 justify-center flex-wrap">
+          <a
+            href="../index.html#contact"
+            class="btn-white inline-flex items-center gap-2.5 px-8 py-3.5 bg-white text-blue-primary rounded-full font-bold text-sm no-underline"
+          >
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 010 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L4.91 7.91a16 16 0 006.18 6.18l1.27-.34a2 2 0 012.11.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"
+              />
+            </svg>
+            <span data-i18n="cmms.cta.btn1">Contact Us</span>
+          </a>
+          <a
+            href="../index.html"
+            class="btn-ghost inline-flex items-center gap-2.5 px-8 py-3.5 bg-white/10 text-white rounded-full font-semibold text-sm no-underline border border-white/25"
+          >
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+              <polyline points="9 22 9 12 15 12 15 22" />
+            </svg>
+            <span data-i18n="cmms.cta.btn2">Back to Homepage</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         FOOTER
+    ══════════════════════════════════════ -->
+    <footer
+      class="px-8 md:px-20 py-7 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-gray-200 bg-white"
+    >
+      <div class="flex items-center gap-2.5">
+        <div class="footer-brand-icon w-7 h-7 rounded-[7px]"></div>
+        <span
+          class="text-[12.5px] text-gray-400 font-medium"
+          data-i18n="cmms.footer.copy"
+          >© 2025 PT Sumber Sarana Solusindo. All rights reserved.</span
+        >
+      </div>
+      <div
+        class="text-[11px] text-gray-400 font-semibold tracking-[0.06em] px-3 py-1 border border-gray-200 rounded-full"
+      >
+        CMMS · MEP Platform · v2.0
+      </div>
+    </footer>
+
+    <!-- AOS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <!-- CountUp.js -->
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/gh/lekoala/formidable-elements@master/dist/count-up.min.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        AOS.init({
+          duration: 650,
+          easing: "ease-out-cubic",
+          once: true,
+          offset: 50,
+        });
+
+        const statsEl = document.querySelector(".stats-strip");
+        if (!statsEl) {
+          console.log("stats-strip not found");
+          return;
+        }
+
+        let fired = false;
+
+        const obs = new IntersectionObserver(
+          (entries) => {
+            if (entries[0].isIntersecting && !fired) {
+              fired = true;
+
+              document.querySelectorAll(".countup").forEach((el) => {
+                const target = parseInt(el.dataset.target || "0");
+                const suffix = el.dataset.suffix || "";
+
+                const counter = new CountUp(el, target, {
+                  duration: 2,
+                  suffix: suffix,
+                  useEasing: true,
+                });
+
+                if (!counter.error) {
+                  counter.start();
+                } else {
+                  console.error(counter.error);
+                }
+              });
+
+              obs.disconnect();
+            }
+          },
+          { threshold: 0.3 },
+        );
+
+        obs.observe(statsEl);
+      });
+    </script>
+  </body>
+</html>
