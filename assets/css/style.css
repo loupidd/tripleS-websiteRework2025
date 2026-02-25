@@ -1377,19 +1377,29 @@ nav {
   opacity: 1 !important;
 }
 
-/* ── HERO WAVE ── */
-.hero-wave {
-  position: absolute;
-  inset: 0;
+/* ── CSS VARIABLES ── */
+:root {
+  --blue-primary: #0061ae;
+  --blue-mid: #0f5f98;
+  --blue-light: #7ac5ff;
+  --blue-dark: #0f3a5f;
+  --blue-pale: #ebf5ff;
+  --blue-pale2: #d6ecff;
+}
+
+/* ── HERO SECTION — blue background only here ── */
+.hero-section {
+  position: relative;
   background: linear-gradient(
     135deg,
     var(--blue-primary) 0%,
     var(--blue-mid) 50%,
     var(--blue-light) 100%
   );
-  clip-path: ellipse(120% 60% at 50% 100%);
+  overflow: hidden;
 }
 
+/* dot overlay */
 .hero-bg-dots {
   position: absolute;
   inset: 0;
@@ -1399,7 +1409,211 @@ nav {
     transparent 1px
   );
   background-size: 32px 32px;
-  clip-path: ellipse(120% 60% at 50% 100%);
+  pointer-events: none;
+}
+
+/* decorative blobs */
+.hero-blob-1 {
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.08) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+.hero-blob-2 {
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.06) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+/* elliptical white curve at the bottom of the hero */
+.hero-section::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: #ffffff;
+  clip-path: ellipse(60% 100% at 50% 100%);
+  z-index: 1;
+}
+
+/* stats strip sits above the ::after curve */
+.stats-strip {
+  position: relative;
+  z-index: 10;
+}
+
+/* hero content sits above decorative layers */
+.hero-content {
+  position: relative;
+  z-index: 10;
+}
+
+/* ── EVERYTHING BELOW HERO IS WHITE ── */
+body {
+  background: #ffffff;
+}
+
+/* ── GRADIENT TEXT UTILITIES ── */
+.text-gradient-blue {
+  background: linear-gradient(90deg, var(--blue-primary), var(--blue-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.text-gradient-light {
+  background: linear-gradient(90deg, #ffffff, #a8d8ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── SECTION BADGE ── */
+.section-badge-grad {
+  background: linear-gradient(135deg, var(--blue-primary), var(--blue-mid));
+}
+
+/* ── STAT NUMBER ── */
+.stat-number {
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(28px, 3vw, 40px);
+  font-weight: 800;
+  color: var(--blue-primary);
+  line-height: 1.1;
+  margin-bottom: 6px;
+}
+
+/* ── CARD HOVER ── */
+.h-card {
+  transition:
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+.h-card:hover {
+  box-shadow: 0 12px 40px rgba(0, 97, 174, 0.12);
+  transform: translateY(-3px);
+}
+
+/* ── FLOW STEP ── */
+.flow-dot-grad {
+  background: linear-gradient(135deg, var(--blue-primary), var(--blue-mid));
+  box-shadow: 0 4px 16px rgba(0, 97, 174, 0.35);
+}
+.flow-line {
+  width: 2px;
+  flex: 1;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 97, 174, 0.3),
+    rgba(122, 197, 255, 0.1)
+  );
+  margin: 6px auto 0;
+}
+
+/* ── NAVBAR (transparent → white on scroll) ── */
+#navbar {
+  background: transparent;
+}
+#navbar.scrolled {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 2px 20px rgba(0, 97, 174, 0.08);
+}
+
+/* ── CTA SECTION ── */
+.cta-section {
+  background: linear-gradient(
+    135deg,
+    var(--blue-primary) 0%,
+    var(--blue-mid) 60%,
+    var(--blue-dark) 100%
+  );
+}
+.cta-blob-1 {
+  background: radial-gradient(
+    circle,
+    rgba(122, 197, 255, 0.15) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+.cta-blob-2 {
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.06) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+/* ── CTA BUTTONS ── */
+.btn-white {
+  transition:
+    box-shadow 0.25s,
+    transform 0.25s;
+}
+.btn-white:hover {
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+.btn-ghost {
+  transition:
+    background 0.25s,
+    transform 0.25s;
+}
+.btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+/* ── MAP WRAPPER ── */
+.map-wrapper {
+  box-shadow: 0 4px 32px rgba(0, 97, 174, 0.07);
+}
+
+/* ── FOOTER BRAND ICON ── */
+.footer-brand-icon {
+  background: linear-gradient(135deg, var(--blue-primary), var(--blue-light));
+}
+
+/* ── DIVIDER ── */
+.divider {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--blue-pale2),
+    transparent
+  );
+  margin: 0 80px;
+}
+
+/* ── BADGE DOT PULSE ── */
+.badge-dot {
+  animation: pulse-dot 2s infinite;
+}
+@keyframes pulse-dot {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* ── MOBILE MENU ── */
+.mobile-menu {
+  display: none;
+}
+.mobile-menu.open {
+  display: block;
 }
 
 /* ── BADGE DOT BLINK ── */
@@ -1651,4 +1865,292 @@ nav {
   .stats-strip-grid {
     grid-template-columns: repeat(2, 1fr) !important;
   }
+}
+
+/* ── CONTACT SECTION WRAPPER ── */
+/* Centering + spacing for the contact section */
+#contact {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px 20px 100px;
+  font-family: "Montserrat", sans-serif;
+  background: #f1f5f9; /* slate-100 to match the card's context */
+}
+
+/* ── Card ── */
+.contact-card {
+  width: 100%;
+  max-width: 960px;
+  background: #1b2340;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.04),
+    0 32px 72px rgba(15, 23, 55, 0.45),
+    0 8px 24px rgba(14, 118, 109, 0.1);
+}
+
+/* Teal glow blob on the info panel */
+.contact-info-panel {
+  position: relative;
+  overflow: hidden;
+}
+.contact-info-panel::before {
+  content: "";
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(
+    circle,
+    rgba(14, 118, 109, 0.2) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+  border-radius: 50%;
+}
+
+/* Section header max-width */
+#contact > .contact-header {
+  width: 100%;
+  max-width: 960px;
+}
+
+/* ── Eyebrow tag ── */
+.contact-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #0e766d;
+  background: rgba(14, 118, 109, 0.09);
+  border: 1px solid rgba(14, 118, 109, 0.22);
+  padding: 5px 14px;
+  border-radius: 100px;
+}
+.contact-eyebrow::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  background: #0e766d;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ── Panel label ── */
+.contact-panel-label {
+  display: block;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #13998e;
+}
+
+/* ── Form inputs ── */
+.contact-input {
+  display: block;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 12px 15px;
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-size: 13.5px;
+  font-weight: 500;
+  transition:
+    border-color 0.2s,
+    background 0.2s;
+  outline: none;
+}
+.contact-input::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+  font-weight: 400;
+}
+.contact-input:focus {
+  border-color: #13998e;
+  background: rgba(19, 153, 142, 0.08);
+}
+
+/* ── Select ── */
+.contact-select {
+  display: block;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 12px 36px 12px 15px;
+  color: rgba(255, 255, 255, 0.35);
+  font-family: "Montserrat", sans-serif;
+  font-size: 13.5px;
+  font-weight: 400;
+  outline: none;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='7' fill='none'%3E%3Cpath d='M1 1l4.5 4.5L10 1' stroke='rgba(255,255,255,0.35)' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  transition: border-color 0.2s;
+}
+.contact-select:focus {
+  border-color: #13998e;
+}
+.contact-select option {
+  background: #1b2340;
+  color: #fff;
+}
+
+/* ── Submit button ── */
+.contact-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #0e766d;
+  color: #fff;
+  border: none;
+  border-radius: 100px;
+  padding: 14px 24px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  letter-spacing: 0.01em;
+  box-shadow: 0 4px 20px rgba(14, 118, 109, 0.4);
+  transition:
+    background 0.2s,
+    transform 0.15s,
+    box-shadow 0.2s;
+}
+.contact-submit:hover {
+  background: #13998e;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 28px rgba(14, 118, 109, 0.5);
+}
+
+/* ── Contact icon tile ── */
+.contact-icon-wrap {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  background: rgba(14, 118, 109, 0.18);
+  border: 1px solid rgba(14, 118, 109, 0.28);
+  border-radius: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #13998e;
+}
+
+/* ── Contact info field label ── */
+.contact-info-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.35);
+  margin-bottom: 2px;
+}
+
+/* ── Quick action buttons ── */
+.contact-btn-wa,
+.contact-btn-call {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 10px 18px;
+  border-radius: 100px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    transform 0.15s,
+    box-shadow 0.15s,
+    background 0.15s;
+}
+.contact-btn-wa {
+  background: #25d366;
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3);
+}
+.contact-btn-wa:hover {
+  background: #1ebe5b;
+  transform: translateY(-1px);
+}
+.contact-btn-call {
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.contact-btn-call:hover {
+  background: rgba(255, 255, 255, 0.13);
+  transform: translateY(-1px);
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+
+footer {
+  font-family: "Montserrat", sans-serif;
+}
+
+.footer-link {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-link:hover {
+  color: #fff;
+}
+
+.footer-social {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.7);
+  transition:
+    background 0.2s,
+    color 0.2s,
+    transform 0.15s;
+  text-decoration: none;
+}
+.footer-social:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.footer-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.12);
+  margin: 40px 0 28px;
+}
+
+.footer-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 100px;
+  padding: 4px 12px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 20px;
 }
