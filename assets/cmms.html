@@ -44,6 +44,9 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
     />
 
+    <!-- i18n Data (load BEFORE navbar.js) -->
+    <script src="../assets/js/data/i18n-data.js"></script>
+
     <!-- Custom CSS — shared with index (one level up) -->
     <link rel="stylesheet" href="../assets/css/style.css" />
   </head>
@@ -134,7 +137,6 @@
               <a
                 href="cmms.html"
                 class="nav-item group relative px-4 py-2.5 text-sm font-semibold text-[#0061ae] transition-all duration-300 rounded-full"
-                data-i18n="nav.cmms"
               >
                 <span class="relative z-10 flex items-center gap-1.5">
                   <span class="relative flex h-1.5 w-1.5">
@@ -145,7 +147,7 @@
                       class="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#7AC5FF]"
                     ></span>
                   </span>
-                  CMMS
+                  <span data-i18n="nav.cmms">CMMS</span>
                 </span>
                 <div
                   class="absolute inset-0 bg-gradient-to-r from-[#7AC5FF]/20 to-[#0061ae]/20 rounded-full"
@@ -317,7 +319,6 @@
               <a
                 href="cmms.html"
                 class="group flex items-center px-4 py-3 text-[#0061ae] bg-[#0061ae]/5 rounded-xl transition-all duration-300"
-                data-i18n="nav.cmms"
               >
                 <div class="flex items-center space-x-3">
                   <span class="relative flex h-2 w-2">
@@ -328,7 +329,7 @@
                       class="relative inline-flex rounded-full h-2 w-2 bg-[#7AC5FF]"
                     ></span>
                   </span>
-                  <span class="font-semibold">CMMS</span>
+                  <span class="font-semibold" data-i18n="nav.cmms">CMMS</span>
                   <span
                     class="ml-1 px-1.5 py-0.5 text-[10px] font-bold rounded-full bg-gradient-to-r from-[#7AC5FF] to-[#0F5F98] text-white leading-none"
                     >App</span
@@ -397,6 +398,7 @@
           </div>
           <div
             class="text-[11px] font-semibold text-gray-400 uppercase tracking-[0.07em]"
+            data-i18n="cmms.stats.equipments"
           >
             Equipments
           </div>
@@ -407,6 +409,7 @@
           </div>
           <div
             class="text-[11px] font-semibold text-gray-400 uppercase tracking-[0.07em]"
+            data-i18n="cmms.stats.maintenance"
           >
             Maintenance Activities
           </div>
@@ -417,6 +420,7 @@
           </div>
           <div
             class="text-[11px] font-semibold text-gray-400 uppercase tracking-[0.07em]"
+            data-i18n="cmms.stats.companies"
           >
             Companies
           </div>
@@ -427,6 +431,7 @@
           </div>
           <div
             class="text-[11px] font-semibold text-gray-400 uppercase tracking-[0.07em]"
+            data-i18n="cmms.stats.workers"
           >
             Workers
           </div>
@@ -1024,39 +1029,28 @@
           <div class="flex flex-wrap gap-2 px-7 py-4">
             <span
               class="text-[10.5px] font-semibold px-3 py-1 rounded-full border border-blue-pale2 text-blue-primary bg-blue-pale"
+              data-i18n="cmms.tag.preventive"
               >Preventive</span
             >
             <span
               class="text-[10.5px] font-semibold px-3 py-1 rounded-full border border-blue-pale2 text-blue-primary bg-blue-pale"
+              data-i18n="cmms.tag.corrective"
               >Corrective</span
             >
             <span
               class="text-[10.5px] font-semibold px-3 py-1 rounded-full border border-blue-pale2 text-blue-primary bg-blue-pale"
+              data-i18n="cmms.tag.certification"
               >Certification</span
             >
             <span
               class="text-[10.5px] font-semibold px-3 py-1 rounded-full border-amber-200 text-amber-900 bg-amber-50 border"
+              data-i18n="cmms.tag.troubleReport"
               >Trouble Report</span
             >
           </div>
           <div
             class="mx-5 mb-5 rounded-xl border border-gray-200 bg-gray-50 aspect-video flex items-center justify-center"
           >
-            <!-- <div class="flex flex-col items-center gap-2.5 text-gray-400">
-              <svg
-                class="w-8 h-8 stroke-[#7ac5ff] fill-none opacity-60"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-              >
-                <rect x="3" y="3" width="18" height="18" rx="2" />
-                <path d="M7 8h10M7 12h10M7 16h6" />
-              </svg>
-              <span
-                class="text-[11px] font-semibold tracking-[0.06em] uppercase"
-                >Screenshot</span
-              >
-            </div> Place Holder-->
-
             <img src="./img/cmms-img/work-order-management.webp" alt="" />
           </div>
         </div>
@@ -1088,15 +1082,22 @@
             <div>
               <div
                 class="text-[10px] font-bold text-gray-400 tracking-[0.12em] uppercase mb-1"
+                data-i18n="cmms.card.num2"
               >
                 Highlight 02
               </div>
-              <div class="text-[17px] font-bold text-gray-800 leading-[1.3]">
+              <div
+                class="text-[17px] font-bold text-gray-800 leading-[1.3]"
+                data-i18n="cmms.card.title2"
+              >
                 Trouble Report → Work Order Link
               </div>
             </div>
           </div>
-          <p class="px-7 pt-3.5 text-[13.5px] text-gray-600 leading-[1.7]">
+          <p
+            class="px-7 pt-3.5 text-[13.5px] text-gray-600 leading-[1.7]"
+            data-i18n="cmms.card.desc2"
+          >
             Any submitted Trouble Report can be directly escalated into a formal
             Work Order. This creates an automatic traceability chain — from the
             field complaint all the way to resolution and sign-off, eliminating
@@ -1105,34 +1106,23 @@
           <div class="flex flex-wrap gap-2 px-7 py-4">
             <span
               class="text-[10.5px] font-semibold px-3 py-1 rounded-full border border-blue-pale2 text-blue-primary bg-blue-pale"
+              data-i18n="cmms.tag.autoEscalation"
               >Auto-escalation</span
             >
             <span
               class="text-[10.5px] font-semibold px-3 py-1 rounded-full border border-blue-pale2 text-blue-primary bg-blue-pale"
+              data-i18n="cmms.tag.traceability"
               >Traceability</span
             >
             <span
               class="text-[10.5px] font-semibold px-3 py-1 rounded-full border border-blue-pale2 text-blue-primary bg-blue-pale"
+              data-i18n="cmms.tag.rootCause"
               >Root Cause Linking</span
             >
           </div>
           <div
             class="mx-5 mb-5 rounded-xl border border-gray-200 bg-gray-50 aspect-video flex items-center justify-center"
           >
-            <!-- <div class="flex flex-col items-center gap-2.5 text-gray-400">
-              <svg
-                class="w-8 h-8 stroke-[#7ac5ff] fill-none opacity-60"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-              >
-                <path d="M13 10V3L4 14h7v7l9-11h-7z" />
-              </svg>
-              <span
-                class="text-[11px] font-semibold tracking-[0.06em] uppercase"
-                >Screenshot</span
-              >
-            </div> -- Placeholder -->
-
             <img src="./img/cmms-img/trouble-report.webp" alt="" />
           </div>
         </div>
@@ -1163,15 +1153,22 @@
             <div>
               <div
                 class="text-[10px] font-bold text-gray-400 tracking-[0.12em] uppercase mb-1"
+                data-i18n="cmms.card.num3"
               >
                 Highlight 03
               </div>
-              <div class="text-[17px] font-bold text-gray-800 leading-[1.3]">
+              <div
+                class="text-[17px] font-bold text-gray-800 leading-[1.3]"
+                data-i18n="cmms.card.title3"
+              >
                 User List &amp; Management
               </div>
             </div>
           </div>
-          <p class="px-7 pt-3.5 text-[13.5px] text-gray-600 leading-[1.7]">
+          <p
+            class="px-7 pt-3.5 text-[13.5px] text-gray-600 leading-[1.7]"
+            data-i18n="cmms.card.desc3"
+          >
             Full user directory with profile management, workload visibility,
             and assignment tracking. Users are tied to specific roles and sites
             ensuring contextually accurate and auditable task assignment.
@@ -1179,34 +1176,23 @@
           <div class="flex flex-wrap gap-2 px-7 py-4">
             <span
               class="text-[10.5px] font-semibold px-3 py-1 rounded-full border border-blue-pale2 text-blue-primary bg-blue-pale"
+              data-i18n="cmms.tag.userProfiles"
               >User Profiles</span
             >
             <span
               class="text-[10.5px] font-semibold px-3 py-1 rounded-full border border-blue-pale2 text-blue-primary bg-blue-pale"
+              data-i18n="cmms.tag.workloadTracking"
               >Workload Tracking</span
             >
             <span
               class="text-[10.5px] font-semibold px-3 py-1 rounded-full border border-blue-pale2 text-blue-primary bg-blue-pale"
+              data-i18n="cmms.tag.assignmentHistory"
               >Assignment History</span
             >
           </div>
           <div
             class="mx-5 mb-5 rounded-xl border border-gray-200 bg-gray-50 aspect-video flex items-center justify-center"
           >
-            <!-- <div class="flex flex-col items-center gap-2.5 text-gray-400">
-              <svg
-                class="w-8 h-8 stroke-[#7ac5ff] fill-none opacity-60"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-              >
-                <circle cx="12" cy="8" r="4" />
-                <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
-              </svg>
-              <span
-                class="text-[11px] font-semibold tracking-[0.06em] uppercase"
-                >Screenshot</span
-              >
-            </div> -- Placeholder -->
             <img src="./img/cmms-img/user-list.webp" alt="" />
           </div>
         </div>
@@ -1237,15 +1223,22 @@
             <div>
               <div
                 class="text-[10px] font-bold text-gray-400 tracking-[0.12em] uppercase mb-1"
+                data-i18n="cmms.card.num4"
               >
                 Highlight 04
               </div>
-              <div class="text-[17px] font-bold text-gray-800 leading-[1.3]">
+              <div
+                class="text-[17px] font-bold text-gray-800 leading-[1.3]"
+                data-i18n="cmms.card.title4"
+              >
                 Schedule Management
               </div>
             </div>
           </div>
-          <p class="px-7 pt-3.5 text-[13.5px] text-gray-600 leading-[1.7]">
+          <p
+            class="px-7 pt-3.5 text-[13.5px] text-gray-600 leading-[1.7]"
+            data-i18n="cmms.card.desc4"
+          >
             Unified scheduling engine connected to both Work Orders and Trouble
             Reports. Preventive maintenance schedules auto-generate WOs on due
             dates, while Trouble Reports can be slotted for tracked resolution
@@ -1254,36 +1247,23 @@
           <div class="flex flex-wrap gap-2 px-7 py-4">
             <span
               class="text-[10.5px] font-semibold px-3 py-1 rounded-full border border-blue-pale2 text-blue-primary bg-blue-pale"
+              data-i18n="cmms.tag.autoWO"
               >Auto WO Generation</span
             >
             <span
               class="text-[10.5px] font-semibold px-3 py-1 rounded-full border border-blue-pale2 text-blue-primary bg-blue-pale"
+              data-i18n="cmms.tag.calendarView"
               >Calendar View</span
             >
             <span
               class="text-[10.5px] font-semibold px-3 py-1 rounded-full border border-blue-pale2 text-blue-primary bg-blue-pale"
+              data-i18n="cmms.tag.deadlineAlerts"
               >Deadline Alerts</span
             >
           </div>
           <div
             class="mx-5 mb-5 rounded-xl border border-gray-200 bg-gray-50 aspect-video flex items-center justify-center"
           >
-            <!-- <div class="flex flex-col items-center gap-2.5 text-gray-400">
-              <svg
-                class="w-8 h-8 stroke-[#7ac5ff] fill-none opacity-60"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-              >
-                <rect x="3" y="4" width="18" height="18" rx="2" />
-                <line x1="16" y1="2" x2="16" y2="6" />
-                <line x1="8" y1="2" x2="8" y2="6" />
-                <line x1="3" y1="10" x2="21" y2="10" />
-              </svg>
-              <span
-                class="text-[11px] font-semibold tracking-[0.06em] uppercase"
-                >Screenshot</span
-              >
-            </div> -- Placeholder -->
             <img src="./img/cmms-img/schedule-management.webp" alt="" />
           </div>
         </div>
@@ -1313,15 +1293,22 @@
             <div>
               <div
                 class="text-[10px] font-bold text-gray-400 tracking-[0.12em] uppercase mb-1"
+                data-i18n="cmms.card.num5"
               >
                 Highlight 05
               </div>
-              <div class="text-[17px] font-bold text-gray-800 leading-[1.3]">
+              <div
+                class="text-[17px] font-bold text-gray-800 leading-[1.3]"
+                data-i18n="cmms.card.title5"
+              >
                 Equipment List → Work Order
               </div>
             </div>
           </div>
-          <p class="px-7 pt-3.5 text-[13.5px] text-gray-600 leading-[1.7]">
+          <p
+            class="px-7 pt-3.5 text-[13.5px] text-gray-600 leading-[1.7]"
+            data-i18n="cmms.card.desc5"
+          >
             Full equipment registry linked directly to Work Orders. Each asset
             carries its complete history of maintenance activities,
             certifications, and trouble reports. Technicians can look up any
@@ -1330,34 +1317,23 @@
           <div class="flex flex-wrap gap-2 px-7 py-4">
             <span
               class="text-[10.5px] font-semibold px-3 py-1 rounded-full border border-blue-pale2 text-blue-primary bg-blue-pale"
+              data-i18n="cmms.tag.assetRegistry"
               >Asset Registry</span
             >
             <span
               class="text-[10.5px] font-semibold px-3 py-1 rounded-full border border-blue-pale2 text-blue-primary bg-blue-pale"
+              data-i18n="cmms.tag.serviceHistory"
               >Service History</span
             >
             <span
               class="text-[10.5px] font-semibold px-3 py-1 rounded-full border border-blue-pale2 text-blue-primary bg-blue-pale"
+              data-i18n="cmms.tag.woLinkage"
               >WO Linkage</span
             >
           </div>
           <div
             class="mx-5 mb-5 rounded-xl border border-gray-200 bg-gray-50 aspect-video flex items-center justify-center"
           >
-            <!-- <div class="flex flex-col items-center gap-2.5 text-gray-400">
-              <svg
-                class="w-8 h-8 stroke-[#7ac5ff] fill-none opacity-60"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-              >
-                <circle cx="12" cy="12" r="3" />
-                <path d="M12 2v2M12 20v2M2 12h2M20 12h2" />
-              </svg>
-              <span
-                class="text-[11px] font-semibold tracking-[0.06em] uppercase"
-                >Screenshot</span
-              >
-            </div>. - Placeholder -->
             <img src="./img/cmms-img/equipment-list.webp" alt="" />
           </div>
         </div>
@@ -1386,15 +1362,22 @@
             <div>
               <div
                 class="text-[10px] font-bold text-gray-400 tracking-[0.12em] uppercase mb-1"
+                data-i18n="cmms.card.num6"
               >
                 Highlight 06
               </div>
-              <div class="text-[17px] font-bold text-gray-800 leading-[1.3]">
+              <div
+                class="text-[17px] font-bold text-gray-800 leading-[1.3]"
+                data-i18n="cmms.card.title6"
+              >
                 Site Choice &amp; User Role Linkage
               </div>
             </div>
           </div>
-          <p class="px-7 pt-3.5 text-[13.5px] text-gray-600 leading-[1.7]">
+          <p
+            class="px-7 pt-3.5 text-[13.5px] text-gray-600 leading-[1.7]"
+            data-i18n="cmms.card.desc6"
+          >
             Multi-site support with site-scoped data visibility. Each user is
             assigned to one or more sites and their data access is automatically
             scoped. A technician at Site A cannot see or modify data belonging
@@ -1403,34 +1386,23 @@
           <div class="flex flex-wrap gap-2 px-7 py-4">
             <span
               class="text-[10.5px] font-semibold px-3 py-1 rounded-full border border-blue-pale2 text-blue-primary bg-blue-pale"
+              data-i18n="cmms.tag.multiSite"
               >Multi-site</span
             >
             <span
               class="text-[10.5px] font-semibold px-3 py-1 rounded-full border border-blue-pale2 text-blue-primary bg-blue-pale"
+              data-i18n="cmms.tag.dataScoping"
               >Data Scoping</span
             >
             <span
               class="text-[10.5px] font-semibold px-3 py-1 rounded-full border-emerald-200 text-emerald-800 bg-emerald-50 border"
+              data-i18n="cmms.tag.accessControl"
               >Access Control</span
             >
           </div>
           <div
             class="mx-5 mb-5 rounded-xl border border-gray-200 bg-gray-50 aspect-video flex items-center justify-center"
           >
-            <!-- <div class="flex flex-col items-center gap-2.5 text-gray-400">
-              <svg
-                class="w-8 h-8 stroke-[#7ac5ff] fill-none opacity-60"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-              >
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
-                <circle cx="12" cy="10" r="3" />
-              </svg>
-              <span
-                class="text-[11px] font-semibold tracking-[0.06em] uppercase"
-                >Screenshot</span
-              >
-            </div> -- Placeholder -->
             <img src="./img/cmms-img/sites-list.webp" alt="" />
           </div>
         </div>
@@ -1459,15 +1431,22 @@
             <div>
               <div
                 class="text-[10px] font-bold text-gray-400 tracking-[0.12em] uppercase mb-1"
+                data-i18n="cmms.card.num7"
               >
                 Highlight 07
               </div>
-              <div class="text-[17px] font-bold text-gray-800 leading-[1.3]">
+              <div
+                class="text-[17px] font-bold text-gray-800 leading-[1.3]"
+                data-i18n="cmms.card.title7"
+              >
                 Role-Based Authority
               </div>
             </div>
           </div>
-          <p class="px-7 pt-3.5 text-[13.5px] text-gray-600 leading-[1.7]">
+          <p
+            class="px-7 pt-3.5 text-[13.5px] text-gray-600 leading-[1.7]"
+            data-i18n="cmms.card.desc7"
+          >
             Granular permission system across all modules. Roles are defined at
             the system level — Admin, Supervisor, Technician, Approver, and
             Viewer — each with precise access rights per module. Permissions
@@ -1494,20 +1473,6 @@
           <div
             class="mx-5 mb-5 rounded-xl border border-gray-200 bg-gray-50 aspect-video flex items-center justify-center"
           >
-            <!-- <div class="flex flex-col items-center gap-2.5 text-gray-400">
-              <svg
-                class="w-8 h-8 stroke-[#7ac5ff] fill-none opacity-60"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-              >
-                <rect x="3" y="11" width="18" height="11" rx="2" />
-                <path d="M7 11V7a5 5 0 0110 0v4" />
-              </svg>
-              <span
-                class="text-[11px] font-semibold tracking-[0.06em] uppercase"
-                >Screenshot</span
-              >
-            </div> -- Placeholder -->
             <img src="./img/cmms-img/role-based-approval.webp" alt="" />
           </div>
         </div>
@@ -1535,15 +1500,22 @@
             <div>
               <div
                 class="text-[10px] font-bold text-gray-400 tracking-[0.12em] uppercase mb-1"
+                data-i18n="cmms.card.num8"
               >
                 Highlight 08
               </div>
-              <div class="text-[17px] font-bold text-gray-800 leading-[1.3]">
+              <div
+                class="text-[17px] font-bold text-gray-800 leading-[1.3]"
+                data-i18n="cmms.card.title8"
+              >
                 Digital Approval System
               </div>
             </div>
           </div>
-          <p class="px-7 pt-3.5 text-[13.5px] text-gray-600 leading-[1.7]">
+          <p
+            class="px-7 pt-3.5 text-[13.5px] text-gray-600 leading-[1.7]"
+            data-i18n="cmms.card.desc8"
+          >
             End-to-end digital approval workflow linked to all major system
             actions — WO creation, WO closure, Trouble Report escalation,
             Certification issuance, and Schedule changes. Multi-level approvals
@@ -1552,38 +1524,28 @@
           <div class="flex flex-wrap gap-2 px-7 py-4">
             <span
               class="text-[10.5px] font-semibold px-3 py-1 rounded-full border-amber-200 text-amber-900 bg-amber-50 border"
+              data-i18n="cmms.tag.multiLevel"
               >Multi-level</span
             >
             <span
               class="text-[10.5px] font-semibold px-3 py-1 rounded-full border-amber-200 text-amber-900 bg-amber-50 border"
+              data-i18n="cmms.tag.timestamped"
               >Timestamped</span
             >
             <span
               class="text-[10.5px] font-semibold px-3 py-1 rounded-full border-amber-200 text-amber-900 bg-amber-50 border"
+              data-i18n="cmms.tag.paperless"
               >Paperless</span
             >
             <span
               class="text-[10.5px] font-semibold px-3 py-1 rounded-full border border-blue-pale2 text-blue-primary bg-blue-pale"
+              data-i18n="cmms.tag.auditTrail"
               >Audit Trail</span
             >
           </div>
           <div
             class="mx-5 mb-5 rounded-xl border border-gray-200 bg-gray-50 aspect-video flex items-center justify-center"
           >
-            <!-- <div class="flex flex-col items-center gap-2.5 text-gray-400">
-              <svg
-                class="w-8 h-8 stroke-[#7ac5ff] fill-none opacity-60"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-              >
-                <polyline points="20 6 9 17 4 12" />
-                <circle cx="12" cy="12" r="10" />
-              </svg>
-              <span
-                class="text-[11px] font-semibold tracking-[0.06em] uppercase"
-                >Screenshot</span
-              >
-            </div> -- Placeholder -->
             <img src="./img/cmms-img/digital-approval.webp" alt="" />
           </div>
         </div>
@@ -1663,14 +1625,17 @@
             <div class="flex flex-wrap gap-2 mt-3.5">
               <span
                 class="text-[11px] font-semibold px-3 py-1 rounded-full bg-blue-pale text-blue-primary border border-blue-pale2"
+                data-i18n="cmms.tag.troubleReportModule"
                 >Trouble Report Module</span
               >
               <span
                 class="text-[11px] font-semibold px-3 py-1 rounded-full bg-blue-pale text-blue-primary border border-blue-pale2"
+                data-i18n="cmms.tag.equipmentRegistry"
                 >Equipment Registry</span
               >
               <span
                 class="text-[11px] font-semibold px-3 py-1 rounded-full bg-blue-pale text-blue-primary border border-blue-pale2"
+                data-i18n="cmms.tag.siteScope"
                 >Site Scope</span
               >
             </div>
@@ -1711,14 +1676,17 @@
             <div class="flex flex-wrap gap-2 mt-3.5">
               <span
                 class="text-[11px] font-semibold px-3 py-1 rounded-full bg-blue-pale text-blue-primary border border-blue-pale2"
+                data-i18n="cmms.tag.workOrderModule"
                 >Work Order Module</span
               >
               <span
                 class="text-[11px] font-semibold px-3 py-1 rounded-full bg-blue-pale text-blue-primary border border-blue-pale2"
+                data-i18n="cmms.tag.userList"
                 >User List</span
               >
               <span
                 class="text-[11px] font-semibold px-3 py-1 rounded-full bg-blue-pale text-blue-primary border border-blue-pale2"
+                data-i18n="cmms.tag.roleAuthority"
                 >Role Authority</span
               >
             </div>
@@ -1758,14 +1726,17 @@
             <div class="flex flex-wrap gap-2 mt-3.5">
               <span
                 class="text-[11px] font-semibold px-3 py-1 rounded-full bg-blue-pale text-blue-primary border border-blue-pale2"
+                data-i18n="cmms.tag.scheduleModule"
                 >Schedule Module</span
               >
               <span
                 class="text-[11px] font-semibold px-3 py-1 rounded-full bg-blue-pale text-blue-primary border border-blue-pale2"
+                data-i18n="cmms.tag.preventiveCalendar"
                 >Preventive Calendar</span
               >
               <span
                 class="text-[11px] font-semibold px-3 py-1 rounded-full bg-blue-pale text-blue-primary border border-blue-pale2"
+                data-i18n="cmms.tag.conflictDetection"
                 >Conflict Detection</span
               >
             </div>
@@ -1806,14 +1777,17 @@
             <div class="flex flex-wrap gap-2 mt-3.5">
               <span
                 class="text-[11px] font-semibold px-3 py-1 rounded-full bg-blue-pale text-blue-primary border border-blue-pale2"
+                data-i18n="cmms.tag.equipmentLog"
                 >Equipment Log</span
               >
               <span
                 class="text-[11px] font-semibold px-3 py-1 rounded-full bg-blue-pale text-blue-primary border border-blue-pale2"
+                data-i18n="cmms.tag.technicianProfile"
                 >Technician Profile</span
               >
               <span
                 class="text-[11px] font-semibold px-3 py-1 rounded-full bg-blue-pale text-blue-primary border border-blue-pale2"
+                data-i18n="cmms.tag.realtimeUpdate"
                 >Real-time Update</span
               >
             </div>
@@ -1854,18 +1828,22 @@
             <div class="flex flex-wrap gap-2 mt-3.5">
               <span
                 class="text-[11px] font-semibold px-3 py-1 rounded-full bg-blue-pale text-blue-primary border border-blue-pale2"
+                data-i18n="cmms.tag.digitalApproval"
                 >Digital Approval</span
               >
               <span
                 class="text-[11px] font-semibold px-3 py-1 rounded-full bg-blue-pale text-blue-primary border border-blue-pale2"
+                data-i18n="cmms.tag.auditTrail"
                 >Audit Trail</span
               >
               <span
                 class="text-[11px] font-semibold px-3 py-1 rounded-full bg-blue-pale text-blue-primary border border-blue-pale2"
+                data-i18n="cmms.tag.trClosure"
                 >TR Closure</span
               >
               <span
                 class="text-[11px] font-semibold px-3 py-1 rounded-full bg-blue-pale text-blue-primary border border-blue-pale2"
+                data-i18n="cmms.tag.equipmentUpdate"
                 >Equipment Update</span
               >
             </div>
@@ -1880,14 +1858,20 @@
     <section id="contact">
       <!-- Header -->
       <div class="contact-header text-center mb-12">
-        <span class="contact-eyebrow">Get In Touch</span>
+        <span class="contact-eyebrow" data-i18n="cmms.contact.eyebrow"
+          >Get In Touch</span
+        >
         <h1
           class="font-montserrat text-4xl md:text-5xl font-extrabold text-slate-800 mt-4 mb-4 leading-tight tracking-tight"
         >
-          Let's Build Something <span style="color: #0e766d">Together</span>
+          <span data-i18n="cmms.contact.title">Let's Build Something</span>
+          <span style="color: #0e766d" data-i18n="cmms.contact.titleHighlight"
+            >Together</span
+          >
         </h1>
         <p
           class="text-slate-500 font-medium text-base max-w-md mx-auto leading-relaxed"
+          data-i18n="cmms.contact.subtitle"
         >
           Ready to optimize your building maintenance? Contact us for a
           professional consultation.
@@ -1902,78 +1886,139 @@
         <div
           class="p-10 md:p-12 border-b md:border-b-0 md:border-r border-white/5"
         >
-          <span class="contact-panel-label">Send a Message</span>
-          <h3 class="text-white font-bold text-2xl mt-2 mb-8">
+          <span class="contact-panel-label" data-i18n="contact.form.sendMessage"
+            >Send a Message</span
+          >
+          <h3
+            class="text-white font-bold text-2xl mt-2 mb-8"
+            data-i18n="cmms.contact.formTitle"
+          >
             Tell us about your project
           </h3>
 
-          <!-- novalidate: we handle validation ourselves -->
           <form id="contactForm" novalidate class="space-y-3">
             <div class="grid grid-cols-2 gap-3">
               <div>
                 <input
                   id="firstName"
                   type="text"
+                  data-i18n-placeholder="contact.form.firstName"
                   placeholder="First Name *"
                   class="contact-input w-full"
                 />
-                <p class="contact-error hidden">Required</p>
+                <p
+                  class="contact-error hidden"
+                  data-i18n="cmms.contact.required"
+                >
+                  Required
+                </p>
               </div>
               <div>
                 <input
                   id="lastName"
                   type="text"
+                  data-i18n-placeholder="contact.form.lastName"
                   placeholder="Last Name *"
                   class="contact-input w-full"
                 />
-                <p class="contact-error hidden">Required</p>
+                <p
+                  class="contact-error hidden"
+                  data-i18n="cmms.contact.required"
+                >
+                  Required
+                </p>
               </div>
             </div>
             <div>
               <input
                 id="email"
                 type="email"
+                data-i18n-placeholder="contact.form.email"
                 placeholder="Email Address *"
                 class="contact-input w-full"
               />
-              <p class="contact-error hidden">Enter a valid email</p>
+              <p
+                class="contact-error hidden"
+                data-i18n="cmms.contact.validEmail"
+              >
+                Enter a valid email
+              </p>
             </div>
             <div>
               <input
                 id="company"
                 type="text"
+                data-i18n-placeholder="contact.form.company"
                 placeholder="Company (optional)"
                 class="contact-input w-full"
               />
             </div>
             <div>
               <select id="service" class="contact-select w-full">
-                <option value="">Select a service (optional)</option>
-                <option value="Preventive Maintenance">
+                <option value="" data-i18n="serviceOptions.default">
+                  Select a service (optional)
+                </option>
+                <option
+                  value="Preventive Maintenance"
+                  data-i18n="serviceOptions.preventiveMaintenance"
+                >
                   Preventive Maintenance
                 </option>
-                <option value="Electrical Services">Electrical Services</option>
-                <option value="HVAC Services">HVAC Services</option>
-                <option value="Access Control Systems">
+                <option
+                  value="Electrical Services"
+                  data-i18n="serviceOptions.electrical"
+                >
+                  Electrical Services
+                </option>
+                <option value="HVAC Services" data-i18n="serviceOptions.hvac">
+                  HVAC Services
+                </option>
+                <option
+                  value="Access Control Systems"
+                  data-i18n="serviceOptions.accessControl"
+                >
                   Access Control Systems
                 </option>
-                <option value="CCTV Installation">CCTV Installation</option>
-                <option value="Website Development">Website Development</option>
-                <option value="Mobile App Development">
+                <option
+                  value="CCTV Installation"
+                  data-i18n="serviceOptions.cctv"
+                >
+                  CCTV Installation
+                </option>
+                <option
+                  value="Website Development"
+                  data-i18n="serviceOptions.websiteDevelopment"
+                >
+                  Website Development
+                </option>
+                <option
+                  value="Mobile App Development"
+                  data-i18n="serviceOptions.mobileDevelopment"
+                >
                   Mobile App Development
                 </option>
-                <option value="CMMS Implementation">CMMS Implementation</option>
-                <option value="Other">Other</option>
+                <option
+                  value="CMMS Implementation"
+                  data-i18n="serviceOptions.cmms"
+                >
+                  CMMS Implementation
+                </option>
+                <option value="Other" data-i18n="serviceOptions.other">
+                  Other
+                </option>
               </select>
             </div>
             <div>
               <textarea
                 id="message"
                 rows="4"
+                data-i18n-placeholder="contact.form.message"
                 placeholder="Tell us about your project requirements... *"
                 class="contact-input w-full resize-none"
               ></textarea>
-              <p class="contact-error hidden">Required</p>
+              <p class="contact-error hidden" data-i18n="cmms.contact.required">
+                Required
+              </p>
             </div>
 
             <button
@@ -1981,7 +2026,9 @@
               onclick="submitToWhatsApp()"
               class="contact-submit w-full mt-1"
             >
-              <span id="submitText">Send via WhatsApp</span>
+              <span id="submitText" data-i18n="cmms.contact.sendWhatsApp"
+                >Send via WhatsApp</span
+              >
               <svg
                 id="submitIcon"
                 class="w-4 h-4"
@@ -2005,8 +2052,13 @@
           class="contact-info-panel p-10 md:p-12 flex flex-col justify-between"
         >
           <div>
-            <span class="contact-panel-label">Contact Information</span>
-            <h3 class="text-white font-bold text-2xl mt-2 mb-8">
+            <span class="contact-panel-label" data-i18n="contact.info.title"
+              >Contact Information</span
+            >
+            <h3
+              class="text-white font-bold text-2xl mt-2 mb-8"
+              data-i18n="cmms.contact.infoTitle"
+            >
               We're here to help
             </h3>
             <div class="space-y-5">
@@ -2027,7 +2079,9 @@
                   </svg>
                 </div>
                 <div>
-                  <p class="contact-info-label">Phone</p>
+                  <p class="contact-info-label" data-i18n="contact.info.phone">
+                    Phone
+                  </p>
                   <p class="text-white/80 text-sm font-medium">
                     +62 811-8860-355
                   </p>
@@ -2051,7 +2105,9 @@
                   </svg>
                 </div>
                 <div>
-                  <p class="contact-info-label">Email</p>
+                  <p class="contact-info-label" data-i18n="contact.info.email">
+                    Email
+                  </p>
                   <p class="text-white/80 text-sm font-medium">
                     sumbersaranasolusindo@gmail.com
                   </p>
@@ -2081,7 +2137,9 @@
                   </svg>
                 </div>
                 <div>
-                  <p class="contact-info-label">Office</p>
+                  <p class="contact-info-label" data-i18n="contact.info.office">
+                    Office
+                  </p>
                   <p class="text-white/80 text-sm font-medium">
                     Jakarta, Indonesia
                   </p>
@@ -2105,8 +2163,13 @@
                   </svg>
                 </div>
                 <div>
-                  <p class="contact-info-label">Business Hours</p>
-                  <p class="text-white/80 text-sm font-medium">
+                  <p class="contact-info-label" data-i18n="contact.info.hours">
+                    Business Hours
+                  </p>
+                  <p
+                    class="text-white/80 text-sm font-medium"
+                    data-i18n="contact.info.hoursDetail.weekday"
+                  >
                     Mon – Fri: 8AM – 6PM WIB
                   </p>
                 </div>
@@ -2117,6 +2180,7 @@
           <div class="mt-8 pt-6 border-t border-white/10">
             <p
               class="text-white/40 text-xs font-semibold uppercase tracking-widest mb-4"
+              data-i18n="contact.info.assistance"
             >
               For immediate assistance
             </p>
@@ -2127,7 +2191,7 @@
                     d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"
                   />
                 </svg>
-                WhatsApp
+                <span data-i18n="contact.info.whatsapp">WhatsApp</span>
               </a>
               <a href="tel:+6283831062662" class="contact-btn-call">
                 <svg
@@ -2143,7 +2207,7 @@
                     d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
                   />
                 </svg>
-                Call Now
+                <span data-i18n="contact.info.callNow">Call Now</span>
               </a>
             </div>
           </div>
@@ -2158,7 +2222,7 @@
     <footer
       class="relative bg-gradient-to-br from-[#0F5F98] via-[#0a4a7a] to-[#071e3d] overflow-hidden"
     >
-      <!-- Wave transition from slate-100 contact bg -->
+      <!-- Wave transition -->
       <div class="w-full -mt-1">
         <svg
           viewBox="0 0 1200 60"
@@ -2207,6 +2271,7 @@
             />
             <p
               class="text-white/60 text-sm leading-relaxed font-medium max-w-xs"
+              data-i18n="company.description"
             >
               Technology-based mechanical & electrical building maintenance,
               backed by advanced CMMS integration.
@@ -2268,16 +2333,41 @@
           <div class="md:col-span-3 md:col-start-6">
             <p
               class="text-white/40 text-xs font-semibold uppercase tracking-widest mb-5"
+              data-i18n="cmms.footer.navigation"
             >
               Navigation
             </p>
             <ul class="space-y-3">
-              <li><a href="#home" class="footer-link">Home</a></li>
-              <li><a href="#cmms" class="footer-link">CMMS</a></li>
-              <li><a href="#projects" class="footer-link">Projects</a></li>
-              <li><a href="#details" class="footer-link">Services</a></li>
-              <li><a href="#about" class="footer-link">About</a></li>
-              <li><a href="#contact" class="footer-link">Contact</a></li>
+              <li>
+                <a href="#home" class="footer-link" data-i18n="nav.home"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a href="#cmms" class="footer-link" data-i18n="nav.cmms"
+                  >CMMS</a
+                >
+              </li>
+              <li>
+                <a href="#projects" class="footer-link" data-i18n="nav.projects"
+                  >Projects</a
+                >
+              </li>
+              <li>
+                <a href="#details" class="footer-link" data-i18n="nav.services"
+                  >Services</a
+                >
+              </li>
+              <li>
+                <a href="#about" class="footer-link" data-i18n="nav.about"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a href="#contact" class="footer-link" data-i18n="nav.contact"
+                  >Contact</a
+                >
+              </li>
             </ul>
           </div>
 
@@ -2285,28 +2375,49 @@
           <div class="md:col-span-3 md:col-start-10">
             <p
               class="text-white/40 text-xs font-semibold uppercase tracking-widest mb-5"
+              data-i18n="cmms.footer.services"
             >
               Services
             </p>
             <ul class="space-y-3">
               <li>
-                <a href="#details" class="footer-link"
+                <a
+                  href="#details"
+                  class="footer-link"
+                  data-i18n="serviceOptions.preventiveMaintenance"
                   >Preventive Maintenance</a
                 >
               </li>
               <li>
-                <a href="#details" class="footer-link">Electrical Services</a>
+                <a
+                  href="#details"
+                  class="footer-link"
+                  data-i18n="serviceOptions.electrical"
+                  >Electrical Services</a
+                >
               </li>
-              <li><a href="#details" class="footer-link">HVAC Systems</a></li>
               <li>
-                <a href="#details" class="footer-link">CCTV & Access Control</a>
+                <a
+                  href="#details"
+                  class="footer-link"
+                  data-i18n="serviceOptions.hvac"
+                  >HVAC Systems</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#details"
+                  class="footer-link"
+                  data-i18n="serviceOptions.cctv"
+                  >CCTV & Access Control</a
+                >
               </li>
               <li>
                 <a
                   href="./assets/cmms.html"
                   class="footer-link flex items-center gap-2"
                 >
-                  CMMS Platform
+                  <span data-i18n="cmms.footer.cmmsLink">CMMS Platform</span>
                   <span
                     class="px-1.5 py-0.5 text-[9px] font-bold rounded-full bg-gradient-to-r from-[#7AC5FF] to-[#0F5F98] text-white leading-none"
                     >App</span
@@ -2322,14 +2433,20 @@
         <div
           class="flex flex-col md:flex-row items-center justify-between gap-4"
         >
-          <p class="text-white/35 text-xs font-medium">
+          <p
+            class="text-white/35 text-xs font-medium"
+            data-i18n="cmms.footer.copyright"
+          >
             © 2025 PT. Sumber Sarana Solusindo. All rights reserved.
           </p>
           <div class="flex items-center gap-2">
             <div
               class="w-1.5 h-1.5 bg-[#7AC5FF] rounded-full animate-pulse"
             ></div>
-            <p class="text-white/35 text-xs font-medium">
+            <p
+              class="text-white/35 text-xs font-medium"
+              data-i18n="cmms.footer.location"
+            >
               Jakarta, Indonesia · Mon–Fri 8AM–6PM WIB
             </p>
           </div>
@@ -2338,12 +2455,53 @@
     </footer>
     <!-- FOOTER END -->
 
-    <script src="./js/core/navbar.js"></script>
-
     <!-- AOS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 
+    <!-- Navbar JS (handles language toggle + mobile menu) -->
+    <script src="./js/core/navbar.js"></script>
+
+    <!-- CMMS Page i18n Initialization -->
     <script>
+      // ─────────────────────────────────────────────────────
+      //  CMMS page i18n: applies translations on load and
+      //  whenever the language changes (synced with navbar.js)
+      // ─────────────────────────────────────────────────────
+
+      // Helper: resolve dot-separated key from object
+      function getNestedProperty(obj, path) {
+        return path.split(".").reduce((cur, key) => cur && cur[key], obj);
+      }
+
+      // Apply all data-i18n / data-i18n-placeholder translations
+      function applyCMMSTranslations(lang) {
+        if (!window.i18nData || !window.i18nData[lang]) return;
+        const t = window.i18nData[lang];
+
+        // text content
+        document.querySelectorAll("[data-i18n]").forEach((el) => {
+          const key = el.getAttribute("data-i18n");
+          const val = getNestedProperty(t, key);
+          if (val !== undefined && val !== null) {
+            el.textContent = val;
+          }
+        });
+
+        // placeholders
+        document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
+          const key = el.getAttribute("data-i18n-placeholder");
+          const val = getNestedProperty(t, key);
+          if (val) el.placeholder = val;
+        });
+
+        // select <option> elements with data-i18n
+        document.querySelectorAll("select option[data-i18n]").forEach((opt) => {
+          const key = opt.getAttribute("data-i18n");
+          const val = getNestedProperty(t, key);
+          if (val) opt.textContent = val;
+        });
+      }
+
       document.addEventListener("DOMContentLoaded", function () {
         // AOS init
         AOS.init({
@@ -2359,7 +2517,7 @@
           navbar.classList.toggle("scrolled", window.scrollY > 30);
         });
 
-        // Mobile menu toggle
+        // Mobile menu toggle (fallback if navbar.js doesn't cover it)
         const menuBtn = document.getElementById("mobileMenuButton");
         const mobileMenu = document.getElementById("mobile-menu");
         if (menuBtn && mobileMenu) {
@@ -2368,10 +2526,66 @@
           });
         }
 
-        // Simple countup for stats
+        // Apply saved language on page load
+        const savedLang = localStorage.getItem("preferredLanguage") || "id";
+        applyCMMSTranslations(savedLang);
+
+        // Sync toggle UI to saved language
+        const desktopToggle = document.getElementById("languageToggle");
+        const mobileToggle = document.getElementById("mobileLangToggle");
+        const toggleSlider = document.getElementById("toggleSlider");
+        const mobileSlider = document.getElementById("mobileToggleSlider");
+        const desktopIdText = document.getElementById("desktopIdText");
+        const desktopEnText = document.getElementById("desktopEnText");
+        const mobileIdText = document.getElementById("mobileIdText");
+        const mobileEnText = document.getElementById("mobileEnText");
+
+        function syncToggleUI(lang) {
+          const isEn = lang === "en";
+          if (toggleSlider)
+            toggleSlider.style.transform = isEn
+              ? "translateX(28px)"
+              : "translateX(0)";
+          if (mobileSlider)
+            mobileSlider.style.transform = isEn
+              ? "translateX(20px)"
+              : "translateX(0)";
+          if (desktopIdText) desktopIdText.style.opacity = isEn ? "0.5" : "1";
+          if (desktopEnText) desktopEnText.style.opacity = isEn ? "1" : "0.5";
+          if (mobileIdText) mobileIdText.style.opacity = isEn ? "0.5" : "1";
+          if (mobileEnText) mobileEnText.style.opacity = isEn ? "1" : "0.5";
+        }
+
+        syncToggleUI(savedLang);
+
+        // Listen for language changes dispatched by navbar.js
+        document.addEventListener("languageChanged", function (e) {
+          const lang = e.detail && e.detail.language;
+          if (lang) {
+            applyCMMSTranslations(lang);
+            syncToggleUI(lang);
+          }
+        });
+
+        // Also wire up toggle buttons directly (in case navbar.js fires events)
+        function handleToggle() {
+          const current = localStorage.getItem("preferredLanguage") || "id";
+          const next = current === "id" ? "en" : "id";
+          localStorage.setItem("preferredLanguage", next);
+          applyCMMSTranslations(next);
+          syncToggleUI(next);
+          document.dispatchEvent(
+            new CustomEvent("languageChanged", { detail: { language: next } }),
+          );
+        }
+
+        if (desktopToggle)
+          desktopToggle.addEventListener("click", handleToggle);
+        if (mobileToggle) mobileToggle.addEventListener("click", handleToggle);
+
+        // Countup for stats
         const statsEl = document.querySelector(".stats-strip");
         if (!statsEl) return;
-
         let fired = false;
         const obs = new IntersectionObserver(
           (entries) => {
@@ -2384,7 +2598,6 @@
                 const tick = (now) => {
                   const elapsed = now - start;
                   const progress = Math.min(elapsed / duration, 1);
-                  // ease out
                   const val =
                     Math.round(
                       progress * (1 - Math.pow(1 - progress, 3)) * target +
@@ -2403,7 +2616,6 @@
           },
           { threshold: 0.3 },
         );
-
         obs.observe(statsEl);
       });
     </script>

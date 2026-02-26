@@ -8,6 +8,7 @@ const i18nData = {
       services: "Layanan",
       about: "Tentang Kami",
       contact: "Kontak",
+      cmms: "CMMS",
     },
 
     // Hero Section
@@ -40,6 +41,176 @@ const i18nData = {
         realTimeMonitoring: "Pemantauan Real-time",
       },
       cta: "Pelajari Lebih Lanjut tentang CMMS",
+
+      // CMMS Page specific
+      hero: {
+        badge: "Didukung Teknologi · CMMS",
+        title1: "Didukung dengan",
+        title2: "Aplikasi Web CMMS",
+        desc: "Optimalkan perawatan MEP gedung Anda dengan CMMS yang cerdas — kelola work order, pantau aset, dan cegah downtime dalam satu sistem terpusat yang aman dan efisien.",
+      },
+
+      // System Map section
+      map: {
+        badge: "Arsitektur Sistem",
+        title1: "Bagaimana Semua",
+        title2: " Terhubung",
+        desc: "Setiap modul saling terhubung — dari laporan kerusakan di lapangan hingga persetujuan digital manajemen, setiap tindakan terekam dalam satu rantai terintegrasi.",
+      },
+
+      // Highlights section
+      highlights: {
+        badge: "Modul Utama",
+        title1: "Keunggulan",
+        title2: " Sistem",
+        desc: "Delapan modul yang saling terhubung mencakup setiap aspek pemeliharaan MEP — dari operasi lapangan hingga persetujuan eksekutif.",
+      },
+
+      // Cards
+      card: {
+        num1: "Keunggulan 01",
+        title1: "Manajemen Work Order",
+        desc1:
+          "Empat jenis work order — Pemeliharaan Preventif, Pemeliharaan Korektif, Sertifikasi, dan Trouble Report. Masing-masing mengikuti alur kerja tersendiri dengan penugasan otomatis, pelacakan progres, dan jalur eskalasi.",
+
+        num2: "Keunggulan 02",
+        title2: "Trouble Report → Tautan Work Order",
+        desc2:
+          "Setiap Trouble Report yang dikirimkan dapat langsung dieskalasi menjadi Work Order formal. Ini menciptakan rantai keterlacakan otomatis — dari keluhan lapangan hingga resolusi dan persetujuan, menghilangkan celah tindak lanjut manual.",
+
+        num3: "Keunggulan 03",
+        title3: "Daftar & Manajemen Pengguna",
+        desc3:
+          "Direktori pengguna lengkap dengan manajemen profil, visibilitas beban kerja, dan pelacakan penugasan. Pengguna terikat pada peran dan lokasi tertentu yang memastikan penugasan tugas yang akurat dan dapat diaudit.",
+
+        num4: "Keunggulan 04",
+        title4: "Manajemen Jadwal",
+        desc4:
+          "Mesin penjadwalan terpadu yang terhubung ke Work Order dan Trouble Report. Jadwal pemeliharaan preventif secara otomatis menghasilkan WO pada tanggal jatuh tempo, sementara Trouble Report dapat dijadwalkan untuk timeline resolusi yang terlacak.",
+
+        num5: "Keunggulan 05",
+        title5: "Daftar Peralatan → Work Order",
+        desc5:
+          "Registri peralatan lengkap yang terhubung langsung ke Work Order. Setiap aset membawa riwayat lengkap aktivitas pemeliharaan, sertifikasi, dan trouble report. Teknisi dapat melihat rekam layanan lengkap setiap peralatan.",
+
+        num6: "Keunggulan 06",
+        title6: "Pilihan Lokasi & Tautan Peran Pengguna",
+        desc6:
+          "Dukungan multi-lokasi dengan visibilitas data yang dibatasi per lokasi. Setiap pengguna ditugaskan ke satu atau lebih lokasi dan akses data mereka otomatis dibatasi. Teknisi di Lokasi A tidak dapat melihat atau mengubah data Lokasi B kecuali diotorisasi.",
+
+        num7: "Keunggulan 07",
+        title7: "Otoritas Berbasis Peran",
+        desc7:
+          "Sistem izin terperinci di seluruh modul. Peran didefinisikan di tingkat sistem — Admin, Supervisor, Teknisi, Approver, dan Viewer — masing-masing dengan hak akses tepat per modul. Izin berjenjang dari tingkat lokasi hingga tindakan pengguna individual.",
+
+        num8: "Keunggulan 08",
+        title8: "Sistem Persetujuan Digital",
+        desc8:
+          "Alur kerja persetujuan digital end-to-end yang terhubung ke semua tindakan sistem utama — pembuatan WO, penutupan WO, eskalasi Trouble Report, penerbitan Sertifikasi, dan perubahan Jadwal. Persetujuan multi-level dengan tanda tangan bertanda waktu menggantikan tanda tangan berbasis kertas sepenuhnya.",
+      },
+
+      // Process flow section
+      flow: {
+        badge: "Alur Kerja End-to-End",
+        title1: "Alur",
+        title2: " Proses",
+        desc: "Dari kerusakan di lapangan hingga work order yang ditutup dan disetujui secara digital — lihat bagaimana sistem menangani setiap langkah secara otomatis.",
+      },
+
+      // Stats
+      stats: {
+        equipments: "Peralatan",
+        maintenance: "Aktivitas Pemeliharaan",
+        companies: "Perusahaan",
+        workers: "Teknisi",
+      },
+
+      // Tags (pill labels)
+      tag: {
+        preventive: "Preventif",
+        corrective: "Korektif",
+        certification: "Sertifikasi",
+        troubleReport: "Trouble Report",
+        autoEscalation: "Eskalasi Otomatis",
+        traceability: "Keterlacakan",
+        rootCause: "Tautan Akar Masalah",
+        userProfiles: "Profil Pengguna",
+        workloadTracking: "Pelacakan Beban Kerja",
+        assignmentHistory: "Riwayat Penugasan",
+        autoWO: "Pembuatan WO Otomatis",
+        calendarView: "Tampilan Kalender",
+        deadlineAlerts: "Pengingat Tenggat",
+        assetRegistry: "Registri Aset",
+        serviceHistory: "Riwayat Layanan",
+        woLinkage: "Tautan WO",
+        multiSite: "Multi-Lokasi",
+        dataScoping: "Pembatasan Data",
+        accessControl: "Kontrol Akses",
+        multiLevel: "Multi-Level",
+        timestamped: "Bertanda Waktu",
+        paperless: "Tanpa Kertas",
+        auditTrail: "Jejak Audit",
+        troubleReportModule: "Modul Trouble Report",
+        equipmentRegistry: "Registri Peralatan",
+        siteScope: "Cakupan Lokasi",
+        workOrderModule: "Modul Work Order",
+        userList: "Daftar Pengguna",
+        roleAuthority: "Otoritas Peran",
+        scheduleModule: "Modul Jadwal",
+        preventiveCalendar: "Kalender Preventif",
+        conflictDetection: "Deteksi Konflik",
+        equipmentLog: "Log Peralatan",
+        technicianProfile: "Profil Teknisi",
+        realtimeUpdate: "Pembaruan Real-time",
+        digitalApproval: "Persetujuan Digital",
+        trClosure: "Penutupan TR",
+        equipmentUpdate: "Pembaruan Peralatan",
+      },
+
+      // Contact (CMMS page specific)
+      contact: {
+        eyebrow: "Hubungi Kami",
+        title: "Mari Membangun Sesuatu",
+        titleHighlight: "Bersama",
+        subtitle:
+          "Siap mengoptimalkan pemeliharaan gedung Anda? Hubungi kami untuk konsultasi profesional.",
+        formTitle: "Ceritakan proyek Anda",
+        required: "Wajib diisi",
+        validEmail: "Masukkan email yang valid",
+        sendWhatsApp: "Kirim via WhatsApp",
+        infoTitle: "Kami siap membantu",
+      },
+
+      // Footer
+      footer: {
+        navigation: "Navigasi",
+        services: "Layanan",
+        cmmsLink: "Platform CMMS",
+        copyright: "© 2025 PT. Sumber Sarana Solusindo. Hak cipta dilindungi.",
+        location: "Jakarta, Indonesia · Sen–Jum 08.00–18.00 WIB",
+      },
+
+      // Steps
+      step1: {
+        title: "Laporan Lapangan Dikirim",
+        desc: "Seorang teknisi atau operator mengirimkan Trouble Report melalui CMMS, menggambarkan kerusakan, peralatan yang terdampak, dan lokasi. Laporan diberi cap waktu dan nomor referensi unik secara otomatis.",
+      },
+      step2: {
+        title: "Tinjauan Supervisor & Pembuatan Work Order",
+        desc: "Supervisor menerima notifikasi, meninjau laporan, dan membuat Work Order formal — memilih jenis (Korektif, Preventif, Sertifikasi) dan menugaskan teknisi berdasarkan keahlian dan ketersediaan.",
+      },
+      step3: {
+        title: "Penugasan Jadwal",
+        desc: "WO ditempatkan pada jadwal pemeliharaan dengan tanggal penyelesaian target. Sistem memeriksa konflik dengan jendela pemeliharaan preventif yang ada dan secara otomatis menandai tumpang tindih.",
+      },
+      step4: {
+        title: "Eksekusi & Pembaruan Progres",
+        desc: "Teknisi yang ditugaskan memperbarui WO secara real time — mencatat jam kerja, temuan, suku cadang yang digunakan, dan foto. Rekam layanan peralatan diperbarui secara bersamaan. Semua tindakan dicatat terhadap profil pengguna teknisi.",
+      },
+      step5: {
+        title: "Persetujuan Digital & Penutupan WO",
+        desc: "Setelah selesai, WO diajukan untuk persetujuan. Supervisor meninjau dan meneruskan ke Approver untuk tanda tangan digital final. Persetujuan multi-level direkam dengan cap waktu dalam jejak audit yang tahan gangguan. Trouble Report ditandai sebagai terselesaikan dan secara permanen terhubung ke WO yang ditutup.",
+      },
     },
 
     // Projects Section
@@ -179,6 +350,7 @@ const i18nData = {
       services: "Services",
       about: "About Us",
       contact: "Contact",
+      cmms: "CMMS",
     },
 
     // Hero Section
@@ -211,6 +383,176 @@ const i18nData = {
         realTimeMonitoring: "Real-time Monitoring",
       },
       cta: "Learn More About CMMS",
+
+      // CMMS Page specific
+      hero: {
+        badge: "Technology Powered · CMMS",
+        title1: "Supported with",
+        title2: "CMMS Web App",
+        desc: "Optimize your building MEP maintenance with intelligent CMMS — manage work orders, monitor assets, and prevent downtime in one secure and efficient centralized system.",
+      },
+
+      // System Map section
+      map: {
+        badge: "System Architecture",
+        title1: "How Everything",
+        title2: " Connects",
+        desc: "Every module is interlinked — from a field trouble report all the way to digital management sign-off, every action traces through one unified chain.",
+      },
+
+      // Highlights section
+      highlights: {
+        badge: "Core Modules",
+        title1: "System",
+        title2: " Highlights",
+        desc: "Eight interconnected modules covering every aspect of MEP maintenance — from field operations to executive approval.",
+      },
+
+      // Cards
+      card: {
+        num1: "Highlight 01",
+        title1: "Work Order Management",
+        desc1:
+          "Four distinct work order types — Preventive Maintenance, Corrective Maintenance, Certification, and Trouble Report. Each follows its own defined workflow with automated assignment, progress tracking, and escalation paths.",
+
+        num2: "Highlight 02",
+        title2: "Trouble Report → Work Order Link",
+        desc2:
+          "Any submitted Trouble Report can be directly escalated into a formal Work Order. This creates an automatic traceability chain — from the field complaint all the way to resolution and sign-off, eliminating manual follow-up gaps.",
+
+        num3: "Highlight 03",
+        title3: "User List & Management",
+        desc3:
+          "Full user directory with profile management, workload visibility, and assignment tracking. Users are tied to specific roles and sites ensuring contextually accurate and auditable task assignment.",
+
+        num4: "Highlight 04",
+        title4: "Schedule Management",
+        desc4:
+          "Unified scheduling engine connected to both Work Orders and Trouble Reports. Preventive maintenance schedules auto-generate WOs on due dates, while Trouble Reports can be slotted for tracked resolution timelines.",
+
+        num5: "Highlight 05",
+        title5: "Equipment List → Work Order",
+        desc5:
+          "Full equipment registry linked directly to Work Orders. Each asset carries its complete history of maintenance activities, certifications, and trouble reports. Technicians can look up any equipment and immediately see its full service record.",
+
+        num6: "Highlight 06",
+        title6: "Site Choice & User Role Linkage",
+        desc6:
+          "Multi-site support with site-scoped data visibility. Each user is assigned to one or more sites and their data access is automatically scoped. A technician at Site A cannot see or modify data belonging to Site B unless explicitly authorized.",
+
+        num7: "Highlight 07",
+        title7: "Role-Based Authority",
+        desc7:
+          "Granular permission system across all modules. Roles are defined at the system level — Admin, Supervisor, Technician, Approver, and Viewer — each with precise access rights per module. Permissions cascade from site level down to individual user actions.",
+
+        num8: "Highlight 08",
+        title8: "Digital Approval System",
+        desc8:
+          "End-to-end digital approval workflow linked to all major system actions — WO creation, WO closure, Trouble Report escalation, Certification issuance, and Schedule changes. Multi-level approvals with timestamped signatures replace paper-based sign-off entirely.",
+      },
+
+      // Process flow section
+      flow: {
+        badge: "End-to-End Workflow",
+        title1: "Process",
+        title2: " Flow",
+        desc: "From a fault on the floor to a closed and digitally approved work order — see how the system handles every step automatically.",
+      },
+
+      // Stats
+      stats: {
+        equipments: "Equipments",
+        maintenance: "Maintenance Activities",
+        companies: "Companies",
+        workers: "Workers",
+      },
+
+      // Tags (pill labels)
+      tag: {
+        preventive: "Preventive",
+        corrective: "Corrective",
+        certification: "Certification",
+        troubleReport: "Trouble Report",
+        autoEscalation: "Auto-escalation",
+        traceability: "Traceability",
+        rootCause: "Root Cause Linking",
+        userProfiles: "User Profiles",
+        workloadTracking: "Workload Tracking",
+        assignmentHistory: "Assignment History",
+        autoWO: "Auto WO Generation",
+        calendarView: "Calendar View",
+        deadlineAlerts: "Deadline Alerts",
+        assetRegistry: "Asset Registry",
+        serviceHistory: "Service History",
+        woLinkage: "WO Linkage",
+        multiSite: "Multi-site",
+        dataScoping: "Data Scoping",
+        accessControl: "Access Control",
+        multiLevel: "Multi-level",
+        timestamped: "Timestamped",
+        paperless: "Paperless",
+        auditTrail: "Audit Trail",
+        troubleReportModule: "Trouble Report Module",
+        equipmentRegistry: "Equipment Registry",
+        siteScope: "Site Scope",
+        workOrderModule: "Work Order Module",
+        userList: "User List",
+        roleAuthority: "Role Authority",
+        scheduleModule: "Schedule Module",
+        preventiveCalendar: "Preventive Calendar",
+        conflictDetection: "Conflict Detection",
+        equipmentLog: "Equipment Log",
+        technicianProfile: "Technician Profile",
+        realtimeUpdate: "Real-time Update",
+        digitalApproval: "Digital Approval",
+        trClosure: "TR Closure",
+        equipmentUpdate: "Equipment Update",
+      },
+
+      // Contact (CMMS page specific)
+      contact: {
+        eyebrow: "Get In Touch",
+        title: "Let's Build Something",
+        titleHighlight: "Together",
+        subtitle:
+          "Ready to optimize your building maintenance? Contact us for a professional consultation.",
+        formTitle: "Tell us about your project",
+        required: "Required",
+        validEmail: "Enter a valid email",
+        sendWhatsApp: "Send via WhatsApp",
+        infoTitle: "We're here to help",
+      },
+
+      // Footer
+      footer: {
+        navigation: "Navigation",
+        services: "Services",
+        cmmsLink: "CMMS Platform",
+        copyright: "© 2025 PT. Sumber Sarana Solusindo. All rights reserved.",
+        location: "Jakarta, Indonesia · Mon–Fri 8AM–6PM WIB",
+      },
+
+      // Steps
+      step1: {
+        title: "Field Report Submitted",
+        desc: "A technician or operator submits a Trouble Report via CMMS, describing the fault, affected equipment, and site. The report is time-stamped and assigned a unique reference number automatically.",
+      },
+      step2: {
+        title: "Supervisor Review & Work Order Creation",
+        desc: "The Supervisor receives a notification, reviews the report, and creates a formal Work Order — selecting the type (Corrective, Preventive, Certification) and assigning a technician based on skill and availability.",
+      },
+      step3: {
+        title: "Schedule Assignment",
+        desc: "The WO is placed on the maintenance schedule with a target completion date. The system checks for conflicts with existing preventive maintenance windows and flags overlaps automatically.",
+      },
+      step4: {
+        title: "Execution & Progress Update",
+        desc: "The assigned technician updates the WO in real time — logging labor hours, findings, parts used, and photos. The equipment's service record updates simultaneously. All actions are logged against the technician's user profile.",
+      },
+      step5: {
+        title: "Digital Approval & WO Closure",
+        desc: "Upon completion, the WO is submitted for approval. The Supervisor reviews and routes to the Approver for final digital sign-off. Multi-level approvals are captured with timestamps in a tamper-proof audit trail. The Trouble Report is marked resolved and permanently linked to the closed WO.",
+      },
     },
 
     // Projects Section
