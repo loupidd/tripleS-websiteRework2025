@@ -50,7 +50,6 @@ const i18nData = {
         desc: "Optimalkan perawatan MEP gedung Anda dengan CMMS yang cerdas — kelola work order, pantau aset, dan cegah downtime dalam satu sistem terpusat yang aman dan efisien.",
       },
 
-      // System Map section
       map: {
         badge: "Arsitektur Sistem",
         title1: "Bagaimana Semua",
@@ -58,7 +57,6 @@ const i18nData = {
         desc: "Setiap modul saling terhubung — dari laporan kerusakan di lapangan hingga persetujuan digital manajemen, setiap tindakan terekam dalam satu rantai terintegrasi.",
       },
 
-      // Highlights section
       highlights: {
         badge: "Modul Utama",
         title1: "Keunggulan",
@@ -66,50 +64,41 @@ const i18nData = {
         desc: "Delapan modul yang saling terhubung mencakup setiap aspek pemeliharaan MEP — dari operasi lapangan hingga persetujuan eksekutif.",
       },
 
-      // Cards
       card: {
         num1: "Keunggulan 01",
         title1: "Manajemen Work Order",
         desc1:
           "Empat jenis work order — Pemeliharaan Preventif, Pemeliharaan Korektif, Sertifikasi, dan Trouble Report. Masing-masing mengikuti alur kerja tersendiri dengan penugasan otomatis, pelacakan progres, dan jalur eskalasi.",
-
         num2: "Keunggulan 02",
         title2: "Trouble Report → Tautan Work Order",
         desc2:
           "Setiap Trouble Report yang dikirimkan dapat langsung dieskalasi menjadi Work Order formal. Ini menciptakan rantai keterlacakan otomatis — dari keluhan lapangan hingga resolusi dan persetujuan, menghilangkan celah tindak lanjut manual.",
-
         num3: "Keunggulan 03",
         title3: "Daftar & Manajemen Pengguna",
         desc3:
           "Direktori pengguna lengkap dengan manajemen profil, visibilitas beban kerja, dan pelacakan penugasan. Pengguna terikat pada peran dan lokasi tertentu yang memastikan penugasan tugas yang akurat dan dapat diaudit.",
-
         num4: "Keunggulan 04",
         title4: "Manajemen Jadwal",
         desc4:
           "Mesin penjadwalan terpadu yang terhubung ke Work Order dan Trouble Report. Jadwal pemeliharaan preventif secara otomatis menghasilkan WO pada tanggal jatuh tempo, sementara Trouble Report dapat dijadwalkan untuk timeline resolusi yang terlacak.",
-
         num5: "Keunggulan 05",
         title5: "Daftar Peralatan → Work Order",
         desc5:
           "Registri peralatan lengkap yang terhubung langsung ke Work Order. Setiap aset membawa riwayat lengkap aktivitas pemeliharaan, sertifikasi, dan trouble report. Teknisi dapat melihat rekam layanan lengkap setiap peralatan.",
-
         num6: "Keunggulan 06",
         title6: "Pilihan Lokasi & Tautan Peran Pengguna",
         desc6:
           "Dukungan multi-lokasi dengan visibilitas data yang dibatasi per lokasi. Setiap pengguna ditugaskan ke satu atau lebih lokasi dan akses data mereka otomatis dibatasi. Teknisi di Lokasi A tidak dapat melihat atau mengubah data Lokasi B kecuali diotorisasi.",
-
         num7: "Keunggulan 07",
         title7: "Otoritas Berbasis Peran",
         desc7:
           "Sistem izin terperinci di seluruh modul. Peran didefinisikan di tingkat sistem — Admin, Supervisor, Teknisi, Approver, dan Viewer — masing-masing dengan hak akses tepat per modul. Izin berjenjang dari tingkat lokasi hingga tindakan pengguna individual.",
-
         num8: "Keunggulan 08",
         title8: "Sistem Persetujuan Digital",
         desc8:
           "Alur kerja persetujuan digital end-to-end yang terhubung ke semua tindakan sistem utama — pembuatan WO, penutupan WO, eskalasi Trouble Report, penerbitan Sertifikasi, dan perubahan Jadwal. Persetujuan multi-level dengan tanda tangan bertanda waktu menggantikan tanda tangan berbasis kertas sepenuhnya.",
       },
 
-      // Process flow section
       flow: {
         badge: "Alur Kerja End-to-End",
         title1: "Alur",
@@ -117,7 +106,6 @@ const i18nData = {
         desc: "Dari kerusakan di lapangan hingga work order yang ditutup dan disetujui secara digital — lihat bagaimana sistem menangani setiap langkah secara otomatis.",
       },
 
-      // Stats
       stats: {
         equipments: "Peralatan",
         maintenance: "Aktivitas Pemeliharaan",
@@ -125,7 +113,6 @@ const i18nData = {
         workers: "Teknisi",
       },
 
-      // Tags (pill labels)
       tag: {
         preventive: "Preventif",
         corrective: "Korektif",
@@ -167,7 +154,6 @@ const i18nData = {
         equipmentUpdate: "Pembaruan Peralatan",
       },
 
-      // Contact (CMMS page specific)
       contact: {
         eyebrow: "Hubungi Kami",
         title: "Mari Membangun Sesuatu",
@@ -181,7 +167,6 @@ const i18nData = {
         infoTitle: "Kami siap membantu",
       },
 
-      // Footer
       footer: {
         navigation: "Navigasi",
         services: "Layanan",
@@ -190,7 +175,6 @@ const i18nData = {
         location: "Jakarta, Indonesia · Sen–Jum 08.00–18.00 WIB",
       },
 
-      // Steps
       step1: {
         title: "Laporan Lapangan Dikirim",
         desc: "Seorang teknisi atau operator mengirimkan Trouble Report melalui CMMS, menggambarkan kerusakan, peralatan yang terdampak, dan lokasi. Laporan diberi cap waktu dan nomor referensi unik secara otomatis.",
@@ -225,15 +209,34 @@ const i18nData = {
         description:
           "Sistem pemeliharaan gedung komprehensif dengan integrasi CMMS canggih untuk kompleks residensial mewah.",
         status: "Aktif",
-        location: "Jakarta",
+        location: "Jakarta Selatan",
+        sub: "Eminence · South · East Tower",
       },
       project2: {
-        name: "Niffaro Park",
+        name: "Nifarro Park",
         description:
-          "Kompleks perkantoran modern dengan teknologi gedung pintar dan sistem manajemen fasilitas yang komprehensif.",
+          "Apartemen modern dengan pemeliharaan sistem MEP penuh — panel listrik, genset, pompa, AC, fire protection, CCTV, dan access control.",
         status: "Aktif",
-        location: "Jakarta",
+        location: "Jakarta Timur",
+        sub: "Pasar Rebo, Jakarta Timur",
       },
+      project3: {
+        name: "Itama Ranoraya",
+        description:
+          "Layanan perawatan AC kantor yang sedang berlangsung di Lantai 21, Menara ITS untuk PT. Itama Ranoraya, memastikan kinerja pendinginan yang optimal dan keandalan sistem.",
+        status: "Aktif",
+        location: "Jakarta Selatan",
+        sub: "Pasar Minggu",
+      },
+      project4: {
+        name: "PT. Infokom Elektrindo",
+        description:
+          "Kontrak servis preventif dan penggantian suku cadang kritis untuk generator set Perkins 1500 KVA, 2024–2026.",
+        status: "Berjalan",
+        location: "Jakarta",
+        sub: "Kontrak Servis Genset",
+      },
+      viewAll: "Lihat Seluruh Portofolio Proyek",
     },
 
     // Services Section
@@ -246,6 +249,45 @@ const i18nData = {
       seeMore: "Lihat Layanan Lainnya",
       seeLess: "Tampilkan Lebih Sedikit",
       viewDetails: "Lihat Detail",
+      // ── Service category cards (new) ──────────────────────────────────
+      label: "Layanan",
+      viewPortfolio: "Lihat Seluruh Portofolio Proyek",
+      electrical: {
+        title: "Sistem Panel Listrik",
+        desc: "Pemeliharaan preventif dan perbaikan panel distribusi listrik, switchgear, dan sistem kelistrikan gedung secara menyeluruh.",
+      },
+      hvac: {
+        title: "Air Conditioner & Ventilasi",
+        desc: "Perawatan rutin AC split, AC central, serta sistem FAN (intake, exhaust, pressurized) untuk kenyamanan optimal.",
+      },
+      genset: {
+        title: "Generator Set (Genset)",
+        desc: "Inspeksi, servis, perbaikan, dan overhaul generator set berbagai kapasitas — termasuk penggantian modul kontrol dan komponen kritis.",
+      },
+      pump: {
+        title: "Sistem Pompa",
+        desc: "Pemeliharaan pompa air bersih, pompa submersible (air bekas, hujan, kotor), serta pompa hydrant dan fire pump.",
+      },
+      fire: {
+        title: "Sistem Proteksi Kebakaran",
+        desc: "Perawatan dan perbaikan fire alarm system, hydrant, dan fire pump — termasuk modernisasi panel kontrol diesel fire pump.",
+      },
+      access: {
+        title: "Access Control & Tata Suara",
+        desc: "Instalasi, pemeliharaan, dan penggantian sistem access control serta tata suara (public address) untuk keamanan dan komunikasi gedung.",
+      },
+      cctv: {
+        title: "CCTV",
+        desc: "Pemeliharaan dan instalasi sistem pengawasan CCTV untuk keamanan menyeluruh di seluruh area gedung.",
+      },
+      evcs: {
+        title: "EV Charging Station (EVCS)",
+        desc: "Pemasangan dan komisioning Electric Vehicle Charging Station kapasitas 40–106 KW di hotel, gedung perkantoran, dan pusat perbelanjaan.",
+      },
+      cmms: {
+        title: "Platform CMMS",
+        desc: "Implementasi aplikasi web CMMS untuk manajemen work order, jadwal pemeliharaan, registri aset, dan persetujuan digital berbasis peran.",
+      },
     },
 
     // About Section
@@ -384,7 +426,6 @@ const i18nData = {
       },
       cta: "Learn More About CMMS",
 
-      // CMMS Page specific
       hero: {
         badge: "Technology Powered · CMMS",
         title1: "Supported with",
@@ -392,7 +433,6 @@ const i18nData = {
         desc: "Optimize your building MEP maintenance with intelligent CMMS — manage work orders, monitor assets, and prevent downtime in one secure and efficient centralized system.",
       },
 
-      // System Map section
       map: {
         badge: "System Architecture",
         title1: "How Everything",
@@ -400,7 +440,6 @@ const i18nData = {
         desc: "Every module is interlinked — from a field trouble report all the way to digital management sign-off, every action traces through one unified chain.",
       },
 
-      // Highlights section
       highlights: {
         badge: "Core Modules",
         title1: "System",
@@ -408,50 +447,41 @@ const i18nData = {
         desc: "Eight interconnected modules covering every aspect of MEP maintenance — from field operations to executive approval.",
       },
 
-      // Cards
       card: {
         num1: "Highlight 01",
         title1: "Work Order Management",
         desc1:
           "Four distinct work order types — Preventive Maintenance, Corrective Maintenance, Certification, and Trouble Report. Each follows its own defined workflow with automated assignment, progress tracking, and escalation paths.",
-
         num2: "Highlight 02",
         title2: "Trouble Report → Work Order Link",
         desc2:
           "Any submitted Trouble Report can be directly escalated into a formal Work Order. This creates an automatic traceability chain — from the field complaint all the way to resolution and sign-off, eliminating manual follow-up gaps.",
-
         num3: "Highlight 03",
         title3: "User List & Management",
         desc3:
           "Full user directory with profile management, workload visibility, and assignment tracking. Users are tied to specific roles and sites ensuring contextually accurate and auditable task assignment.",
-
         num4: "Highlight 04",
         title4: "Schedule Management",
         desc4:
           "Unified scheduling engine connected to both Work Orders and Trouble Reports. Preventive maintenance schedules auto-generate WOs on due dates, while Trouble Reports can be slotted for tracked resolution timelines.",
-
         num5: "Highlight 05",
         title5: "Equipment List → Work Order",
         desc5:
           "Full equipment registry linked directly to Work Orders. Each asset carries its complete history of maintenance activities, certifications, and trouble reports. Technicians can look up any equipment and immediately see its full service record.",
-
         num6: "Highlight 06",
         title6: "Site Choice & User Role Linkage",
         desc6:
           "Multi-site support with site-scoped data visibility. Each user is assigned to one or more sites and their data access is automatically scoped. A technician at Site A cannot see or modify data belonging to Site B unless explicitly authorized.",
-
         num7: "Highlight 07",
         title7: "Role-Based Authority",
         desc7:
           "Granular permission system across all modules. Roles are defined at the system level — Admin, Supervisor, Technician, Approver, and Viewer — each with precise access rights per module. Permissions cascade from site level down to individual user actions.",
-
         num8: "Highlight 08",
         title8: "Digital Approval System",
         desc8:
           "End-to-end digital approval workflow linked to all major system actions — WO creation, WO closure, Trouble Report escalation, Certification issuance, and Schedule changes. Multi-level approvals with timestamped signatures replace paper-based sign-off entirely.",
       },
 
-      // Process flow section
       flow: {
         badge: "End-to-End Workflow",
         title1: "Process",
@@ -459,7 +489,6 @@ const i18nData = {
         desc: "From a fault on the floor to a closed and digitally approved work order — see how the system handles every step automatically.",
       },
 
-      // Stats
       stats: {
         equipments: "Equipments",
         maintenance: "Maintenance Activities",
@@ -467,7 +496,6 @@ const i18nData = {
         workers: "Workers",
       },
 
-      // Tags (pill labels)
       tag: {
         preventive: "Preventive",
         corrective: "Corrective",
@@ -509,7 +537,6 @@ const i18nData = {
         equipmentUpdate: "Equipment Update",
       },
 
-      // Contact (CMMS page specific)
       contact: {
         eyebrow: "Get In Touch",
         title: "Let's Build Something",
@@ -523,7 +550,6 @@ const i18nData = {
         infoTitle: "We're here to help",
       },
 
-      // Footer
       footer: {
         navigation: "Navigation",
         services: "Services",
@@ -532,7 +558,6 @@ const i18nData = {
         location: "Jakarta, Indonesia · Mon–Fri 8AM–6PM WIB",
       },
 
-      // Steps
       step1: {
         title: "Field Report Submitted",
         desc: "A technician or operator submits a Trouble Report via CMMS, describing the fault, affected equipment, and site. The report is time-stamped and assigned a unique reference number automatically.",
@@ -567,15 +592,34 @@ const i18nData = {
         description:
           "Comprehensive building maintenance system with advanced CMMS integration for luxury residential complex.",
         status: "Active",
-        location: "Jakarta",
+        location: "South Jakarta",
+        sub: "Eminence · South · East Tower",
       },
       project2: {
-        name: "Niffaro Park",
+        name: "Nifarro Park",
         description:
-          "Modern office complex featuring smart building technology and comprehensive facility management systems.",
+          "Modern apartment with full MEP system maintenance — electrical panels, genset, pumps, AC, fire protection, CCTV, and access control.",
         status: "Active",
-        location: "Jakarta",
+        location: "East Jakarta",
+        sub: "Pasar Rebo, East Jakarta",
       },
+      project3: {
+        name: "Itama Ranoraya",
+        description:
+          "Ongoing office AC maintenance service at Floor 21, ITS Tower for PT. Itama Ranoraya, ensuring optimal cooling performance and system reliability.",
+        status: "Active",
+        location: "South Jakarta",
+        sub: "Pasar Minggu",
+      },
+      project4: {
+        name: "PT. Infokom Elektrindo",
+        description:
+          "Preventive service contract and critical spare parts replacement for a Perkins 1500 KVA generator set, 2024–2026.",
+        status: "In Progress",
+        location: "Jakarta",
+        sub: "Genset Service Contract",
+      },
+      viewAll: "View Full Project Portfolio",
     },
 
     // Services Section
@@ -588,6 +632,45 @@ const i18nData = {
       seeMore: "See More Services",
       seeLess: "Show Less",
       viewDetails: "View Details",
+      // ── Service category cards (new) ──────────────────────────────────
+      label: "Service",
+      viewPortfolio: "View Full Project Portfolio",
+      electrical: {
+        title: "Electrical Panel Systems",
+        desc: "Preventive maintenance and repair of distribution panels, switchgear, and building electrical systems.",
+      },
+      hvac: {
+        title: "Air Conditioning & Ventilation",
+        desc: "Routine care of split AC, central AC, and ventilation FAN systems (intake, exhaust, pressurized) for optimal comfort.",
+      },
+      genset: {
+        title: "Generator Set (Genset)",
+        desc: "Inspection, servicing, repair, and overhaul of generator sets — including control module and critical component replacement.",
+      },
+      pump: {
+        title: "Pump Systems",
+        desc: "Maintenance of domestic water pumps, submersible pumps (wastewater, rainwater, sewage), hydrant and fire pumps.",
+      },
+      fire: {
+        title: "Fire Protection Systems",
+        desc: "Maintenance and repair of fire alarm systems, hydrants, and fire pumps — including diesel fire pump control panel modernization.",
+      },
+      access: {
+        title: "Access Control & Public Address",
+        desc: "Installation, maintenance, and replacement of access control and public address systems for building security and communication.",
+      },
+      cctv: {
+        title: "CCTV Systems",
+        desc: "Maintenance and installation of CCTV surveillance systems for comprehensive building security coverage.",
+      },
+      evcs: {
+        title: "EV Charging Station (EVCS)",
+        desc: "Installation and commissioning of Electric Vehicle Charging Stations (40–106 KW) at hotels, offices, and commercial venues.",
+      },
+      cmms: {
+        title: "CMMS Platform",
+        desc: "Implementation of a CMMS web application for work order management, maintenance scheduling, asset registry, and role-based digital approvals.",
+      },
     },
 
     // About Section

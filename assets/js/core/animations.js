@@ -1,184 +1,213 @@
 // ============================================
-// ANIMATIONS.JS - All GSAP & Scroll Animations
+// ANIMATIONS.JS — OOP class
+// GSAP + ScrollTrigger + IntersectionObserver.
+// Lenis removed — it conflicted with navbar.js
+// smooth scroll and caused slingshot/stutter.
+// Rive and Lottie hooks kept as opt-in APIs.
 // ============================================
 
-const SiteAnimations = {
-  init() {
-    this.initGSAP();
-    this.initScrollAnimations();
-    console.log("Animations initialized");
-  },
+class Animations {
+  constructor() {
+    this.lenis = null; // reserved — not used
+    this._riveMap = new Map();
+    this._lottieSet = new Set();
 
-  // ============================================
-  // GSAP ANIMATIONS
-  // ============================================
-  initGSAP() {
-    // Register GSAP plugins
-    if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
+    this._initGSAP();
+  }
+
+  // ─── GSAP + ScrollTrigger ────────────────────────────────────────────
+  _initGSAP() {
+    if (typeof gsap === "undefined") return;
+    if (typeof ScrollTrigger !== "undefined") {
       gsap.registerPlugin(ScrollTrigger);
-
-      // HERO SECTION - Staggered entrance
-      this.animateHero();
-
-      // PROJECT CARDS - Hover effects
-      this.animateProjects();
-
-      // CMMS SECTION - Image reveal
-      this.animateCMMS();
     }
-  },
+    this._animateHero();
+    this._animateProjects();
+    this._animateCMMS();
+    this._animateScrollReveal();
+    this._initFadeObserver();
+  }
 
-  // Hero Section Animation
-  animateHero() {
-    const heroElements = document.querySelectorAll(".hero-content");
-
-    if (heroElements.length === 0) return;
-
-    gsap.from(heroElements, {
+  // ─── Hero entrance ───────────────────────────────────────────────────
+  _animateHero() {
+    const els = document.querySelectorAll(".hero-content");
+    if (!els.length) return;
+    gsap.from(els, {
       y: 30,
       opacity: 0,
       duration: 0.8,
       stagger: 0.15,
       ease: "power3.out",
       delay: 0.3,
-      clearProps: "all", // Clean up after animation
+      clearProps: "all",
     });
-  },
+  }
 
-  // Project Cards Hover (GSAP for precision)
-  animateProjects() {
-    const projectCards = document.querySelectorAll(".group.relative");
-
-    projectCards.forEach((card) => {
+  // ─── Project card hovers ─────────────────────────────────────────────
+  _animateProjects() {
+    document.querySelectorAll(".group.relative").forEach((card) => {
       const overlay = card.querySelector(".absolute.inset-0");
       const content = card.querySelector(".absolute.bottom-0");
-
       if (!overlay || !content) return;
-
-      // Hover in
       card.addEventListener("mouseenter", () => {
-        gsap.to(overlay, {
-          opacity: 1,
-          duration: 0.3,
-          ease: "power2.out",
-        });
-
-        gsap.to(content, {
-          y: 0,
-          duration: 0.3,
-          ease: "power2.out",
-        });
+        gsap.to(overlay, { opacity: 1, duration: 0.3, ease: "power2.out" });
+        gsap.to(content, { y: 0, duration: 0.3, ease: "power2.out" });
       });
-
-      // Hover out
       card.addEventListener("mouseleave", () => {
-        gsap.to(overlay, {
-          opacity: 0.7,
-          duration: 0.3,
-          ease: "power2.in",
-        });
-
-        gsap.to(content, {
-          y: 10,
-          duration: 0.3,
-          ease: "power2.in",
-        });
+        gsap.to(overlay, { opacity: 0.7, duration: 0.3, ease: "power2.in" });
+        gsap.to(content, { y: 10, duration: 0.3, ease: "power2.in" });
       });
     });
-  },
+  }
 
-  // CMMS Section - Scroll-triggered image reveal
-  animateCMMS() {
-    const cmmsImage = document.querySelector("#cmms img");
-    const cmmsContent = document.querySelector("#cmms .space-y-6");
+  // ─── CMMS section scroll reveal ──────────────────────────────────────
+  _animateCMMS() {
+    if (typeof ScrollTrigger === "undefined") return;
+    const img = document.querySelector("#cmms img");
+    const content = document.querySelector("#cmms .space-y-6");
+    if (!img || !content) return;
 
-    if (!cmmsImage || !cmmsContent) return;
-
-    // Image slide-in from left
-    gsap.from(cmmsImage, {
-      scrollTrigger: {
-        trigger: "#cmms",
-        start: "top 80%",
-        end: "top 20%",
-        toggleActions: "play none none reverse",
-        once: true,
-      },
+    gsap.from(img, {
+      scrollTrigger: { trigger: "#cmms", start: "top 80%", once: true },
       x: -50,
       opacity: 0,
       duration: 0.8,
       ease: "power3.out",
     });
-
-    // Content fade-in from right
-    gsap.from(cmmsContent.children, {
-      scrollTrigger: {
-        trigger: "#cmms",
-        start: "top 80%",
-        once: true,
-      },
+    gsap.from(content.children, {
+      scrollTrigger: { trigger: "#cmms", start: "top 80%", once: true },
       x: 30,
       opacity: 0,
       duration: 0.6,
       stagger: 0.1,
       ease: "power2.out",
     });
-  },
+  }
 
-  // ============================================
-  // SCROLL ANIMATIONS (Simple fade-ups)
-  // ============================================
-  initScrollAnimations() {
-    // Use Intersection Observer for simple fade-ups
-    const fadeElements = document.querySelectorAll("[data-fade-up]");
+  // ─── Generic reveal classes ──────────────────────────────────────────
+  _animateScrollReveal() {
+    if (typeof ScrollTrigger === "undefined") return;
 
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: "0px 0px -100px 0px",
-    };
+    gsap.utils.toArray(".reveal").forEach((el) => {
+      gsap.from(el, {
+        scrollTrigger: {
+          trigger: el,
+          start: "top 88%",
+          toggleActions: "play none none none",
+        },
+        opacity: 0,
+        y: 32,
+        duration: 0.7,
+        ease: "power2.out",
+      });
+    });
 
-    const fadeObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
+    gsap.utils.toArray(".reveal-stagger").forEach((parent) => {
+      const kids = parent.querySelectorAll(".reveal-child");
+      if (!kids.length) return;
+      gsap.from(kids, {
+        scrollTrigger: {
+          trigger: parent,
+          start: "top 85%",
+          toggleActions: "play none none none",
+        },
+        opacity: 0,
+        y: 28,
+        duration: 0.6,
+        ease: "power2.out",
+        stagger: 0.1,
+      });
+    });
+  }
+
+  // ─── IntersectionObserver fade-up ────────────────────────────────────
+  _initFadeObserver() {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
           entry.target.style.opacity = "1";
           entry.target.style.transform = "translateY(0)";
-          fadeObserver.unobserve(entry.target);
-        }
-      });
-    }, observerOptions);
+          observer.unobserve(entry.target);
+        });
+      },
+      { threshold: 0.1, rootMargin: "0px 0px -100px 0px" },
+    );
 
-    fadeElements.forEach((el) => {
+    const watch = (el, delay = 0) => {
       el.style.opacity = "0";
       el.style.transform = "translateY(20px)";
-      el.style.transition = "opacity 0.6s ease-out, transform 0.6s ease-out";
-      fadeObserver.observe(el);
-    });
+      el.style.transition = `opacity 0.6s ease-out ${delay}s, transform 0.6s ease-out ${delay}s`;
+      observer.observe(el);
+    };
 
-    // Projects section header
-    const projectsHeader = document.querySelector("#projects .text-center");
-    if (projectsHeader) {
-      projectsHeader.setAttribute("data-fade-up", "");
-      projectsHeader.style.opacity = "0";
-      projectsHeader.style.transform = "translateY(20px)";
-      projectsHeader.style.transition =
-        "opacity 0.6s ease-out, transform 0.6s ease-out";
-      fadeObserver.observe(projectsHeader);
+    document.querySelectorAll("[data-fade-up]").forEach((el) => watch(el));
+
+    const projHeader = document.querySelector("#projects .text-center");
+    if (projHeader && !projHeader.hasAttribute("data-fade-up"))
+      watch(projHeader);
+
+    document
+      .querySelectorAll("#about .bg-white\\/10")
+      .forEach((card, i) => watch(card, i * 0.1));
+  }
+
+  // ─── Rive (opt-in) ───────────────────────────────────────────────────
+  attachRive(target, src, opts = {}) {
+    if (typeof rive === "undefined") {
+      console.warn("[Animations] Rive not loaded.");
+      return null;
     }
-
-    // About section cards
-    const aboutCards = document.querySelectorAll("#about .bg-white\\/10");
-    aboutCards.forEach((card, index) => {
-      card.setAttribute("data-fade-up", "");
-      card.style.opacity = "0";
-      card.style.transform = "translateY(20px)";
-      card.style.transition = `opacity 0.6s ease-out ${index * 0.1}s, transform 0.6s ease-out ${index * 0.1}s`;
-      fadeObserver.observe(card);
+    const canvas =
+      typeof target === "string" ? document.querySelector(target) : target;
+    if (!canvas) return null;
+    const instance = new rive.Rive({
+      src,
+      canvas,
+      autoplay: true,
+      stateMachines: opts.stateMachines ?? "default",
+      layout: new rive.Layout({
+        fit: opts.fit ?? rive.Fit.Cover,
+        alignment: opts.alignment ?? rive.Alignment.Center,
+      }),
+      ...opts,
     });
-  },
-};
+    this._riveMap.set(canvas, instance);
+    return instance;
+  }
+  getRive(target) {
+    const canvas =
+      typeof target === "string" ? document.querySelector(target) : target;
+    return this._riveMap.get(canvas) ?? null;
+  }
 
-// Initialize on DOM ready
-if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", () => SiteAnimations.init());
-} else {
-  SiteAnimations.init();
+  // ─── Lottie (opt-in) ─────────────────────────────────────────────────
+  attachLottie(containerId, src, opts = {}) {
+    const container = document.getElementById(containerId);
+    if (!container || !customElements.get("lottie-player")) return null;
+    const player = document.createElement("lottie-player");
+    player.setAttribute("src", src);
+    player.setAttribute("background", opts.background ?? "transparent");
+    player.setAttribute("speed", String(opts.speed ?? 1));
+    if (opts.loop !== false) player.setAttribute("loop", "");
+    if (opts.autoplay !== false) player.setAttribute("autoplay", "");
+    player.style.width = opts.width ?? "100%";
+    player.style.height = opts.height ?? "100%";
+    container.innerHTML = "";
+    container.appendChild(player);
+    this._lottieSet.add(player);
+    return player;
+  }
+  pauseAllLottie() {
+    this._lottieSet.forEach((p) => p.pause?.());
+  }
+  resumeAllLottie() {
+    this._lottieSet.forEach((p) => p.play?.());
+  }
+
+  destroy() {
+    this._riveMap.forEach((r) => r.cleanup?.());
+    this._riveMap.clear();
+    this._lottieSet.clear();
+  }
 }
