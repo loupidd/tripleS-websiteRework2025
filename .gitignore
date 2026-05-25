@@ -16,3 +16,4 @@ npm-debug.log*
 
 # Dependencies
 node_modules/assets/js/config.js
+node_modules

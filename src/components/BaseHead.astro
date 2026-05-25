@@ -1,0 +1,151 @@
+---
+/**
+ * BaseHead.astro
+ * Shared <head> content for all pages.
+ * Replaces the duplicated head blocks across index.html, projects.html, cmms.html.
+ *
+ * Props:
+ *   title       — page <title>
+ *   description — meta description (SEO)
+ *   image       — OG image URL (optional, defaults to site og-image)
+ *   canonicalURL — canonical href (optional, defaults to Astro.url)
+ *   noindex     — set true on pages you don't want indexed
+ */
+
+interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+  canonicalURL?: string;
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description = 'PT. Sumber Sarana Solusindo — Technology-based mechanical & electrical building maintenance, backed by advanced CMMS integration. Jakarta, Indonesia.',
+  image = '/og-image.png',
+  canonicalURL = Astro.url.href,
+  noindex = false,
+} = Astro.props;
+
+const siteName = 'Sumber Sarana Solusindo';
+---
+
+<!-- ── Charset & Viewport ─────────────────────────────── -->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<!-- ── Canonical ─────────────────────────────────────── -->
+<link rel="canonical" href={canonicalURL} />
+
+<!-- ── Title & Description ────────────────────────────── -->
+<title>{title}</title>
+<meta name="description" content={description} />
+{noindex && <meta name="robots" content="noindex, nofollow" />}
+
+<!-- ── Open Graph / Facebook ──────────────────────────── -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content={canonicalURL} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={new URL(image, Astro.site)} />
+<meta property="og:site_name" content={siteName} />
+<meta property="og:locale" content="id_ID" />
+<meta property="og:locale:alternate" content="en_US" />
+
+<!-- ── Twitter Card ───────────────────────────────────── -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={new URL(image, Astro.site)} />
+
+<!-- ── Favicon ────────────────────────────────────────── -->
+<link rel="icon" href="/assets/img/logo/LogoNew.png" type="image/png" />
+<link rel="apple-touch-icon" href="/assets/img/logo/LogoNew.png" />
+
+<!-- ── Structured Data (JSON-LD) ─────────────────────── -->
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "PT. Sumber Sarana Solusindo",
+  "alternateName": "Triple S",
+  "description": description,
+  "url": "https://sumbersaranasolusindo.co.id",
+  "logo": "https://sumbersaranasolusindo.co.id/assets/img/LOGO_FINAL1.webp",
+  "image": "https://sumbersaranasolusindo.co.id/assets/img/LOGO_FINAL1.webp",
+  "telephone": "+628118860355",
+  "email": "sumbersaranasolusindo@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Jakarta",
+    "addressCountry": "ID"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -6.2088,
+    "longitude": 106.8456
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "08:00",
+      "closes": "18:00"
+    }
+  ],
+  "serviceArea": {
+    "@type": "Country",
+    "name": "Indonesia"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Building Maintenance Services",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Preventive Maintenance" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Electrical Services" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "HVAC Systems" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "CCTV & Access Control" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "CMMS Platform" } }
+    ]
+  },
+  "sameAs": [
+    "https://wa.me/+628118860355"
+  ]
+})} />
+
+<!-- ── Resource Hints ──────────────────────────────────── -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+<link rel="preconnect" href="https://cdn.jsdelivr.net" />
+<link rel="dns-prefetch" href="https://unpkg.com" />
+
+<!-- ── Google Fonts ───────────────────────────────────── -->
+<!--
+  Use `display=swap` + preload the most critical weight to avoid FOIT.
+  Astro builds the font link at compile time so it lands in the <head> with no
+  JS render-blocking overhead (unlike the old CDN Tailwind approach).
+-->
+<link
+  rel="preload"
+  as="style"
+  href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&family=Montserrat:wght@500;600;700;800&display=swap"
+/>
+<link
+  href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&family=Montserrat:wght@500;600;700;800&display=swap"
+  rel="stylesheet"
+/>
+
+<!-- ── Flowbite CSS ───────────────────────────────────── -->
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css"
+/>
+
+<!-- ── Theme Color (browser chrome) ──────────────────── -->
+<meta name="theme-color" content="#006AB3" />
+<meta name="msapplication-TileColor" content="#006AB3" />
+
+<!-- ── Web App Meta ───────────────────────────────────── -->
+<meta name="application-name" content={siteName} />
+<meta name="generator" content={Astro.generator} />

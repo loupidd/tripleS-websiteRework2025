@@ -1,0 +1,2467 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CMMS Web App — Sumber Sarana Solusindo</title>
+
+    <!-- Fonts: Montserrat + Poppins (matching index.html) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              montserrat: ["Montserrat", "sans-serif"],
+              poppins: ["Poppins", "sans-serif"],
+            },
+            colors: {
+              blue: {
+                primary: "#0061ae",
+                light: "#7ac5ff",
+                mid: "#0f5f98",
+                dark: "#0f3a5f",
+                pale: "#ebf5ff",
+                pale2: "#d6ecff",
+              },
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- AOS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+    />
+
+    <!-- i18n Data (load BEFORE navbar.js) -->
+    <script src="../assets/js/data/i18n-data.js"></script>
+
+    <!-- Custom CSS — shared with index (one level up) -->
+    <link rel="stylesheet" href="../assets/css/style.css" />
+  </head>
+
+  <body class="font-poppins text-gray-700 overflow-x-hidden scroll-smooth">
+    <!-- ════════════════════════════════════════
+         NAVBAR
+    ════════════════════════════════════════ -->
+    <nav
+      class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 font-poppins bg-white border-b border-gray-100 shadow-sm"
+      id="navbar"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20">
+          <!-- Logo -->
+          <div class="flex items-center group">
+            <a
+              href="../index.html"
+              class="flex items-center space-x-3 relative overflow-hidden rounded-xl p-2 hover:bg-black/5 transition-all duration-300"
+            >
+              <div class="relative">
+                <img
+                  src="../assets/img/LOGO_FINAL1.webp"
+                  class="h-10 md:h-12 transition-all duration-300 group-hover:scale-110"
+                  alt="Triple S Logo"
+                />
+              </div>
+            </a>
+          </div>
+
+          <!-- Desktop Nav -->
+          <div class="hidden md:flex items-center space-x-1">
+            <div
+              class="flex items-center space-x-1 bg-[#0061ae]/8 backdrop-blur-sm rounded-full p-1 border border-[#0061ae]/15"
+            >
+              <a
+                href="../index.html#home"
+                class="nav-item group relative px-4 py-2.5 text-sm font-medium text-gray-600 hover:text-[#0061ae] transition-all duration-300 rounded-full"
+                data-i18n="nav.home"
+              >
+                <span class="relative z-10">Home</span>
+                <div
+                  class="absolute inset-0 bg-[#0061ae]/5 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300"
+                ></div>
+              </a>
+              <a
+                href="../index.html#projects"
+                class="nav-item group relative px-4 py-2.5 text-sm font-medium text-gray-600 hover:text-[#0061ae] transition-all duration-300 rounded-full"
+                data-i18n="nav.projects"
+              >
+                <span class="relative z-10">Projects</span>
+                <div
+                  class="absolute inset-0 bg-[#0061ae]/5 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300"
+                ></div>
+              </a>
+              <a
+                href="../index.html#details"
+                class="nav-item group relative px-4 py-2.5 text-sm font-medium text-gray-600 hover:text-[#0061ae] transition-all duration-300 rounded-full"
+                data-i18n="nav.services"
+              >
+                <span class="relative z-10">Services</span>
+                <div
+                  class="absolute inset-0 bg-[#0061ae]/5 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300"
+                ></div>
+              </a>
+              <a
+                href="../index.html#about"
+                class="nav-item group relative px-4 py-2.5 text-sm font-medium text-gray-600 hover:text-[#0061ae] transition-all duration-300 rounded-full"
+                data-i18n="nav.about"
+              >
+                <span class="relative z-10">About</span>
+                <div
+                  class="absolute inset-0 bg-[#0061ae]/5 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300"
+                ></div>
+              </a>
+              <a
+                href="../index.html#contact"
+                class="nav-item group relative px-4 py-2.5 text-sm font-medium text-gray-600 hover:text-[#0061ae] transition-all duration-300 rounded-full"
+                data-i18n="nav.contact"
+              >
+                <span class="relative z-10">Contact</span>
+                <div
+                  class="absolute inset-0 bg-[#0061ae]/5 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300"
+                ></div>
+              </a>
+
+              <!-- CMMS — active -->
+              <a
+                href="cmms.html"
+                class="nav-item group relative px-4 py-2.5 text-sm font-semibold text-[#0061ae] transition-all duration-300 rounded-full"
+              >
+                <span class="relative z-10 flex items-center gap-1.5">
+                  <span class="relative flex h-1.5 w-1.5">
+                    <span
+                      class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#7AC5FF] opacity-75"
+                    ></span>
+                    <span
+                      class="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#7AC5FF]"
+                    ></span>
+                  </span>
+                  <span data-i18n="nav.cmms">CMMS</span>
+                </span>
+                <div
+                  class="absolute inset-0 bg-gradient-to-r from-[#7AC5FF]/20 to-[#0061ae]/20 rounded-full"
+                ></div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right: Language toggle -->
+          <div class="hidden md:flex items-center space-x-4">
+            <div class="relative flex items-center space-x-3">
+              <span id="desktopIdText" class="text-gray-500 text-sm font-medium"
+                >ID</span
+              >
+              <div class="relative">
+                <button
+                  id="languageToggle"
+                  class="relative w-14 h-7 bg-[#0061ae]/10 backdrop-blur-sm rounded-full border border-[#0061ae]/20 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#0061ae]/30 hover:bg-[#0061ae]/20"
+                >
+                  <div
+                    id="toggleSlider"
+                    class="absolute top-0.5 left-0.5 w-6 h-6 bg-gradient-to-r from-[#7AC5FF] to-[#0F5F98] rounded-full shadow-lg transform transition-transform duration-300 ease-in-out flex items-center justify-center"
+                  >
+                    <svg
+                      class="w-3 h-3 text-white"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
+                      ></path>
+                    </svg>
+                  </div>
+                </button>
+              </div>
+              <span id="desktopEnText" class="text-gray-500 text-sm font-medium"
+                >EN</span
+              >
+            </div>
+          </div>
+
+          <!-- Mobile: lang + hamburger -->
+          <div class="md:hidden flex items-center space-x-3">
+            <div class="flex items-center space-x-2">
+              <span id="mobileIdText" class="text-gray-500 text-xs font-medium"
+                >ID</span
+              >
+              <button
+                id="mobileLangToggle"
+                class="relative w-10 h-5 bg-[#0061ae]/10 rounded-full border border-[#0061ae]/20 transition-all duration-300"
+              >
+                <div
+                  id="mobileToggleSlider"
+                  class="absolute top-0.5 left-0.5 w-4 h-4 bg-gradient-to-r from-[#7AC5FF] to-[#0F5F98] rounded-full transform transition-transform duration-300 ease-in-out flex items-center justify-center"
+                >
+                  <svg
+                    class="w-2 h-2 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
+                    ></path>
+                  </svg>
+                </div>
+              </button>
+              <span id="mobileEnText" class="text-gray-500 text-xs font-medium"
+                >EN</span
+              >
+            </div>
+
+            <!-- Hamburger -->
+            <button
+              type="button"
+              id="mobileMenuButton"
+              class="mobile-menu-button relative w-10 h-10 text-gray-700 hover:bg-[#0061ae]/10 rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#0061ae]/30"
+              aria-controls="mobile-menu"
+              aria-expanded="false"
+            >
+              <span class="sr-only">Open main menu</span>
+              <div class="absolute inset-0 flex items-center justify-center">
+                <div class="space-y-1">
+                  <div
+                    class="w-5 h-0.5 bg-current transform transition-all duration-300"
+                  ></div>
+                  <div
+                    class="w-5 h-0.5 bg-current transform transition-all duration-300"
+                  ></div>
+                  <div
+                    class="w-5 h-0.5 bg-current transform transition-all duration-300"
+                  ></div>
+                </div>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div class="mobile-menu md:hidden" id="mobile-menu">
+        <div class="bg-white border-t border-gray-100 shadow-2xl">
+          <div class="px-4 py-6 space-y-1">
+            <a
+              href="../index.html#home"
+              class="group flex items-center px-4 py-3 text-gray-700 hover:text-[#0061ae] hover:bg-[#0061ae]/5 rounded-xl transition-all duration-300"
+              data-i18n="nav.home"
+            >
+              <div class="flex items-center space-x-3">
+                <div
+                  class="w-2 h-2 bg-gradient-to-r from-[#7AC5FF] to-[#0F5F98] rounded-full opacity-40 group-hover:opacity-100 transition-opacity duration-300"
+                ></div>
+                <span class="font-medium">Home</span>
+              </div>
+            </a>
+            <a
+              href="../index.html#projects"
+              class="group flex items-center px-4 py-3 text-gray-600 hover:text-[#0061ae] hover:bg-[#0061ae]/5 rounded-xl transition-all duration-300"
+              data-i18n="nav.projects"
+            >
+              <div class="flex items-center space-x-3">
+                <div
+                  class="w-2 h-2 bg-gradient-to-r from-[#7AC5FF] to-[#0F5F98] rounded-full opacity-40 group-hover:opacity-100 transition-opacity duration-300"
+                ></div>
+                <span class="font-medium">Projects</span>
+              </div>
+            </a>
+            <a
+              href="../index.html#details"
+              class="group flex items-center px-4 py-3 text-gray-600 hover:text-[#0061ae] hover:bg-[#0061ae]/5 rounded-xl transition-all duration-300"
+              data-i18n="nav.services"
+            >
+              <div class="flex items-center space-x-3">
+                <div
+                  class="w-2 h-2 bg-gradient-to-r from-[#7AC5FF] to-[#0F5F98] rounded-full opacity-40 group-hover:opacity-100 transition-opacity duration-300"
+                ></div>
+                <span class="font-medium">Services</span>
+              </div>
+            </a>
+            <a
+              href="../index.html#about"
+              class="group flex items-center px-4 py-3 text-gray-600 hover:text-[#0061ae] hover:bg-[#0061ae]/5 rounded-xl transition-all duration-300"
+              data-i18n="nav.about"
+            >
+              <div class="flex items-center space-x-3">
+                <div
+                  class="w-2 h-2 bg-gradient-to-r from-[#7AC5FF] to-[#0F5F98] rounded-full opacity-40 group-hover:opacity-100 transition-opacity duration-300"
+                ></div>
+                <span class="font-medium">About</span>
+              </div>
+            </a>
+            <a
+              href="../index.html#contact"
+              class="group flex items-center px-4 py-3 text-gray-600 hover:text-[#0061ae] hover:bg-[#0061ae]/5 rounded-xl transition-all duration-300"
+              data-i18n="nav.contact"
+            >
+              <div class="flex items-center space-x-3">
+                <div
+                  class="w-2 h-2 bg-gradient-to-r from-[#7AC5FF] to-[#0F5F98] rounded-full opacity-40 group-hover:opacity-100 transition-opacity duration-300"
+                ></div>
+                <span class="font-medium">Contact</span>
+              </div>
+            </a>
+            <div class="pt-2 mt-2 border-t border-gray-100">
+              <a
+                href="cmms.html"
+                class="group flex items-center px-4 py-3 text-[#0061ae] bg-[#0061ae]/5 rounded-xl transition-all duration-300"
+              >
+                <div class="flex items-center space-x-3">
+                  <span class="relative flex h-2 w-2">
+                    <span
+                      class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#7AC5FF] opacity-75"
+                    ></span>
+                    <span
+                      class="relative inline-flex rounded-full h-2 w-2 bg-[#7AC5FF]"
+                    ></span>
+                  </span>
+                  <span class="font-semibold" data-i18n="nav.cmms">CMMS</span>
+                  <span
+                    class="ml-1 px-1.5 py-0.5 text-[10px] font-bold rounded-full bg-gradient-to-r from-[#7AC5FF] to-[#0F5F98] text-white leading-none"
+                    >App</span
+                  >
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- END NAVBAR -->
+
+    <!-- ══════════════════════════════════════
+         HERO  — blue background
+    ══════════════════════════════════════ -->
+    <section class="hero-section pt-[152px] pb-32 px-8 md:px-20">
+      <!-- decorative layers -->
+      <div class="hero-bg-dots"></div>
+      <div
+        class="hero-blob-1 absolute -top-16 -right-16 w-[300px] h-[300px] rounded-full"
+      ></div>
+      <div
+        class="hero-blob-2 absolute bottom-16 -left-10 w-[200px] h-[200px] rounded-full"
+      ></div>
+
+      <!-- hero text -->
+      <div class="hero-content max-w-[680px]">
+        <div
+          class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/20 border border-white/35 text-[11px] font-bold text-white tracking-[0.1em] uppercase mb-6 backdrop-blur-sm"
+        >
+          <div
+            class="badge-dot w-[7px] h-[7px] rounded-full bg-[#7dffbd]"
+          ></div>
+          <span data-i18n="cmms.hero.badge">Technology Powered · CMMS</span>
+        </div>
+
+        <h1
+          class="text-[clamp(36px,4.5vw,60px)] font-extrabold leading-[1.1] tracking-tight mb-[18px] text-white"
+        >
+          <span data-i18n="cmms.hero.title1">Supported with</span><br />
+          <span class="text-gradient-light" data-i18n="cmms.hero.title2"
+            >CMMS Web App</span
+          >
+        </h1>
+
+        <p
+          class="text-base text-white/80 leading-[1.75] max-w-[520px] mb-12 font-normal"
+          data-i18n="cmms.hero.desc"
+        >
+          Optimize your building MEP maintenance with intelligent CMMS — manage
+          work orders, monitor assets, and prevent downtime in one secure and
+          efficient centralized system.
+        </p>
+      </div>
+
+      <!-- Stats Strip -->
+      <div
+        class="stats-strip grid grid-cols-2 md:grid-cols-4 bg-white rounded-[20px] overflow-hidden border border-gray-200 mt-12"
+        data-aos="fade-up"
+        data-aos-delay="200"
+      >
+        <div class="stat-item px-6 py-7 text-center border-r border-gray-200">
+          <div class="stat-number">
+            <span class="countup-val" data-target="3045">0</span>
+          </div>
+          <div
+            class="text-[11px] font-semibold text-gray-400 uppercase tracking-[0.07em]"
+            data-i18n="cmms.stats.equipments"
+          >
+            Equipments
+          </div>
+        </div>
+        <div class="stat-item px-6 py-7 text-center border-r border-gray-200">
+          <div class="stat-number">
+            <span class="countup-val" data-target="244">0</span>
+          </div>
+          <div
+            class="text-[11px] font-semibold text-gray-400 uppercase tracking-[0.07em]"
+            data-i18n="cmms.stats.maintenance"
+          >
+            Maintenance Activities
+          </div>
+        </div>
+        <div class="stat-item px-6 py-7 text-center border-r border-gray-200">
+          <div class="stat-number">
+            <span class="countup-val" data-target="2">0</span>
+          </div>
+          <div
+            class="text-[11px] font-semibold text-gray-400 uppercase tracking-[0.07em]"
+            data-i18n="cmms.stats.companies"
+          >
+            Companies
+          </div>
+        </div>
+        <div class="stat-item px-6 py-7 text-center">
+          <div class="stat-number">
+            <span class="countup-val" data-target="24">0</span>
+          </div>
+          <div
+            class="text-[11px] font-semibold text-gray-400 uppercase tracking-[0.07em]"
+            data-i18n="cmms.stats.workers"
+          >
+            Workers
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END HERO -->
+
+    <!-- ══════════════════════════════════════
+         SYSTEM MAP  — white background
+    ══════════════════════════════════════ -->
+    <section class="py-20 px-8 md:px-20 bg-gray-50">
+      <div data-aos="fade-up">
+        <div
+          class="section-badge-grad inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-[11px] font-bold text-white tracking-[0.08em] uppercase mb-4"
+        >
+          <svg
+            width="12"
+            height="12"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+          >
+            <circle cx="12" cy="12" r="3" />
+            <path d="M12 2v2M12 20v2M2 12h2M20 12h2" />
+          </svg>
+          <span data-i18n="cmms.map.badge">System Architecture</span>
+        </div>
+        <h2
+          class="text-[clamp(26px,3vw,40px)] font-extrabold text-blue-primary tracking-tight leading-[1.15] mb-3.5"
+        >
+          <span data-i18n="cmms.map.title1">How Everything</span>
+          <span class="text-gradient-blue" data-i18n="cmms.map.title2">
+            Connects</span
+          >
+        </h2>
+        <p
+          class="text-[15px] text-gray-600 leading-[1.75] max-w-[600px] mb-12 font-normal"
+          data-i18n="cmms.map.desc"
+        >
+          Every module is interlinked — from a field trouble report all the way
+          to digital management sign-off, every action traces through one
+          unified chain.
+        </p>
+      </div>
+
+      <div
+        class="map-wrapper max-w-[960px] mx-auto bg-white rounded-[24px] border border-gray-200 p-10"
+        data-aos="fade-up"
+        data-aos-delay="100"
+      >
+        <svg
+          viewBox="0 0 960 540"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          style="width: 100%; height: auto"
+        >
+          <defs>
+            <linearGradient id="lineGrad" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#7AC5FF" stop-opacity="0.5" />
+              <stop offset="100%" stop-color="#0061AE" stop-opacity="0.5" />
+            </linearGradient>
+            <filter id="softglow">
+              <feGaussianBlur stdDeviation="4" result="blur" />
+              <feMerge>
+                <feMergeNode in="blur" />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
+            <marker
+              id="arrowBlue"
+              markerWidth="7"
+              markerHeight="7"
+              refX="5"
+              refY="3.5"
+              orient="auto"
+            >
+              <polygon points="0 0, 7 3.5, 0 7" fill="rgba(0,97,174,0.4)" />
+            </marker>
+          </defs>
+          <!-- Lines from centre Work Order node to satellites -->
+          <line
+            x1="480"
+            y1="195"
+            x2="210"
+            y2="105"
+            stroke="url(#lineGrad)"
+            stroke-width="1.5"
+            stroke-dasharray="6,4"
+            marker-end="url(#arrowBlue)"
+          />
+          <line
+            x1="480"
+            y1="195"
+            x2="750"
+            y2="105"
+            stroke="url(#lineGrad)"
+            stroke-width="1.5"
+            stroke-dasharray="6,4"
+            marker-end="url(#arrowBlue)"
+          />
+          <line
+            x1="480"
+            y1="195"
+            x2="120"
+            y2="290"
+            stroke="url(#lineGrad)"
+            stroke-width="1.5"
+            stroke-dasharray="6,4"
+            marker-end="url(#arrowBlue)"
+          />
+          <line
+            x1="480"
+            y1="195"
+            x2="840"
+            y2="290"
+            stroke="url(#lineGrad)"
+            stroke-width="1.5"
+            stroke-dasharray="6,4"
+            marker-end="url(#arrowBlue)"
+          />
+          <line
+            x1="480"
+            y1="195"
+            x2="210"
+            y2="420"
+            stroke="url(#lineGrad)"
+            stroke-width="1.5"
+            stroke-dasharray="6,4"
+            marker-end="url(#arrowBlue)"
+          />
+          <line
+            x1="480"
+            y1="195"
+            x2="480"
+            y2="420"
+            stroke="url(#lineGrad)"
+            stroke-width="1.5"
+            stroke-dasharray="6,4"
+            marker-end="url(#arrowBlue)"
+          />
+          <line
+            x1="480"
+            y1="195"
+            x2="750"
+            y2="420"
+            stroke="url(#lineGrad)"
+            stroke-width="1.5"
+            stroke-dasharray="6,4"
+            marker-end="url(#arrowBlue)"
+          />
+          <!-- Centre: Work Order -->
+          <circle
+            cx="480"
+            cy="195"
+            r="70"
+            fill="#EBF5FF"
+            stroke="#0061AE"
+            stroke-width="2"
+            filter="url(#softglow)"
+          />
+          <circle
+            cx="480"
+            cy="195"
+            r="58"
+            fill="#D6ECFF"
+            stroke="#7AC5FF"
+            stroke-width="1"
+          />
+          <text
+            x="480"
+            y="188"
+            text-anchor="middle"
+            fill="#0061AE"
+            font-family="Montserrat,sans-serif"
+            font-size="13"
+            font-weight="800"
+          >
+            WORK
+          </text>
+          <text
+            x="480"
+            y="207"
+            text-anchor="middle"
+            fill="#0061AE"
+            font-family="Montserrat,sans-serif"
+            font-size="13"
+            font-weight="800"
+          >
+            ORDER
+          </text>
+          <text
+            x="480"
+            y="226"
+            text-anchor="middle"
+            fill="#0F5F98"
+            font-family="Montserrat,sans-serif"
+            font-size="8.5"
+            font-weight="500"
+          >
+            PM · CM · CERT · TR
+          </text>
+          <!-- Trouble Report -->
+          <rect
+            x="100"
+            y="62"
+            width="180"
+            height="74"
+            rx="12"
+            fill="white"
+            stroke="#D6ECFF"
+            stroke-width="1.5"
+            filter="url(#softglow)"
+          />
+          <rect
+            x="100"
+            y="62"
+            width="180"
+            height="5"
+            rx="2.5"
+            fill="url(#lineGrad)"
+          />
+          <text
+            x="190"
+            y="100"
+            text-anchor="middle"
+            fill="#0061AE"
+            font-family="Montserrat,sans-serif"
+            font-size="12"
+            font-weight="700"
+          >
+            Trouble Report
+          </text>
+          <text
+            x="190"
+            y="120"
+            text-anchor="middle"
+            fill="#94A3B8"
+            font-family="Montserrat,sans-serif"
+            font-size="9.5"
+          >
+            Linked → Work Order
+          </text>
+          <!-- Schedule -->
+          <rect
+            x="680"
+            y="62"
+            width="180"
+            height="74"
+            rx="12"
+            fill="white"
+            stroke="#D6ECFF"
+            stroke-width="1.5"
+            filter="url(#softglow)"
+          />
+          <rect
+            x="680"
+            y="62"
+            width="180"
+            height="5"
+            rx="2.5"
+            fill="url(#lineGrad)"
+          />
+          <text
+            x="770"
+            y="100"
+            text-anchor="middle"
+            fill="#0061AE"
+            font-family="Montserrat,sans-serif"
+            font-size="12"
+            font-weight="700"
+          >
+            Schedule
+          </text>
+          <text
+            x="770"
+            y="120"
+            text-anchor="middle"
+            fill="#94A3B8"
+            font-family="Montserrat,sans-serif"
+            font-size="9.5"
+          >
+            WO + Trouble Report
+          </text>
+          <!-- Equipment List -->
+          <rect
+            x="25"
+            y="255"
+            width="180"
+            height="74"
+            rx="12"
+            fill="white"
+            stroke="#D6ECFF"
+            stroke-width="1.5"
+            filter="url(#softglow)"
+          />
+          <rect
+            x="25"
+            y="255"
+            width="180"
+            height="5"
+            rx="2.5"
+            fill="url(#lineGrad)"
+          />
+          <text
+            x="115"
+            y="293"
+            text-anchor="middle"
+            fill="#0061AE"
+            font-family="Montserrat,sans-serif"
+            font-size="12"
+            font-weight="700"
+          >
+            Equipment List
+          </text>
+          <text
+            x="115"
+            y="313"
+            text-anchor="middle"
+            fill="#94A3B8"
+            font-family="Montserrat,sans-serif"
+            font-size="9.5"
+          >
+            Linked → Work Order
+          </text>
+          <!-- Digital Approval -->
+          <rect
+            x="755"
+            y="255"
+            width="180"
+            height="74"
+            rx="12"
+            fill="#FFFBEB"
+            stroke="#FDE68A"
+            stroke-width="1.5"
+            filter="url(#softglow)"
+          />
+          <rect
+            x="755"
+            y="255"
+            width="180"
+            height="5"
+            rx="2.5"
+            fill="#F59E0B"
+          />
+          <text
+            x="845"
+            y="293"
+            text-anchor="middle"
+            fill="#92400E"
+            font-family="Montserrat,sans-serif"
+            font-size="12"
+            font-weight="700"
+          >
+            Digital Approval
+          </text>
+          <text
+            x="845"
+            y="313"
+            text-anchor="middle"
+            fill="#B45309"
+            font-family="Montserrat,sans-serif"
+            font-size="9.5"
+          >
+            Linked to all modules
+          </text>
+          <!-- User List -->
+          <rect
+            x="100"
+            y="390"
+            width="180"
+            height="74"
+            rx="12"
+            fill="white"
+            stroke="#D6ECFF"
+            stroke-width="1.5"
+            filter="url(#softglow)"
+          />
+          <rect
+            x="100"
+            y="390"
+            width="180"
+            height="5"
+            rx="2.5"
+            fill="url(#lineGrad)"
+          />
+          <text
+            x="190"
+            y="428"
+            text-anchor="middle"
+            fill="#0061AE"
+            font-family="Montserrat,sans-serif"
+            font-size="12"
+            font-weight="700"
+          >
+            User List
+          </text>
+          <text
+            x="190"
+            y="447"
+            text-anchor="middle"
+            fill="#94A3B8"
+            font-family="Montserrat,sans-serif"
+            font-size="9.5"
+          >
+            Role Based Authority
+          </text>
+          <!-- Site Choice -->
+          <rect
+            x="390"
+            y="390"
+            width="180"
+            height="74"
+            rx="12"
+            fill="white"
+            stroke="#A7F3D0"
+            stroke-width="1.5"
+            filter="url(#softglow)"
+          />
+          <rect
+            x="390"
+            y="390"
+            width="180"
+            height="5"
+            rx="2.5"
+            fill="#34D399"
+          />
+          <text
+            x="480"
+            y="428"
+            text-anchor="middle"
+            fill="#065F46"
+            font-family="Montserrat,sans-serif"
+            font-size="12"
+            font-weight="700"
+          >
+            Site Choice
+          </text>
+          <text
+            x="480"
+            y="447"
+            text-anchor="middle"
+            fill="#94A3B8"
+            font-family="Montserrat,sans-serif"
+            font-size="9.5"
+          >
+            Linked to User Role
+          </text>
+          <!-- WO Types -->
+          <rect
+            x="680"
+            y="390"
+            width="180"
+            height="74"
+            rx="12"
+            fill="white"
+            stroke="#DDD6FE"
+            stroke-width="1.5"
+            filter="url(#softglow)"
+          />
+          <rect
+            x="680"
+            y="390"
+            width="180"
+            height="5"
+            rx="2.5"
+            fill="#8B5CF6"
+          />
+          <text
+            x="770"
+            y="421"
+            text-anchor="middle"
+            fill="#5B21B6"
+            font-family="Montserrat,sans-serif"
+            font-size="12"
+            font-weight="700"
+          >
+            WO Types
+          </text>
+          <text
+            x="770"
+            y="439"
+            text-anchor="middle"
+            fill="#94A3B8"
+            font-family="Montserrat,sans-serif"
+            font-size="9.5"
+          >
+            Prev · Corr · Cert
+          </text>
+          <text
+            x="770"
+            y="455"
+            text-anchor="middle"
+            fill="#94A3B8"
+            font-family="Montserrat,sans-serif"
+            font-size="9.5"
+          >
+            Trouble Report
+          </text>
+        </svg>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         HIGHLIGHTS
+    ══════════════════════════════════════ -->
+    <section class="py-20 px-8 md:px-20 bg-white" id="highlights">
+      <div data-aos="fade-up">
+        <div
+          class="section-badge-grad inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-[11px] font-bold text-white tracking-[0.08em] uppercase mb-4"
+        >
+          <svg
+            width="12"
+            height="12"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+          >
+            <path
+              d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+            />
+          </svg>
+          <span data-i18n="cmms.highlights.badge">Core Modules</span>
+        </div>
+        <h2
+          class="text-[clamp(26px,3vw,40px)] font-extrabold text-blue-primary tracking-tight leading-[1.15] mb-3.5"
+        >
+          <span data-i18n="cmms.highlights.title1">System</span>
+          <span class="text-gradient-blue" data-i18n="cmms.highlights.title2">
+            Highlights</span
+          >
+        </h2>
+        <p
+          class="text-[15px] text-gray-600 leading-[1.75] max-w-[600px] mb-12 font-normal"
+          data-i18n="cmms.highlights.desc"
+        >
+          Eight interconnected modules covering every aspect of MEP maintenance
+          — from field operations to executive approval.
+        </p>
+      </div>
+
+      <div
+        class="grid gap-5"
+        style="grid-template-columns: repeat(auto-fit, minmax(340px, 1fr))"
+      >
+        <!-- Card 1: Work Order -->
+        <div
+          class="h-card bg-white border border-gray-200 rounded-[20px] overflow-hidden"
+          data-aos="fade-up"
+          data-aos-delay="0"
+        >
+          <div class="flex items-start gap-4 pt-7 px-7">
+            <div
+              class="w-12 h-12 rounded-[14px] flex items-center justify-center flex-shrink-0 bg-violet-50"
+            >
+              <svg
+                class="w-[22px] h-[22px] stroke-violet-700 fill-none"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+                />
+                <path d="M9 12l2 2 4-4" />
+              </svg>
+            </div>
+            <div>
+              <div
+                class="text-[10px] font-bold text-gray-400 tracking-[0.12em] uppercase mb-1"
+                data-i18n="cmms.card.num1"
+              >
+                Highlight 01
+              </div>
+              <div
+                class="text-[17px] font-bold text-gray-800 leading-[1.3]"
+                data-i18n="cmms.card.title1"
+              >
+                Work Order Management
+              </div>
+            </div>
+          </div>
+          <p
+            class="px-7 pt-3.5 text-[13.5px] text-gray-600 leading-[1.7]"
+            data-i18n="cmms.card.desc1"
+          >
+            Four distinct work order types — Preventive Maintenance, Corrective
+            Maintenance, Certification, and Trouble Report. Each follows its own
+            defined workflow with automated assignment, progress tracking, and
+            escalation paths.
+          </p>
+          <div class="flex flex-wrap gap-2 px-7 py-4">
+            <span
+              class="text-[10.5px] font-semibold px-3 py-1 rounded-full border border-blue-pale2 text-blue-primary bg-blue-pale"
+              data-i18n="cmms.tag.preventive"
+              >Preventive</span
+            >
+            <span
+              class="text-[10.5px] font-semibold px-3 py-1 rounded-full border border-blue-pale2 text-blue-primary bg-blue-pale"
+              data-i18n="cmms.tag.corrective"
+              >Corrective</span
+            >
+            <span
+              class="text-[10.5px] font-semibold px-3 py-1 rounded-full border border-blue-pale2 text-blue-primary bg-blue-pale"
+              data-i18n="cmms.tag.certification"
+              >Certification</span
+            >
+            <span
+              class="text-[10.5px] font-semibold px-3 py-1 rounded-full border-amber-200 text-amber-900 bg-amber-50 border"
+              data-i18n="cmms.tag.troubleReport"
+              >Trouble Report</span
+            >
+          </div>
+          <div
+            class="mx-5 mb-5 rounded-xl border border-gray-200 bg-gray-50 aspect-video flex items-center justify-center"
+          >
+            <img src="./img/cmms-img/work-order-management.webp" alt="" />
+          </div>
+        </div>
+
+        <!-- Card 2: TR → WO -->
+        <div
+          class="h-card bg-white border border-gray-200 rounded-[20px] overflow-hidden"
+          data-aos="fade-up"
+          data-aos-delay="60"
+        >
+          <div class="flex items-start gap-4 pt-7 px-7">
+            <div
+              class="w-12 h-12 rounded-[14px] flex items-center justify-center flex-shrink-0 bg-rose-50"
+            >
+              <svg
+                class="w-[22px] h-[22px] stroke-rose-600 fill-none"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"
+                />
+                <line x1="12" y1="9" x2="12" y2="13" />
+                <line x1="12" y1="17" x2="12.01" y2="17" />
+              </svg>
+            </div>
+            <div>
+              <div
+                class="text-[10px] font-bold text-gray-400 tracking-[0.12em] uppercase mb-1"
+                data-i18n="cmms.card.num2"
+              >
+                Highlight 02
+              </div>
+              <div
+                class="text-[17px] font-bold text-gray-800 leading-[1.3]"
+                data-i18n="cmms.card.title2"
+              >
+                Trouble Report → Work Order Link
+              </div>
+            </div>
+          </div>
+          <p
+            class="px-7 pt-3.5 text-[13.5px] text-gray-600 leading-[1.7]"
+            data-i18n="cmms.card.desc2"
+          >
+            Any submitted Trouble Report can be directly escalated into a formal
+            Work Order. This creates an automatic traceability chain — from the
+            field complaint all the way to resolution and sign-off, eliminating
+            manual follow-up gaps.
+          </p>
+          <div class="flex flex-wrap gap-2 px-7 py-4">
+            <span
+              class="text-[10.5px] font-semibold px-3 py-1 rounded-full border border-blue-pale2 text-blue-primary bg-blue-pale"
+              data-i18n="cmms.tag.autoEscalation"
+              >Auto-escalation</span
+            >
+            <span
+              class="text-[10.5px] font-semibold px-3 py-1 rounded-full border border-blue-pale2 text-blue-primary bg-blue-pale"
+              data-i18n="cmms.tag.traceability"
+              >Traceability</span
+            >
+            <span
+              class="text-[10.5px] font-semibold px-3 py-1 rounded-full border border-blue-pale2 text-blue-primary bg-blue-pale"
+              data-i18n="cmms.tag.rootCause"
+              >Root Cause Linking</span
+            >
+          </div>
+          <div
+            class="mx-5 mb-5 rounded-xl border border-gray-200 bg-gray-50 aspect-video flex items-center justify-center"
+          >
+            <img src="./img/cmms-img/trouble-report.webp" alt="" />
+          </div>
+        </div>
+
+        <!-- Card 3: User List -->
+        <div
+          class="h-card bg-white border border-gray-200 rounded-[20px] overflow-hidden"
+          data-aos="fade-up"
+          data-aos-delay="120"
+        >
+          <div class="flex items-start gap-4 pt-7 px-7">
+            <div
+              class="w-12 h-12 rounded-[14px] flex items-center justify-center flex-shrink-0 bg-[#ebf5ff]"
+            >
+              <svg
+                class="w-[22px] h-[22px] stroke-[#0061ae] fill-none"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="M23 21v-2a4 4 0 00-3-3.87" />
+                <path d="M16 3.13a4 4 0 010 7.75" />
+              </svg>
+            </div>
+            <div>
+              <div
+                class="text-[10px] font-bold text-gray-400 tracking-[0.12em] uppercase mb-1"
+                data-i18n="cmms.card.num3"
+              >
+                Highlight 03
+              </div>
+              <div
+                class="text-[17px] font-bold text-gray-800 leading-[1.3]"
+                data-i18n="cmms.card.title3"
+              >
+                User List &amp; Management
+              </div>
+            </div>
+          </div>
+          <p
+            class="px-7 pt-3.5 text-[13.5px] text-gray-600 leading-[1.7]"
+            data-i18n="cmms.card.desc3"
+          >
+            Full user directory with profile management, workload visibility,
+            and assignment tracking. Users are tied to specific roles and sites
+            ensuring contextually accurate and auditable task assignment.
+          </p>
+          <div class="flex flex-wrap gap-2 px-7 py-4">
+            <span
+              class="text-[10.5px] font-semibold px-3 py-1 rounded-full border border-blue-pale2 text-blue-primary bg-blue-pale"
+              data-i18n="cmms.tag.userProfiles"
+              >User Profiles</span
+            >
+            <span
+              class="text-[10.5px] font-semibold px-3 py-1 rounded-full border border-blue-pale2 text-blue-primary bg-blue-pale"
+              data-i18n="cmms.tag.workloadTracking"
+              >Workload Tracking</span
+            >
+            <span
+              class="text-[10.5px] font-semibold px-3 py-1 rounded-full border border-blue-pale2 text-blue-primary bg-blue-pale"
+              data-i18n="cmms.tag.assignmentHistory"
+              >Assignment History</span
+            >
+          </div>
+          <div
+            class="mx-5 mb-5 rounded-xl border border-gray-200 bg-gray-50 aspect-video flex items-center justify-center"
+          >
+            <img src="./img/cmms-img/user-list.webp" alt="" />
+          </div>
+        </div>
+
+        <!-- Card 4: Schedule -->
+        <div
+          class="h-card bg-white border border-gray-200 rounded-[20px] overflow-hidden"
+          data-aos="fade-up"
+          data-aos-delay="0"
+        >
+          <div class="flex items-start gap-4 pt-7 px-7">
+            <div
+              class="w-12 h-12 rounded-[14px] flex items-center justify-center flex-shrink-0 bg-[#ebf5ff]"
+            >
+              <svg
+                class="w-[22px] h-[22px] stroke-[#0061ae] fill-none"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                <line x1="16" y1="2" x2="16" y2="6" />
+                <line x1="8" y1="2" x2="8" y2="6" />
+                <line x1="3" y1="10" x2="21" y2="10" />
+              </svg>
+            </div>
+            <div>
+              <div
+                class="text-[10px] font-bold text-gray-400 tracking-[0.12em] uppercase mb-1"
+                data-i18n="cmms.card.num4"
+              >
+                Highlight 04
+              </div>
+              <div
+                class="text-[17px] font-bold text-gray-800 leading-[1.3]"
+                data-i18n="cmms.card.title4"
+              >
+                Schedule Management
+              </div>
+            </div>
+          </div>
+          <p
+            class="px-7 pt-3.5 text-[13.5px] text-gray-600 leading-[1.7]"
+            data-i18n="cmms.card.desc4"
+          >
+            Unified scheduling engine connected to both Work Orders and Trouble
+            Reports. Preventive maintenance schedules auto-generate WOs on due
+            dates, while Trouble Reports can be slotted for tracked resolution
+            timelines.
+          </p>
+          <div class="flex flex-wrap gap-2 px-7 py-4">
+            <span
+              class="text-[10.5px] font-semibold px-3 py-1 rounded-full border border-blue-pale2 text-blue-primary bg-blue-pale"
+              data-i18n="cmms.tag.autoWO"
+              >Auto WO Generation</span
+            >
+            <span
+              class="text-[10.5px] font-semibold px-3 py-1 rounded-full border border-blue-pale2 text-blue-primary bg-blue-pale"
+              data-i18n="cmms.tag.calendarView"
+              >Calendar View</span
+            >
+            <span
+              class="text-[10.5px] font-semibold px-3 py-1 rounded-full border border-blue-pale2 text-blue-primary bg-blue-pale"
+              data-i18n="cmms.tag.deadlineAlerts"
+              >Deadline Alerts</span
+            >
+          </div>
+          <div
+            class="mx-5 mb-5 rounded-xl border border-gray-200 bg-gray-50 aspect-video flex items-center justify-center"
+          >
+            <img src="./img/cmms-img/schedule-management.webp" alt="" />
+          </div>
+        </div>
+
+        <!-- Card 5: Equipment -->
+        <div
+          class="h-card bg-white border border-gray-200 rounded-[20px] overflow-hidden"
+          data-aos="fade-up"
+          data-aos-delay="60"
+        >
+          <div class="flex items-start gap-4 pt-7 px-7">
+            <div
+              class="w-12 h-12 rounded-[14px] flex items-center justify-center flex-shrink-0 bg-amber-50"
+            >
+              <svg
+                class="w-[22px] h-[22px] stroke-amber-600 fill-none"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
+                />
+              </svg>
+            </div>
+            <div>
+              <div
+                class="text-[10px] font-bold text-gray-400 tracking-[0.12em] uppercase mb-1"
+                data-i18n="cmms.card.num5"
+              >
+                Highlight 05
+              </div>
+              <div
+                class="text-[17px] font-bold text-gray-800 leading-[1.3]"
+                data-i18n="cmms.card.title5"
+              >
+                Equipment List → Work Order
+              </div>
+            </div>
+          </div>
+          <p
+            class="px-7 pt-3.5 text-[13.5px] text-gray-600 leading-[1.7]"
+            data-i18n="cmms.card.desc5"
+          >
+            Full equipment registry linked directly to Work Orders. Each asset
+            carries its complete history of maintenance activities,
+            certifications, and trouble reports. Technicians can look up any
+            equipment and immediately see its full service record.
+          </p>
+          <div class="flex flex-wrap gap-2 px-7 py-4">
+            <span
+              class="text-[10.5px] font-semibold px-3 py-1 rounded-full border border-blue-pale2 text-blue-primary bg-blue-pale"
+              data-i18n="cmms.tag.assetRegistry"
+              >Asset Registry</span
+            >
+            <span
+              class="text-[10.5px] font-semibold px-3 py-1 rounded-full border border-blue-pale2 text-blue-primary bg-blue-pale"
+              data-i18n="cmms.tag.serviceHistory"
+              >Service History</span
+            >
+            <span
+              class="text-[10.5px] font-semibold px-3 py-1 rounded-full border border-blue-pale2 text-blue-primary bg-blue-pale"
+              data-i18n="cmms.tag.woLinkage"
+              >WO Linkage</span
+            >
+          </div>
+          <div
+            class="mx-5 mb-5 rounded-xl border border-gray-200 bg-gray-50 aspect-video flex items-center justify-center"
+          >
+            <img src="./img/cmms-img/equipment-list.webp" alt="" />
+          </div>
+        </div>
+
+        <!-- Card 6: Site Choice -->
+        <div
+          class="h-card bg-white border border-gray-200 rounded-[20px] overflow-hidden"
+          data-aos="fade-up"
+          data-aos-delay="120"
+        >
+          <div class="flex items-start gap-4 pt-7 px-7">
+            <div
+              class="w-12 h-12 rounded-[14px] flex items-center justify-center flex-shrink-0 bg-emerald-50"
+            >
+              <svg
+                class="w-[22px] h-[22px] stroke-emerald-600 fill-none"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+            </div>
+            <div>
+              <div
+                class="text-[10px] font-bold text-gray-400 tracking-[0.12em] uppercase mb-1"
+                data-i18n="cmms.card.num6"
+              >
+                Highlight 06
+              </div>
+              <div
+                class="text-[17px] font-bold text-gray-800 leading-[1.3]"
+                data-i18n="cmms.card.title6"
+              >
+                Site Choice &amp; User Role Linkage
+              </div>
+            </div>
+          </div>
+          <p
+            class="px-7 pt-3.5 text-[13.5px] text-gray-600 leading-[1.7]"
+            data-i18n="cmms.card.desc6"
+          >
+            Multi-site support with site-scoped data visibility. Each user is
+            assigned to one or more sites and their data access is automatically
+            scoped. A technician at Site A cannot see or modify data belonging
+            to Site B unless explicitly authorized.
+          </p>
+          <div class="flex flex-wrap gap-2 px-7 py-4">
+            <span
+              class="text-[10.5px] font-semibold px-3 py-1 rounded-full border border-blue-pale2 text-blue-primary bg-blue-pale"
+              data-i18n="cmms.tag.multiSite"
+              >Multi-site</span
+            >
+            <span
+              class="text-[10.5px] font-semibold px-3 py-1 rounded-full border border-blue-pale2 text-blue-primary bg-blue-pale"
+              data-i18n="cmms.tag.dataScoping"
+              >Data Scoping</span
+            >
+            <span
+              class="text-[10.5px] font-semibold px-3 py-1 rounded-full border-emerald-200 text-emerald-800 bg-emerald-50 border"
+              data-i18n="cmms.tag.accessControl"
+              >Access Control</span
+            >
+          </div>
+          <div
+            class="mx-5 mb-5 rounded-xl border border-gray-200 bg-gray-50 aspect-video flex items-center justify-center"
+          >
+            <img src="./img/cmms-img/sites-list.webp" alt="" />
+          </div>
+        </div>
+
+        <!-- Card 7: Role -->
+        <div
+          class="h-card bg-white border border-gray-200 rounded-[20px] overflow-hidden"
+          data-aos="fade-up"
+          data-aos-delay="0"
+        >
+          <div class="flex items-start gap-4 pt-7 px-7">
+            <div
+              class="w-12 h-12 rounded-[14px] flex items-center justify-center flex-shrink-0 bg-teal-50"
+            >
+              <svg
+                class="w-[22px] h-[22px] stroke-teal-600 fill-none"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                <path d="M7 11V7a5 5 0 0110 0v4" />
+              </svg>
+            </div>
+            <div>
+              <div
+                class="text-[10px] font-bold text-gray-400 tracking-[0.12em] uppercase mb-1"
+                data-i18n="cmms.card.num7"
+              >
+                Highlight 07
+              </div>
+              <div
+                class="text-[17px] font-bold text-gray-800 leading-[1.3]"
+                data-i18n="cmms.card.title7"
+              >
+                Role-Based Authority
+              </div>
+            </div>
+          </div>
+          <p
+            class="px-7 pt-3.5 text-[13.5px] text-gray-600 leading-[1.7]"
+            data-i18n="cmms.card.desc7"
+          >
+            Granular permission system across all modules. Roles are defined at
+            the system level — Admin, Supervisor, Technician, Approver, and
+            Viewer — each with precise access rights per module. Permissions
+            cascade from site level down to individual user actions.
+          </p>
+          <div class="flex flex-wrap gap-2 px-7 py-4">
+            <span
+              class="text-[10.5px] font-semibold px-3 py-1 rounded-full border border-blue-pale2 text-blue-primary bg-blue-pale"
+              >Admin</span
+            >
+            <span
+              class="text-[10.5px] font-semibold px-3 py-1 rounded-full border border-blue-pale2 text-blue-primary bg-blue-pale"
+              >Supervisor</span
+            >
+            <span
+              class="text-[10.5px] font-semibold px-3 py-1 rounded-full border border-blue-pale2 text-blue-primary bg-blue-pale"
+              >Technician</span
+            >
+            <span
+              class="text-[10.5px] font-semibold px-3 py-1 rounded-full border-amber-200 text-amber-900 bg-amber-50 border"
+              >Approver</span
+            >
+          </div>
+          <div
+            class="mx-5 mb-5 rounded-xl border border-gray-200 bg-gray-50 aspect-video flex items-center justify-center"
+          >
+            <img src="./img/cmms-img/role-based-approval.webp" alt="" />
+          </div>
+        </div>
+
+        <!-- Card 8: Digital Approval -->
+        <div
+          class="h-card bg-white border border-gray-200 rounded-[20px] overflow-hidden"
+          data-aos="fade-up"
+          data-aos-delay="60"
+        >
+          <div class="flex items-start gap-4 pt-7 px-7">
+            <div
+              class="w-12 h-12 rounded-[14px] flex items-center justify-center flex-shrink-0 bg-amber-50"
+            >
+              <svg
+                class="w-[22px] h-[22px] stroke-amber-600 fill-none"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+            </div>
+            <div>
+              <div
+                class="text-[10px] font-bold text-gray-400 tracking-[0.12em] uppercase mb-1"
+                data-i18n="cmms.card.num8"
+              >
+                Highlight 08
+              </div>
+              <div
+                class="text-[17px] font-bold text-gray-800 leading-[1.3]"
+                data-i18n="cmms.card.title8"
+              >
+                Digital Approval System
+              </div>
+            </div>
+          </div>
+          <p
+            class="px-7 pt-3.5 text-[13.5px] text-gray-600 leading-[1.7]"
+            data-i18n="cmms.card.desc8"
+          >
+            End-to-end digital approval workflow linked to all major system
+            actions — WO creation, WO closure, Trouble Report escalation,
+            Certification issuance, and Schedule changes. Multi-level approvals
+            with timestamped signatures replace paper-based sign-off entirely.
+          </p>
+          <div class="flex flex-wrap gap-2 px-7 py-4">
+            <span
+              class="text-[10.5px] font-semibold px-3 py-1 rounded-full border-amber-200 text-amber-900 bg-amber-50 border"
+              data-i18n="cmms.tag.multiLevel"
+              >Multi-level</span
+            >
+            <span
+              class="text-[10.5px] font-semibold px-3 py-1 rounded-full border-amber-200 text-amber-900 bg-amber-50 border"
+              data-i18n="cmms.tag.timestamped"
+              >Timestamped</span
+            >
+            <span
+              class="text-[10.5px] font-semibold px-3 py-1 rounded-full border-amber-200 text-amber-900 bg-amber-50 border"
+              data-i18n="cmms.tag.paperless"
+              >Paperless</span
+            >
+            <span
+              class="text-[10.5px] font-semibold px-3 py-1 rounded-full border border-blue-pale2 text-blue-primary bg-blue-pale"
+              data-i18n="cmms.tag.auditTrail"
+              >Audit Trail</span
+            >
+          </div>
+          <div
+            class="mx-5 mb-5 rounded-xl border border-gray-200 bg-gray-50 aspect-video flex items-center justify-center"
+          >
+            <img src="./img/cmms-img/digital-approval.webp" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ══════════════════════════════════════
+         PROCESS FLOW
+    ══════════════════════════════════════ -->
+    <section class="py-20 px-8 md:px-20 bg-gray-50">
+      <div data-aos="fade-up">
+        <div
+          class="section-badge-grad inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-[11px] font-bold text-white tracking-[0.08em] uppercase mb-4"
+        >
+          <svg
+            width="12"
+            height="12"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+          >
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+          <span data-i18n="cmms.flow.badge">End-to-End Workflow</span>
+        </div>
+        <h2
+          class="text-[clamp(26px,3vw,40px)] font-extrabold text-blue-primary tracking-tight leading-[1.15] mb-3.5"
+        >
+          <span data-i18n="cmms.flow.title1">Process</span>
+          <span class="text-gradient-blue" data-i18n="cmms.flow.title2">
+            Flow</span
+          >
+        </h2>
+        <p
+          class="text-[15px] text-gray-600 leading-[1.75] max-w-[600px] mb-12 font-normal"
+          data-i18n="cmms.flow.desc"
+        >
+          From a fault on the floor to a closed and digitally approved work
+          order — see how the system handles every step automatically.
+        </p>
+      </div>
+
+      <div class="mt-12">
+        <!-- Step 1 -->
+        <div
+          class="flow-step grid gap-x-5"
+          style="grid-template-columns: 56px 1fr"
+          data-aos="fade-up"
+          data-aos-delay="0"
+        >
+          <div class="flex flex-col items-center">
+            <div
+              class="flow-dot-grad w-12 h-12 rounded-full flex items-center justify-center text-white font-extrabold text-[15px] flex-shrink-0 relative z-10"
+            >
+              1
+            </div>
+            <div class="flow-line"></div>
+          </div>
+          <div class="pt-1 pb-10">
+            <div
+              class="text-[17px] font-bold text-gray-800 mb-2"
+              data-i18n="cmms.step1.title"
+            >
+              Field Report Submitted
+            </div>
+            <div
+              class="text-sm text-gray-600 leading-[1.7] max-w-[620px]"
+              data-i18n="cmms.step1.desc"
+            >
+              A technician or operator submits a Trouble Report via CMMS,
+              describing the fault, affected equipment, and site. The report is
+              time-stamped and assigned a unique reference number automatically.
+            </div>
+            <div class="flex flex-wrap gap-2 mt-3.5">
+              <span
+                class="text-[11px] font-semibold px-3 py-1 rounded-full bg-blue-pale text-blue-primary border border-blue-pale2"
+                data-i18n="cmms.tag.troubleReportModule"
+                >Trouble Report Module</span
+              >
+              <span
+                class="text-[11px] font-semibold px-3 py-1 rounded-full bg-blue-pale text-blue-primary border border-blue-pale2"
+                data-i18n="cmms.tag.equipmentRegistry"
+                >Equipment Registry</span
+              >
+              <span
+                class="text-[11px] font-semibold px-3 py-1 rounded-full bg-blue-pale text-blue-primary border border-blue-pale2"
+                data-i18n="cmms.tag.siteScope"
+                >Site Scope</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div
+          class="flow-step grid gap-x-5"
+          style="grid-template-columns: 56px 1fr"
+          data-aos="fade-up"
+          data-aos-delay="80"
+        >
+          <div class="flex flex-col items-center">
+            <div
+              class="flow-dot-grad w-12 h-12 rounded-full flex items-center justify-center text-white font-extrabold text-[15px] flex-shrink-0 relative z-10"
+            >
+              2
+            </div>
+            <div class="flow-line"></div>
+          </div>
+          <div class="pt-1 pb-10">
+            <div
+              class="text-[17px] font-bold text-gray-800 mb-2"
+              data-i18n="cmms.step2.title"
+            >
+              Supervisor Review &amp; Work Order Creation
+            </div>
+            <div
+              class="text-sm text-gray-600 leading-[1.7] max-w-[620px]"
+              data-i18n="cmms.step2.desc"
+            >
+              The Supervisor receives a notification, reviews the report, and
+              creates a formal Work Order — selecting the type (Corrective,
+              Preventive, Certification) and assigning a technician based on
+              skill and availability.
+            </div>
+            <div class="flex flex-wrap gap-2 mt-3.5">
+              <span
+                class="text-[11px] font-semibold px-3 py-1 rounded-full bg-blue-pale text-blue-primary border border-blue-pale2"
+                data-i18n="cmms.tag.workOrderModule"
+                >Work Order Module</span
+              >
+              <span
+                class="text-[11px] font-semibold px-3 py-1 rounded-full bg-blue-pale text-blue-primary border border-blue-pale2"
+                data-i18n="cmms.tag.userList"
+                >User List</span
+              >
+              <span
+                class="text-[11px] font-semibold px-3 py-1 rounded-full bg-blue-pale text-blue-primary border border-blue-pale2"
+                data-i18n="cmms.tag.roleAuthority"
+                >Role Authority</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div
+          class="flow-step grid gap-x-5"
+          style="grid-template-columns: 56px 1fr"
+          data-aos="fade-up"
+          data-aos-delay="160"
+        >
+          <div class="flex flex-col items-center">
+            <div
+              class="flow-dot-grad w-12 h-12 rounded-full flex items-center justify-center text-white font-extrabold text-[15px] flex-shrink-0 relative z-10"
+            >
+              3
+            </div>
+            <div class="flow-line"></div>
+          </div>
+          <div class="pt-1 pb-10">
+            <div
+              class="text-[17px] font-bold text-gray-800 mb-2"
+              data-i18n="cmms.step3.title"
+            >
+              Schedule Assignment
+            </div>
+            <div
+              class="text-sm text-gray-600 leading-[1.7] max-w-[620px]"
+              data-i18n="cmms.step3.desc"
+            >
+              The WO is placed on the maintenance schedule with a target
+              completion date. The system checks for conflicts with existing
+              preventive maintenance windows and flags overlaps automatically.
+            </div>
+            <div class="flex flex-wrap gap-2 mt-3.5">
+              <span
+                class="text-[11px] font-semibold px-3 py-1 rounded-full bg-blue-pale text-blue-primary border border-blue-pale2"
+                data-i18n="cmms.tag.scheduleModule"
+                >Schedule Module</span
+              >
+              <span
+                class="text-[11px] font-semibold px-3 py-1 rounded-full bg-blue-pale text-blue-primary border border-blue-pale2"
+                data-i18n="cmms.tag.preventiveCalendar"
+                >Preventive Calendar</span
+              >
+              <span
+                class="text-[11px] font-semibold px-3 py-1 rounded-full bg-blue-pale text-blue-primary border border-blue-pale2"
+                data-i18n="cmms.tag.conflictDetection"
+                >Conflict Detection</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div
+          class="flow-step grid gap-x-5"
+          style="grid-template-columns: 56px 1fr"
+          data-aos="fade-up"
+          data-aos-delay="240"
+        >
+          <div class="flex flex-col items-center">
+            <div
+              class="flow-dot-grad w-12 h-12 rounded-full flex items-center justify-center text-white font-extrabold text-[15px] flex-shrink-0 relative z-10"
+            >
+              4
+            </div>
+            <div class="flow-line"></div>
+          </div>
+          <div class="pt-1 pb-10">
+            <div
+              class="text-[17px] font-bold text-gray-800 mb-2"
+              data-i18n="cmms.step4.title"
+            >
+              Execution &amp; Progress Update
+            </div>
+            <div
+              class="text-sm text-gray-600 leading-[1.7] max-w-[620px]"
+              data-i18n="cmms.step4.desc"
+            >
+              The assigned technician updates the WO in real time — logging
+              labor hours, findings, parts used, and photos. The equipment's
+              service record updates simultaneously. All actions are logged
+              against the technician's user profile.
+            </div>
+            <div class="flex flex-wrap gap-2 mt-3.5">
+              <span
+                class="text-[11px] font-semibold px-3 py-1 rounded-full bg-blue-pale text-blue-primary border border-blue-pale2"
+                data-i18n="cmms.tag.equipmentLog"
+                >Equipment Log</span
+              >
+              <span
+                class="text-[11px] font-semibold px-3 py-1 rounded-full bg-blue-pale text-blue-primary border border-blue-pale2"
+                data-i18n="cmms.tag.technicianProfile"
+                >Technician Profile</span
+              >
+              <span
+                class="text-[11px] font-semibold px-3 py-1 rounded-full bg-blue-pale text-blue-primary border border-blue-pale2"
+                data-i18n="cmms.tag.realtimeUpdate"
+                >Real-time Update</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 5 -->
+        <div
+          class="flow-step grid gap-x-5"
+          style="grid-template-columns: 56px 1fr"
+          data-aos="fade-up"
+          data-aos-delay="320"
+        >
+          <div class="flex flex-col items-center">
+            <div
+              class="flow-dot-grad w-12 h-12 rounded-full flex items-center justify-center text-white font-extrabold text-[15px] flex-shrink-0 relative z-10"
+            >
+              5
+            </div>
+          </div>
+          <div class="pt-1 pb-10">
+            <div
+              class="text-[17px] font-bold text-gray-800 mb-2"
+              data-i18n="cmms.step5.title"
+            >
+              Digital Approval &amp; WO Closure
+            </div>
+            <div
+              class="text-sm text-gray-600 leading-[1.7] max-w-[620px]"
+              data-i18n="cmms.step5.desc"
+            >
+              Upon completion, the WO is submitted for approval. The Supervisor
+              reviews and routes to the Approver for final digital sign-off.
+              Multi-level approvals are captured with timestamps in a
+              tamper-proof audit trail. The Trouble Report is marked resolved
+              and permanently linked to the closed WO.
+            </div>
+            <div class="flex flex-wrap gap-2 mt-3.5">
+              <span
+                class="text-[11px] font-semibold px-3 py-1 rounded-full bg-blue-pale text-blue-primary border border-blue-pale2"
+                data-i18n="cmms.tag.digitalApproval"
+                >Digital Approval</span
+              >
+              <span
+                class="text-[11px] font-semibold px-3 py-1 rounded-full bg-blue-pale text-blue-primary border border-blue-pale2"
+                data-i18n="cmms.tag.auditTrail"
+                >Audit Trail</span
+              >
+              <span
+                class="text-[11px] font-semibold px-3 py-1 rounded-full bg-blue-pale text-blue-primary border border-blue-pale2"
+                data-i18n="cmms.tag.trClosure"
+                >TR Closure</span
+              >
+              <span
+                class="text-[11px] font-semibold px-3 py-1 rounded-full bg-blue-pale text-blue-primary border border-blue-pale2"
+                data-i18n="cmms.tag.equipmentUpdate"
+                >Equipment Update</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+     CONTACT SECTION 
+     ===================================================== -->
+    <section id="contact">
+      <!-- Header -->
+      <div class="contact-header text-center mb-12">
+        <span class="contact-eyebrow" data-i18n="cmms.contact.eyebrow"
+          >Get In Touch</span
+        >
+        <h1
+          class="font-montserrat text-4xl md:text-5xl font-extrabold text-slate-800 mt-4 mb-4 leading-tight tracking-tight"
+        >
+          <span data-i18n="cmms.contact.title">Let's Build Something</span>
+          <span style="color: #0e766d" data-i18n="cmms.contact.titleHighlight"
+            >Together</span
+          >
+        </h1>
+        <p
+          class="text-slate-500 font-medium text-base max-w-md mx-auto leading-relaxed"
+          data-i18n="cmms.contact.subtitle"
+        >
+          Ready to optimize your building maintenance? Contact us for a
+          professional consultation.
+        </p>
+      </div>
+
+      <!-- Card -->
+      <div
+        class="contact-card grid grid-cols-1 md:grid-cols-2 rounded-3xl overflow-hidden"
+      >
+        <!-- Left: Form -->
+        <div
+          class="p-10 md:p-12 border-b md:border-b-0 md:border-r border-white/5"
+        >
+          <span class="contact-panel-label" data-i18n="contact.form.sendMessage"
+            >Send a Message</span
+          >
+          <h3
+            class="text-white font-bold text-2xl mt-2 mb-8"
+            data-i18n="cmms.contact.formTitle"
+          >
+            Tell us about your project
+          </h3>
+
+          <form id="contactForm" novalidate class="space-y-3">
+            <div class="grid grid-cols-2 gap-3">
+              <div>
+                <input
+                  id="firstName"
+                  type="text"
+                  data-i18n-placeholder="contact.form.firstName"
+                  placeholder="First Name *"
+                  class="contact-input w-full"
+                />
+                <p
+                  class="contact-error hidden"
+                  data-i18n="cmms.contact.required"
+                >
+                  Required
+                </p>
+              </div>
+              <div>
+                <input
+                  id="lastName"
+                  type="text"
+                  data-i18n-placeholder="contact.form.lastName"
+                  placeholder="Last Name *"
+                  class="contact-input w-full"
+                />
+                <p
+                  class="contact-error hidden"
+                  data-i18n="cmms.contact.required"
+                >
+                  Required
+                </p>
+              </div>
+            </div>
+            <div>
+              <input
+                id="email"
+                type="email"
+                data-i18n-placeholder="contact.form.email"
+                placeholder="Email Address *"
+                class="contact-input w-full"
+              />
+              <p
+                class="contact-error hidden"
+                data-i18n="cmms.contact.validEmail"
+              >
+                Enter a valid email
+              </p>
+            </div>
+            <div>
+              <input
+                id="company"
+                type="text"
+                data-i18n-placeholder="contact.form.company"
+                placeholder="Company (optional)"
+                class="contact-input w-full"
+              />
+            </div>
+            <div>
+              <select id="service" class="contact-select w-full">
+                <option value="" data-i18n="serviceOptions.default">
+                  Select a service (optional)
+                </option>
+                <option
+                  value="Preventive Maintenance"
+                  data-i18n="serviceOptions.preventiveMaintenance"
+                >
+                  Preventive Maintenance
+                </option>
+                <option
+                  value="Electrical Services"
+                  data-i18n="serviceOptions.electrical"
+                >
+                  Electrical Services
+                </option>
+                <option value="HVAC Services" data-i18n="serviceOptions.hvac">
+                  HVAC Services
+                </option>
+                <option
+                  value="Access Control Systems"
+                  data-i18n="serviceOptions.accessControl"
+                >
+                  Access Control Systems
+                </option>
+                <option
+                  value="CCTV Installation"
+                  data-i18n="serviceOptions.cctv"
+                >
+                  CCTV Installation
+                </option>
+                <option
+                  value="Website Development"
+                  data-i18n="serviceOptions.websiteDevelopment"
+                >
+                  Website Development
+                </option>
+                <option
+                  value="Mobile App Development"
+                  data-i18n="serviceOptions.mobileDevelopment"
+                >
+                  Mobile App Development
+                </option>
+                <option
+                  value="CMMS Implementation"
+                  data-i18n="serviceOptions.cmms"
+                >
+                  CMMS Implementation
+                </option>
+                <option value="Other" data-i18n="serviceOptions.other">
+                  Other
+                </option>
+              </select>
+            </div>
+            <div>
+              <textarea
+                id="message"
+                rows="4"
+                data-i18n-placeholder="contact.form.message"
+                placeholder="Tell us about your project requirements... *"
+                class="contact-input w-full resize-none"
+              ></textarea>
+              <p class="contact-error hidden" data-i18n="cmms.contact.required">
+                Required
+              </p>
+            </div>
+
+            <button
+              type="button"
+              onclick="submitToWhatsApp()"
+              class="contact-submit w-full mt-1"
+            >
+              <span id="submitText" data-i18n="cmms.contact.sendWhatsApp"
+                >Send via WhatsApp</span
+              >
+              <svg
+                id="submitIcon"
+                class="w-4 h-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M14 5l7 7m0 0l-7 7m7-7H3"
+                />
+              </svg>
+            </button>
+          </form>
+        </div>
+
+        <!-- Right: Info -->
+        <div
+          class="contact-info-panel p-10 md:p-12 flex flex-col justify-between"
+        >
+          <div>
+            <span class="contact-panel-label" data-i18n="contact.info.title"
+              >Contact Information</span
+            >
+            <h3
+              class="text-white font-bold text-2xl mt-2 mb-8"
+              data-i18n="cmms.contact.infoTitle"
+            >
+              We're here to help
+            </h3>
+            <div class="space-y-5">
+              <div class="flex items-start gap-4">
+                <div class="contact-icon-wrap">
+                  <svg
+                    class="w-[18px] h-[18px]"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1.8"
+                      d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <p class="contact-info-label" data-i18n="contact.info.phone">
+                    Phone
+                  </p>
+                  <p class="text-white/80 text-sm font-medium">
+                    +62 811-8860-355
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4">
+                <div class="contact-icon-wrap">
+                  <svg
+                    class="w-[18px] h-[18px]"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1.8"
+                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <p class="contact-info-label" data-i18n="contact.info.email">
+                    Email
+                  </p>
+                  <p class="text-white/80 text-sm font-medium">
+                    sumbersaranasolusindo@gmail.com
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4">
+                <div class="contact-icon-wrap">
+                  <svg
+                    class="w-[18px] h-[18px]"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1.8"
+                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                    />
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1.8"
+                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <p class="contact-info-label" data-i18n="contact.info.office">
+                    Office
+                  </p>
+                  <p class="text-white/80 text-sm font-medium">
+                    Jakarta, Indonesia
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4">
+                <div class="contact-icon-wrap">
+                  <svg
+                    class="w-[18px] h-[18px]"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1.8"
+                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <p class="contact-info-label" data-i18n="contact.info.hours">
+                    Business Hours
+                  </p>
+                  <p
+                    class="text-white/80 text-sm font-medium"
+                    data-i18n="contact.info.hoursDetail.weekday"
+                  >
+                    Mon – Fri: 8AM – 6PM WIB
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-8 pt-6 border-t border-white/10">
+            <p
+              class="text-white/40 text-xs font-semibold uppercase tracking-widest mb-4"
+              data-i18n="contact.info.assistance"
+            >
+              For immediate assistance
+            </p>
+            <div class="flex gap-3 flex-wrap">
+              <a href="https://wa.me/+628118860355" class="contact-btn-wa">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"
+                  />
+                </svg>
+                <span data-i18n="contact.info.whatsapp">WhatsApp</span>
+              </a>
+              <a href="tel:+6283831062662" class="contact-btn-call">
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                  />
+                </svg>
+                <span data-i18n="contact.info.callNow">Call Now</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- CONTACT SECTION END -->
+
+    <!-- =====================================================
+     FOOTER
+     ===================================================== -->
+    <footer
+      class="relative bg-gradient-to-br from-[#0F5F98] via-[#0a4a7a] to-[#071e3d] overflow-hidden"
+    >
+      <!-- Wave transition -->
+      <div class="w-full -mt-1">
+        <svg
+          viewBox="0 0 1200 60"
+          class="block w-full fill-slate-100"
+          preserveAspectRatio="none"
+          style="height: 48px"
+        >
+          <path
+            d="M0,0 C200,60 400,0 600,30 C800,60 1000,10 1200,30 L1200,0 Z"
+          />
+        </svg>
+      </div>
+
+      <!-- Decorative blobs -->
+      <div class="absolute inset-0 pointer-events-none">
+        <div
+          class="absolute top-12 left-16 w-48 h-48 bg-[#7AC5FF]/10 rounded-full blur-3xl"
+        ></div>
+        <div
+          class="absolute bottom-10 right-24 w-64 h-64 bg-[#0F5F98]/20 rounded-full blur-3xl"
+        ></div>
+        <div
+          class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-32 bg-white/5 rounded-full blur-2xl"
+        ></div>
+      </div>
+
+      <div class="relative z-10 max-w-6xl mx-auto px-6 md:px-12 pt-4 pb-10">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-8">
+          <!-- Brand -->
+          <div class="md:col-span-4">
+            <div class="footer-badge">
+              <span class="relative flex h-1.5 w-1.5">
+                <span
+                  class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#7AC5FF] opacity-75"
+                ></span>
+                <span
+                  class="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#7AC5FF]"
+                ></span>
+              </span>
+              Est. Jakarta, Indonesia
+            </div>
+            <img
+              src="./img/LOGO_FINAL1.webp"
+              alt="Triple S Logo"
+              class="h-10 mb-5 bg-white border rounded-xl opacity-90"
+            />
+            <p
+              class="text-white/60 text-sm leading-relaxed font-medium max-w-xs"
+              data-i18n="company.description"
+            >
+              Technology-based mechanical & electrical building maintenance,
+              backed by advanced CMMS integration.
+            </p>
+            <div class="flex gap-3 mt-6">
+              <a
+                href="https://wa.me/+628118860355"
+                class="footer-social"
+                aria-label="WhatsApp"
+              >
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"
+                  />
+                </svg>
+              </a>
+              <a
+                href="mailto:sumbersaranasolusindo@gmail.com"
+                class="footer-social"
+                aria-label="Email"
+              >
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.8"
+                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="tel:+6283831062662"
+                class="footer-social"
+                aria-label="Phone"
+              >
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.8"
+                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Nav links -->
+          <div class="md:col-span-3 md:col-start-6">
+            <p
+              class="text-white/40 text-xs font-semibold uppercase tracking-widest mb-5"
+              data-i18n="cmms.footer.navigation"
+            >
+              Navigation
+            </p>
+            <ul class="space-y-3">
+              <li>
+                <a href="#home" class="footer-link" data-i18n="nav.home"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a href="#cmms" class="footer-link" data-i18n="nav.cmms"
+                  >CMMS</a
+                >
+              </li>
+              <li>
+                <a href="#projects" class="footer-link" data-i18n="nav.projects"
+                  >Projects</a
+                >
+              </li>
+              <li>
+                <a href="#details" class="footer-link" data-i18n="nav.services"
+                  >Services</a
+                >
+              </li>
+              <li>
+                <a href="#about" class="footer-link" data-i18n="nav.about"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a href="#contact" class="footer-link" data-i18n="nav.contact"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Services links -->
+          <div class="md:col-span-3 md:col-start-10">
+            <p
+              class="text-white/40 text-xs font-semibold uppercase tracking-widest mb-5"
+              data-i18n="cmms.footer.services"
+            >
+              Services
+            </p>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="#details"
+                  class="footer-link"
+                  data-i18n="serviceOptions.preventiveMaintenance"
+                  >Preventive Maintenance</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#details"
+                  class="footer-link"
+                  data-i18n="serviceOptions.electrical"
+                  >Electrical Services</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#details"
+                  class="footer-link"
+                  data-i18n="serviceOptions.hvac"
+                  >HVAC Systems</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#details"
+                  class="footer-link"
+                  data-i18n="serviceOptions.cctv"
+                  >CCTV & Access Control</a
+                >
+              </li>
+              <li>
+                <a
+                  href="./assets/cmms.html"
+                  class="footer-link flex items-center gap-2"
+                >
+                  <span data-i18n="cmms.footer.cmmsLink">CMMS Platform</span>
+                  <span
+                    class="px-1.5 py-0.5 text-[9px] font-bold rounded-full bg-gradient-to-r from-[#7AC5FF] to-[#0F5F98] text-white leading-none"
+                    >App</span
+                  >
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-divider"></div>
+
+        <div
+          class="flex flex-col md:flex-row items-center justify-between gap-4"
+        >
+          <p
+            class="text-white/35 text-xs font-medium"
+            data-i18n="cmms.footer.copyright"
+          >
+            © 2025 PT. Sumber Sarana Solusindo. All rights reserved.
+          </p>
+          <div class="flex items-center gap-2">
+            <div
+              class="w-1.5 h-1.5 bg-[#7AC5FF] rounded-full animate-pulse"
+            ></div>
+            <p
+              class="text-white/35 text-xs font-medium"
+              data-i18n="cmms.footer.location"
+            >
+              Jakarta, Indonesia · Mon–Fri 8AM–6PM WIB
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- FOOTER END -->
+
+    <!-- AOS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <!-- Navbar JS (handles language toggle + mobile menu) -->
+    <script src="./js/core/navbar.js"></script>
+
+    <!-- CMMS Page i18n Initialization -->
+    <script src="../assets/js/sections/CmmsPage.js"></script>
+  </body>
+</html>

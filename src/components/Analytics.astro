@@ -1,0 +1,76 @@
+---
+/**
+ * Analytics.astro
+ * Drop-in analytics block. Place once in each layout, just before </body>.
+ *
+ * Includes:
+ *   • Google Analytics 4
+ *   • Core Web Vitals reporting (CLS, FID, LCP, TTFB, FCP → GA4)
+ *
+ * TO ACTIVATE:
+ *   1. Add PUBLIC_GA_ID to your .env
+ *   2. Done.
+ */
+
+const GA_ID = import.meta.env.PUBLIC_GA_ID;
+const isProd = import.meta.env.PROD;
+---
+
+{isProd && GA_ID && (
+  <>
+    <!-- ── Google Analytics 4 ──────────────────────── -->
+    <script
+      async
+      src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+    ></script>
+
+    <script define:vars={{ GA_ID }} is:inline>
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        window.dataLayer.push(arguments);
+      }
+
+      gtag('js', new Date());
+
+      gtag('config', GA_ID, {
+        send_page_view: true,
+      });
+
+      // Expose globally for custom event tracking
+      window.gtag = gtag;
+    </script>
+
+    <!-- ── Core Web Vitals → GA4 ──────────────────── -->
+    <script type="module" is:inline>
+      import {
+        onCLS,
+        onFID,
+        onLCP,
+        onTTFB,
+        onFCP
+      } from 'https://unpkg.com/web-vitals@4/dist/web-vitals.attribution.js?module';
+
+      function sendToGA(metric) {
+        if (!window.gtag) return;
+
+        window.gtag('event', metric.name, {
+          event_category: 'Web Vitals',
+          event_label: metric.id,
+          value: Math.round(
+            metric.name === 'CLS'
+              ? metric.value * 1000
+              : metric.value
+          ),
+          non_interaction: true,
+        });
+      }
+
+      onCLS(sendToGA);
+      onFID(sendToGA);
+      onLCP(sendToGA);
+      onTTFB(sendToGA);
+      onFCP(sendToGA);
+    </script>
+  </>
+)}
